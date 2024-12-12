@@ -1,7 +1,7 @@
 @extends('layouts.guest')
  
 @section('content')
-<section class="breadcrumb-wrapper" data-bg-image="https://blog-media.lifepal.co.id/wp-content/uploads/2020/01/09095548/faktor-yang-mempengaruhi-harga-saham-3.jpg">
+<section class="breadcrumb-wrapper" data-bg-image="{{ asset('assets/images/banner/banner-visimisi.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

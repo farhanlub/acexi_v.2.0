@@ -1,6 +1,11 @@
 <x-app-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <div class="alert alert-info" role="alert">
+        <strong>Segera Hadir</strong>
+        <a href="/">Kembali ke beranda</a>
+    </div>
+
+    {{-- <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -43,5 +48,5 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
-    </form>
+    </form> --}}
 </x-app-layout>

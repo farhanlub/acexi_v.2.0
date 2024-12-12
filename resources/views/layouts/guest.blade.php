@@ -248,6 +248,42 @@
 
     <main class="site-main">
         @yield('content')
+        <section class="tj-subscribe-section">
+            <div class="container">
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="gallery-text">
+                                    <div class="tj-sec-heading">
+                                        <h2 class="sec-title">Dapatkan Konsultasi Gratis?</h2>
+                                        <div class="gallery-contact">
+                                            Diskusikan tentang proyek Anda untuk dihubungi
+                                            <a href="tel:+6288290222512">0882-9022-2512 (Giordano)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-box-one">
+                                    <div class="input-form">
+                                        <input type="text" id="name" name="name" placeholder="Nama.."
+                                            required="" />
+                                    </div>
+                                    <div class="input-form">
+                                        <input type="email" id="email" name="email" placeholder="Alamat email...."
+                                            required="" />
+                                    </div>
+                                    <div class="subscribe-button">
+                                        <button class="tj-primary-btn btn" type="submit" value="submit">
+                                            Dapatkan penawaran sekarang <i class="flaticon-right-arrow"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
     </main>
 
     <!--=========== Footer Area Start =========-->

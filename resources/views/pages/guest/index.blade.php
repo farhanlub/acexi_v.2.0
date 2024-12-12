@@ -1,11 +1,11 @@
 @extends('layouts.guest')
- 
+
 @section('content')
     <section class="tj-slider-section">
         <div class="swiper hero-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="https://solarwp.wpengine.com/wp-content/uploads/2016/11/blog-img2.jpg"></div>
+                    <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner1.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">ACEXI</h1>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="https://dornsife.usc.edu/news/wp-content/uploads/sites/7/2024/04/Carbon_Removal_DD_Recap_Top-768x432.png"></div>
+                    <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">Harnessing The Wind</h1>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="https://solarwp.wpengine.com/wp-content/uploads/2016/11/slider2-bg1.jpg"></div>
+                    <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner3.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">Harnessing The Wind</h1>
@@ -128,16 +128,13 @@
                 <div class="col-xl-7 col-lg-12">
                     <div class="about-content-one">
                         <div class="tj-sec-heading">
-                            <span class="sub-title">About Us</span>
+                            {{-- <span class="sub-title">Tentang Kami</span> --}}
                             <h2 class="sec-title">
-                                Our Mission Is To Make Solar <br />
-                                <span>Energy Accessible</span>
+                               Tentang Kami
                             </h2>
                             <div class="desc">
                                 <p>
-                                    It is a long established fact that a reader will be distracted by the
-                                    readable content of a page when looking at its layout. The point of using
-                                    Lorem Ipsum is that it has a more-or-less normal distribution of.
+                                    Kami dengan bangga mempersembahkan diri sebagai lembaga yang memimpin perubahan dalam mengatasi permasalahan emisi karbon di Indonesia. Di sini, kami menggali solusi inovatif, melakukan penelitian mendalam, dan mengedukasi masyarakat tentang pentingnya mengurangi emisi karbon untuk menjaga lingkungan hidup yang sehat dan berkelanjutan. Kami percaya bahwa dengan kolaborasi antara para ahli, pemangku kepentingan, dan masyarakat luas, kita dapat mencapai tujuan bersama dalam menghadapi perubahan iklim global. Jelajahi situs kami untuk mengetahui lebih lanjut tentang proyek-proyek terkini, riset terbaru, dan inisiatif pendidikan yang sedang kami jalankan.
                                 </p>
                             </div>
                         </div>
@@ -176,16 +173,15 @@
                             <img src="assets/images/about/about-1.jpg" alt="Image" />
                             <div class="about-circle">
                                 <div class="video-play">
-                                    <a class="venobox popup-videos-button" data-autoplay="true" data-vbtype="video"
-                                        href="https://www.youtube.com/watch?v=ADmQTw4qqTY">
+                                    <a class="venobox popup-videos-button" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=ADmQTw4qqTY">
                                         <i class="fa-solid fa-play"></i>
                                         <svg class="shape-1" viewBox="0 0 100 100" width="150" height="100">
                                             <defs>
                                                 <path id="circle" d="
-                                                      M 50, 50
-                                                      m -37, 0
-                                                      a 37,37 0 1,1 74,0
-                                                      a 37,37 0 1,1 -74,0" />
+                                                          M 50, 50
+                                                          m -37, 0
+                                                          a 37,37 0 1,1 74,0
+                                                          a 37,37 0 1,1 -74,0" />
                                             </defs>
                                             <text font-size="16">
                                                 <textPath xlink:href="#circle" class="shape-1">
@@ -225,10 +221,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tj-sec-heading text-center">
-                        <span class="sub-title">Our Services</span>
+                        <span class="sub-title">Tujuan Utama Kami</span>
                         <h2 class="sec-title">
-                            Solar Renewable Services for <br />
-                            <span>A Greener World</span>
+                            Perkumpulan Ahli Emisi Karbon untuk <br />
+                            <span>Dunia yang Lebih Hijau</span>
                         </h2>
                     </div>
                 </div>
@@ -258,8 +254,7 @@
                                 </p>
                             </div>
                             <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i
-                                class="flaticon-right-arrow"></i></a>
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -288,8 +283,7 @@
                                 </p>
                             </div>
                             <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i
-                                class="flaticon-right-arrow"></i></a>
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -318,8 +312,7 @@
                                 </p>
                             </div>
                             <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i
-                                class="flaticon-right-arrow"></i></a>
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -348,8 +341,7 @@
                                 </p>
                             </div>
                             <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i
-                                class="flaticon-right-arrow"></i></a>
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
                             </div>
                         </div>
                     </div>
@@ -371,7 +363,7 @@
                             </div>
                             <div class="counter-number">
                                 <div class="tj-count"><span class="odometer" data-count="48">0</span>+</div>
-                                <span class="sub-title">Years Experience</span>
+                                <span class="sub-title">Jumlah Pakar</span>
                             </div>
                         </div>
                         <div class="counter-item-two">
@@ -380,7 +372,7 @@
                             </div>
                             <div class="counter-number">
                                 <div class="tj-count"><span class="odometer" data-count="239">0</span>+</div>
-                                <span class="sub-title">Projects Completed</span>
+                                <span class="sub-title">Jumlah Pengurus</span>
                             </div>
                         </div>
                         <div class="counter-item-two">
@@ -389,7 +381,7 @@
                             </div>
                             <div class="counter-number">
                                 <div class="tj-count"><span class="odometer" data-count="230">0</span>+</div>
-                                <span class="sub-title">Happy Customers</span>
+                                <span class="sub-title">Jumlah Anggota</span>
                             </div>
                         </div>
                         <div class="counter-item-two">
@@ -397,15 +389,15 @@
                                 <i class="flaticon-timeline"></i>
                             </div>
                             <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="380">0</span>+</div>
-                                <span class="sub-title">Awards Milestones</span>
+                                <div class="tj-count"><span class="odometer" data-count="20">0</span>+</div>
+                                <span class="sub-title">Jumlah Mitra</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7">
                     <div class="counter-wrapper">
-                        <img src="assets/images/project/counter-1.jpg" alt="Image" />
+                        <img src="{{ asset('assets/images/banner/our-team-banner.jpg') }}" alt="Image" />
                     </div>
                 </div>
             </div>
@@ -419,7 +411,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tj-sec-heading text-center">
-                        <span class="sub-title">Our Working Process</span>
+                        <span class="sub-title">Aktivitas Kami</span>
                         <h2 class="sec-title">
                             Inspiring Interiors Exceptional <br />
                             <span>Of Experiences</span>
@@ -762,8 +754,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tj-sec-heading-four text-center">
-                        <span class="sub-title">Our FAQ</span>
-                        <h2 class="sec-title">Frequently Asked <span>Question</span></h2>
+                        <span class="sub-title">FAQ</span>
+                        <h2 class="sec-title">Pertanyaan yang Sering<span>Diajukan</span></h2>
                     </div>
                 </div>
             </div>
@@ -772,63 +764,37 @@
                     <div class="accordion" id="ItemOne">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    1. What is Included in your Services?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Apa yang dimaksud dengan Ahli Emisi Karbon Expert Indonesia?
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                aria-labelledby="headingOne" data-bs-parent="#ItemOne">
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#ItemOne">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Ahli Emisi Karbon Expert Indonesia adalah profesional yang memiliki pengetahuan mendalam tentang emisi karbon, praktik keberlanjutan, dan solusi untuk mengurangi dampak lingkungan. Mereka membantu perusahaan dan organisasi untuk mengelola dan mengurangi jejak karbon mereka.</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    2. What Warranties do I Have For Installation?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Apa saja layanan yang dapat diberikan oleh Ahli Emisi Karbon Expert Indonesia?
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#ItemOne">
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ItemOne">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Ahli Emisi Karbon Expert Indonesia menyediakan berbagai layanan, termasuk penilaian emisi karbon, konsultasi keberlanjutan, dan pengembangan strategi hijau untuk membantu klien mengurangi dampak lingkungan mereka.</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                    3. How fast I get my Order?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Apakah Ahli Emisi Karbon Expert Indonesia juga memberikan pelatihan atau workshop?
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="headingThree" data-bs-parent="#ItemOne">
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ItemOne">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                    4. What are the advantages of solar energy?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#ItemOne">
-                                <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Ya, Ahli Emisi Karbon Expert Indonesia menyelenggarakan pelatihan dan workshop untuk membantu individu dan organisasi memahami praktik keberlanjutan, mengukur emisi karbon, dan mengembangkan solusi berkelanjutan.</strong>
                                 </div>
                             </div>
                         </div>
@@ -838,79 +804,37 @@
                     <div class="accordion" id="ItemTwo">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTen">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                    5. How Much do Energy Panels Cost?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                    Bagaimana caranya untuk bergabung menjadi anggota ACEXI?
                                 </button>
                             </h2>
-                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
-                                data-bs-parent="#ItemTwo">
+                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#ItemTwo">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Anda bisa mendaftar dengan mengisi formulir yang sudah kami sediakan di halaman Anggota, atau bisa melalui link berikut</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    6. How Mech Energy Can a Solar Panel Generate?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Bagaimana saya dapat menjadi Ahli Emisi Karbon Expert Indonesia?
                                 </button>
                             </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                                data-bs-parent="#ItemTwo">
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#ItemTwo">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Untuk menjadi Ahli Emisi Karbon Expert Indonesia, Anda perlu memiliki pendidikan dan pengalaman yang relevan dalam bidang keberlanjutan, emisi karbon, atau disiplin ilmu terkait. Selain itu, sertifikasi atau pelatihan tambahan dapat menjadi nilai tambah.</strong>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingSeven">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseSeven" aria-expanded="false"
-                                    aria-controls="collapseSeven">
-                                    7. What are the advantages of solar energy?
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    Bagaimana perusahaan atau organisasi dapat bekerja sama dengan Ahli Emisi Karbon Expert Indonesia?
                                 </button>
                             </h2>
-                            <div id="collapseSeven" class="accordion-collapse collapse"
-                                aria-labelledby="headingSeven" data-bs-parent="#ItemTwo">
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#ItemTwo">
                                 <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingEight">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseEight" aria-expanded="false"
-                                    aria-controls="collapseEight">
-                                    8. What is Included in your Services?
-                                </button>
-                            </h2>
-                            <div id="collapseEight" class="accordion-collapse collapse"
-                                aria-labelledby="headingEight" data-bs-parent="#ItemTwo">
-                                <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingNine">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseNine" aria-expanded="false"
-                                    aria-controls="collapseNine">
-                                    9. Majority have do Energy Panels Cost?
-                                </button>
-                            </h2>
-                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-                                data-bs-parent="#ItemTwo">
-                                <div class="accordion-body">
-                                    <strong>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in.</strong>
+                                    <strong>Perusahaan atau organisasi yang ingin bekerja sama dengan Ahli Emisi Karbon Expert Indonesia dapat menghubungi kami melalui formulir kontak di situs web atau melalui email. Kami akan segera merespons permintaan Anda.</strong>
                                 </div>
                             </div>
                         </div>
