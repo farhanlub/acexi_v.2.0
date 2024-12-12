@@ -130,7 +130,7 @@
                         <div class="tj-sec-heading">
                             {{-- <span class="sub-title">Tentang Kami</span> --}}
                             <h2 class="sec-title">
-                               Tentang Kami
+                                Tentang Kami
                             </h2>
                             <div class="desc">
                                 <p>
@@ -170,18 +170,18 @@
                 <div class="col-xl-5 col-lg-12">
                     <div class="about-image-group">
                         <div class="about-lg-image">
-                            <img src="assets/images/about/about-1.jpg" alt="Image" />
-                            <div class="about-circle">
+                            <img src="{{ asset('assets/images/banner/Visi Misi.jpg') }}" alt="Image" />
+                            {{-- <div class="about-circle">
                                 <div class="video-play">
                                     <a class="venobox popup-videos-button" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=ADmQTw4qqTY">
                                         <i class="fa-solid fa-play"></i>
                                         <svg class="shape-1" viewBox="0 0 100 100" width="150" height="100">
                                             <defs>
                                                 <path id="circle" d="
-                                                          M 50, 50
-                                                          m -37, 0
-                                                          a 37,37 0 1,1 74,0
-                                                          a 37,37 0 1,1 -74,0" />
+                                                              M 50, 50
+                                                              m -37, 0
+                                                              a 37,37 0 1,1 74,0
+                                                              a 37,37 0 1,1 -74,0" />
                                             </defs>
                                             <text font-size="16">
                                                 <textPath xlink:href="#circle" class="shape-1">
@@ -191,7 +191,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="about-experience">
                             <div class="about-icon">
@@ -413,8 +413,7 @@
                     <div class="tj-sec-heading text-center">
                         <span class="sub-title">Aktivitas Kami</span>
                         <h2 class="sec-title">
-                            Inspiring Interiors Exceptional <br />
-                            <span>Of Experiences</span>
+                            Mewujudkan Masa Depan Hijau melalui Kolaborasi dan Aksi Nyata
                         </h2>
                     </div>
                 </div>
@@ -471,18 +470,20 @@
                 <div class="col-lg-12">
                     <div class="team-content-area">
                         <div class="tj-sec-heading">
-                            <span class="sub-title">Our Team</span>
+                            <span class="sub-title">Pakar</span>
                             <h2 class="sec-title">
-                                Inspiring Interiors Exceptional <br />
-                                <span>Of Experiences</span>
+                                Kolaborasi, Dedikasi, dan Aksi 
+                                 <br />
+                                <span>untuk Hijaukan Dunia 
+                                </span>
                             </h2>
                         </div>
-                        <div class="right-content">
+                        {{-- <div class="right-content">
                             <p>
                                 Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse fugiat quo
                                 voluptas nulla pariatur?"
                             </p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -636,8 +637,8 @@
                     <div class="tj-sec-heading">
                         <span class="sub-title">Testimonial</span>
                         <h2 class="sec-title">
-                            Check Our Clients <br />
-                            <span>Feedback</span>
+                            {{-- Check Our Clients <br /> --}}
+                            <span>Umpan Balik</span>
                         </h2>
                     </div>
                     <div class="swiper tj-testimonial-slider">
@@ -646,9 +647,7 @@
                                 <div class="tj-testimonial-item">
                                     <div class="desc">
                                         <p>
-                                            ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin literature from 45 BC, making it over 2000 years
-                                            old. Richard McClintock, a Latin professor at Hampden’’
+                                            Asosiasi ini adalah mitra strategis yang menggabungkan keahlian, dedikasi, dan visi untuk menciptakan solusi berkelanjutan. Dengan tim profesional yang memiliki keahlian di berbagai bidang seperti energi terbarukan, pengelolaan karbon, hingga penerapan prinsip ESG, mereka memberikan pendekatan holistik terhadap tantangan lingkungan. Setiap proyek yang dikerjakan mencerminkan komitmen mereka untuk masa depan yang lebih hijau dan inklusif.
                                         </p>
                                     </div>
                                     <div class="testimonial-auother">
@@ -657,9 +656,10 @@
                                         </div>
                                         <div class="auother-header">
                                             <h5 class="title">
-                                                Richard <span class="active-text">Thomas</span>
+                                                Dewan pengawas  
+                                                {{-- <span class="active-text">Thomas</span> --}}
                                             </h5>
-                                            <span class="sub-title">Manager</span>
+                                            {{-- <span class="sub-title">Manager</span> --}}
                                         </div>
                                     </div>
                                 </div>
