@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <style>
+        .styleHyperlink:hover {
+            color: var(--tj-color-theme-primary);
+        }
+    </style>
 
 </head>
 
@@ -42,7 +47,7 @@
                 <span data-text-preloader="X" class="letters-loading"> X </span>
                 <span data-text-preloader="I" class="letters-loading"> I </span>
             </div>
-        </div> 
+        </div>
     </div>
     <!-- Preloader end -->
 
@@ -65,166 +70,68 @@
 
     <!-- start: Header Area -->
     <header class="tj-header-area header-absolute header-1">
-        <div class="tj-header-topbar-area" style="margin-bottom: 20px !important;">
+        <div class="tj-header-topbar-area mb-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="header-content-area">
+                    <div class="col-lg-12 ps-0 pe-0">
+                        <div class="header-content-area pt-3 pb-3">
                             <div class="header-info">
-                                <ul>
-                                    <li><i class="flaticon-email"></i>info@acexi.org</li>
-                                    <li>
-                                        <i class="fa-brands fa-whatsapp"></i><a href="tel:+6288290222512">0882-9022-2512 (Giordano)</a>, <a href="tel:+6281357447828">0813-5744-7828 (Fresti)</a>
-                                    </li>
-                                </ul>
+                                <div class="menu-area" style="gap:0;">
+                                    <div class="logo-area">
+                                        <a href="index.html"><img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Logo" /></a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="header-share">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <div class="header-share d-none d-md-block">
+                                <div class="info-item">
+                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
+                                        Donasi <i class="fa fa-donate"></i>
+                                    </div>
+                                    @if (!Auth::check()) 
+                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
+                                        <a href="{{ route('login') }}" class="styleHyperlink">Sign In</a> / <a href="{{ route('register') }}" class="styleHyperlink">Sign Up</a> <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                    @else 
+                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
+                                        <a href="{{ route('dashboard') }}" class="styleHyperlink">{{ Auth::user()->name }}</a> <i class="fa fa-user"></i>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tj-bottom-content-area" style="padding-bottom: 20px; !important">
-            <div class="container">
+        <div class="tj-bottom-content-area pb-3 pb-md-0">
+            <div class="ps-5 pe-5">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="bottom-content-area">
-                            <div class="menu-area" style="gap:0;">
-                                <div class="logo-area">
-                                    <a href="index.html"><img src="{{ asset('assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
-                                </div>
+                    <div class="col-lg-12 p-0">
+                        <div class="bottom-content-area justify-content-lg-center justify-content-end">  
+                            <div class="tj-menu-area d-lg-block d-none">
+                                <nav>
+                                    @include('components/navbar')
+                                </nav>
                             </div>
-                            <div class="info-right-item">
-                                <div class="tj-menu-area d-lg-block d-none">
-                                    <nav>
-                                        <ul style="gap: 25px">
-                                            <li class="unix-beranda">
-                                                <a href="{{ route('beranda') }}">Beranda</a>
-                                            </li>
-                                            <li class="unix-tentang-kami has-dropdown">
-                                                <a href="#">Tentang Kami</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-profil"><a href="{{ route('tentang-kami.profil') }}">Profil</a></li>
-                                                    <li class="unix-visi-misi"><a href="{{ route('tentang-kami.visi-misi') }}">Visi & Misi</a></li>
-                                                    <li class="unix-struktur-pengurus has-dropdown">
-                                                        <a href="#">Struktur Pengurus</a>
-                                                        <ul class="sub-menu">
-                                                            <li class="unix-dewan-kehormatan"><a href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Kehormatan, Penasihat, Pembina, Pendiri, Pakar</a></li>
-                                                            <li class="unix-pengurus-pusat"><a href="{{ route('tentang-kami.struktur-pengurus') }}">Pengurus Pusat</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="unix-lingkup-kepakaran"><a href="{{ route('tentang-kami.lingkup-kepakaran') }}">Lingkup Kepakaran</a></li>
-                                                    <li class="unix-galeri"><a href="{{ route('tentang-kami.galeri') }}">Galeri</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-program-kegiatan">
-                                                <a href="{{ route('program-kegiatan') }}">Program & Kegiatan</a>
-                                            </li>
-                                            <li class="unix-anggota has-dropdown">
-                                                <a href="#">Anggota</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-manfaat-anggota"><a href="{{ route('anggota.manfaat') }}">Manfaat Menjadi Anggota</a></li>
-                                                    <li class="unix-cara-anggota"><a href="{{ route('anggota.cara') }}">Cara Menjadi Anggota</a></li>
-                                                    <li class="unix-manfaat-mitra"><a href="{{ route('anggota.mitra') }}">Manfaat Menjadi Mitra</a></li>
-                                                    <li class="unix-cara-mitra"><a href="{{ route('anggota.cara-mitra') }}">Cara Menjadi Mitra</a></li>
-                                                    <li class="unix-mitra-terdaftar"><a href="{{ route('anggota.mitra-terdaftar') }}">Mitra Terdaftar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-emisi-iklim has-dropdown">
-                                                <a href="#">Emisi & Iklim</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-kalkulator-emisi"><a href="{{ route('emisi-iklim.kalkulator') }}">Kalkulator Emisi</a></li>
-                                                    <li class="unix-climate-change-101"><a href="{{ route('emisi-iklim.climate-change-101') }}">Climate Change 101</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-hubungi-kami">
-                                                <a href="{{ route('hubungi-kami') }}">Hubungi Kami</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="info-navbar d-lg-none">
-                                    <ul>
-                                        <li>
-                                            <a class="canva_expander nav-menu-link menu-button" href="#"><i class="flaticon-menu"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="info-item d-none d-md-block">
-                                    <a class="tj-header-btn btn" href="{{ route('login') }}">Member Area <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
+                            <div class="info-navbar d-lg-none"> 
+                                <a class="canva_expander nav-menu-link menu-button" href="#"><i class="flaticon-menu"></i></a>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <header class="tj-header-area header-sticky header-1">
+    <header class="tj-header-area header-sticky header-1 pt-0 pb-0">
         <div class="tj-bottom-content-area">
-            <div class="container">
+            <div class="ps-5 pe-5">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="bottom-content-area">
-                            <div class="menu-area">
-                                <div class="logo-area">
-                                    <a href="index.html"><img src="{{ asset('assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
-                                </div>
-                            </div>
+                        <div class="bottom-content-area justify-content-center">   
                             <div class="info-right-item">
                                 <div class="tj-menu-area d-lg-block d-none" id="main-menu">
                                     <nav id="mobile-menu">
-                                        <ul style="gap: 25px">
-                                            <li class="unix-beranda">
-                                                <a href="{{ route('beranda') }}">Beranda</a>
-                                            </li>
-                                            <li class="unix-tentang-kami has-dropdown">
-                                                <a href="#">Tentang Kami</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-profil"><a href="{{ route('tentang-kami.profil') }}">Profil</a></li>
-                                                    <li class="unix-visi-misi"><a href="{{ route('tentang-kami.visi-misi') }}">Visi & Misi</a></li>
-                                                    <li class="unix-struktur-pengurus has-dropdown">
-                                                        <a href="#">Struktur Pengurus</a>
-                                                        <ul class="sub-menu">
-                                                            <li class="unix-dewan-kehormatan"><a href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Kehormatan, Penasihat, Pembina, Pendiri, Pakar</a></li>
-                                                            <li class="unix-pengurus-pusat"><a href="{{ route('tentang-kami.struktur-pengurus') }}">Pengurus Pusat</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="unix-lingkup-kepakaran"><a href="{{ route('tentang-kami.lingkup-kepakaran') }}">Lingkup Kepakaran</a></li>
-                                                    <li class="unix-galeri"><a href="{{ route('tentang-kami.galeri') }}">Galeri</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-program-kegiatan">
-                                                <a href="{{ route('program-kegiatan') }}">Program & Kegiatan</a>
-                                            </li>
-                                            <li class="unix-anggota has-dropdown">
-                                                <a href="#">Anggota</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-manfaat-anggota"><a href="{{ route('anggota.manfaat') }}">Manfaat Menjadi Anggota</a></li>
-                                                    <li class="unix-cara-anggota"><a href="{{ route('anggota.cara') }}">Cara Menjadi Anggota</a></li>
-                                                    <li class="unix-manfaat-mitra"><a href="{{ route('anggota.mitra') }}">Manfaat Menjadi Mitra</a></li>
-                                                    <li class="unix-cara-mitra"><a href="{{ route('anggota.cara-mitra') }}">Cara Menjadi Mitra</a></li>
-                                                    <li class="unix-mitra-terdaftar"><a href="{{ route('anggota.mitra-terdaftar') }}">Mitra Terdaftar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-emisi-iklim has-dropdown">
-                                                <a href="#">Emisi & Iklim</a>
-                                                <ul class="sub-menu">
-                                                    <li class="unix-kalkulator-emisi"><a href="{{ route('emisi-iklim.kalkulator') }}">Kalkulator Emisi</a></li>
-                                                    <li class="unix-climate-change-101"><a href="{{ route('emisi-iklim.climate-change-101') }}">Climate Change 101</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="unix-hubungi-kami">
-                                                <a href="{{ route('hubungi-kami') }}">Hubungi Kami</a>
-                                            </li>
-                                        </ul>
+                                        @include('components/navbar')
                                     </nav>
                                 </div>
                                 <div class="info-navbar d-lg-none">
@@ -233,10 +140,7 @@
                                             <a class="canva_expander nav-menu-link menu-button" href="#"><i class="flaticon-menu"></i></a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="info-item d-none d-md-block">
-                                    <a class="tj-header-btn btn" href="{{ route('login') }}">Member Area <i class="flaticon-right-arrow"></i></a>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -265,12 +169,10 @@
                                 </div>
                                 <div class="form-box-one">
                                     <div class="input-form">
-                                        <input type="text" id="name" name="name" placeholder="Nama.."
-                                            required="" />
+                                        <input type="text" id="name" name="name" placeholder="Nama.." required="" />
                                     </div>
                                     <div class="input-form">
-                                        <input type="email" id="email" name="email" placeholder="Alamat email...."
-                                            required="" />
+                                        <input type="email" id="email" name="email" placeholder="Alamat email...." required="" />
                                     </div>
                                     <div class="subscribe-button">
                                         <button class="tj-primary-btn btn" type="submit" value="submit">
@@ -282,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
     </main>
 
@@ -461,8 +363,8 @@
     <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
     <script src="{{ asset('assets/js/meanmenu.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script> 
-        const nacActiveClasses = @json($nav_active);  
+    <script>
+        const nacActiveClasses = @json($nav_active);
         document.querySelectorAll('li').forEach(function(li) {
             nacActiveClasses.forEach(function(className) {
                 if (li.classList.contains(className)) {
@@ -470,6 +372,6 @@
                 }
             });
         });
-    </script>    
+    </script>
 
 </html>

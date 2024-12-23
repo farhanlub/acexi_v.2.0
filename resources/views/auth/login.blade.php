@@ -1,52 +1,93 @@
-<x-app-layout>
-    <!-- Session Status -->
-    <div class="alert alert-info" role="alert">
-        <strong>Segera Hadir</strong>
-        <a href="/">Kembali ke beranda</a>
-    </div>
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Tailwind and DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.19/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Check if user prefers dark mode
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.remove('light');
+            document.documentElement.classList.add('dark');
+        }
 
-    {{-- <x-auth-session-status class="mb-4" :status="session('status')" />
+        // Watch for changes in system dark mode preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            document.documentElement.classList.remove(newTheme === 'dark' ? 'light' : 'dark');
+            document.documentElement.classList.add(newTheme);
+        });
+    </script>
+</head>
+<body class="min-h-screen bg-base-200">
+    <section class="min-h-screen flex items-center justify-center">
+        <div class="container">
+            <form method="POST" action="{{ route('login') }}" class="card w-96 bg-base-100 shadow-xl mx-auto p-6">
+                @csrf
+                <!-- Login Header -->
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold">Login</h2>
+                    <p class="text-sm text-base-content/70">Please enter your credentials to continue</p>
+                </div>
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+                <!-- Email Address -->
+                <div class="form-control w-full">
+                    <label class="label">
+                        <span class="label-text">Email</span>
+                    </label>
+                    <input type="email" 
+                           class="input input-bordered w-full @error('email') input-error @enderror" 
+                           name="email"
+                           value="{{ old('email') }}"
+                           required 
+                           autofocus 
+                           autocomplete="username">
+                    @error('email')
+                        <label class="label">
+                            <span class="label-text-alt text-error">{{ $message }}</span>
+                        </label>
+                    @enderror
+                </div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <!-- Password -->
+                <div class="form-control w-full mt-4">
+                    <label class="label">
+                        <span class="label-text">Password</span>
+                    </label>
+                    <input type="password" 
+                           class="input input-bordered w-full @error('password') input-error @enderror" 
+                           name="password"
+                           required 
+                           autocomplete="current-password">
+                    @error('password')
+                        <label class="label">
+                            <span class="label-text-alt text-error">{{ $message }}</span>
+                        </label>
+                    @enderror
+                </div>
+
+                <div class="flex justify-between items-center mt-6">
+                    <a href="#" class="link link-hover text-sm">
+                        Lupa password?
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        Log in
+                    </button>
+                </div>
+
+                <!-- Register Link -->
+                <div class="text-center mt-6">
+                    <p class="text-sm">Daftar sebagai anggota/mitra? 
+                        <a href="#" class="link link-primary">Daftar disini</a>
+                    </p>
+                </div>
+            </form>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form> --}}
-</x-app-layout>
+    </section>
+</body>
+</html>

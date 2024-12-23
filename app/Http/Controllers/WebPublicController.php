@@ -1,14 +1,18 @@
 <?php 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
+use Illuminate\Support\Facades\Auth;
+
 class WebPublicController extends Controller
 {
     // Home Page
     public function beranda() 
-    { 
+    {  
         $title = 'Association Of Carbon Emission Experts Indonesia'; 
         $nav_active = ['unix-beranda']; // Kelas untuk menu yang aktif
-        return view('pages.guest.index', compact('title', 'nav_active')); 
+        $testimonials = Testimonial::all();
+        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials')); 
     }
 
     // Programs & Activities Page

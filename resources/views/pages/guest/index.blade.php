@@ -9,16 +9,16 @@
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">ACEXI</h1>
-                            <h2 class="slider-sub-title">And Sun <span>For Future</span></h2>
+                            <h2 class="slider-sub-title">ASSOCIATION OF CARBON EMISSION EXPERTS <span>INDONESIA</span></h2>
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
-                                        ASSOCIATION OF CARBON EMISSION EXPERTS INDONESIA
+                                        Driving AMBITIONS to ACTION
                                     </p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
-                                        Read More <i class="flaticon-right-arrow"></i>
+                                    <a class="tj-transparent-btn btn" href="{{ route('tentang-kami.profil') }}">
+                                        Selenggkapnya <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
                             </div>
@@ -29,25 +29,24 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1 class="slider-title">Harnessing The Wind</h1>
-                            <h2 class="slider-sub-title">And Sun <span>For Future</span></h2>
+                            <h1 class="slider-title">Berita terkini</h1>
+                            <h2 class="slider-sub-title">Carbon Emission & <span>Isu Lingkungan</span></h2>
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered form, passage.
+                                        Dapatkan informasi terbaru seputar emisi karbon, keberlanjutan, dan isu lingkungan lainnya hanya di sini
                                     </p>
                                 </div>
                                 <div class="slider-button d-flex">
                                     <a class="tj-transparent-btn btn" href="contact.html">
-                                        Read More <i class="flaticon-right-arrow"></i>
+                                        Selengkapnya <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide tj-slider-item">
+                {{-- <div class="swiper-slide tj-slider-item">
                     <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner3.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
@@ -68,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -76,53 +75,105 @@
             <img src="assets/images/shape/hero-shape.svg" alt="Shape" />
         </div>
         <div class="tj-service-item">
-            <ul class="dot-style">
-                <li>
-                    <div class="service-content">
+            <div class="row">
+                <div class="col-md-4"> 
+                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
                         <div class="service-icon">
-                            <i class="flaticon-solar-panel"></i>
+                            <img style="height: 150px;" src="https://awsimages.detik.net.id/visual/2022/01/20/ptijk-2022_169.jpeg?w=400&q=90" class="rounded-top w-100 object-fit-cover" />
                         </div>
-                        <div class="service-text">
-                            <h5 class="title">Number #1</h5>
-                            <span class="sub-title">Best Renewable Solar</span>
-                        </div>
-                        <div class="item-shape">
-                            <img src="assets/images/shape/service-1.svg" alt="Shape" />
-                        </div>
+                        <div class="service-text pt-2">
+                            <h5 class="title">Taksonomi Hijau adalah Masa Depan Indonesia! Kok Bisa?</h5>
+                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
+                        </div> 
                     </div>
-                </li>
-                <li>
-                    <div class="service-content">
+                </div>
+                <div class="col-md-4"> 
+                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
                         <div class="service-icon">
-                            <i class="flaticon-solar-energy"></i>
+                            <img style="height: 150px;" src="https://ppid.menlhk.go.id/media/articles/5/6DyB_WhatsApp%20Image%202023-10-11%20at%2015.18.06%20(1).jpeg" class="rounded-top w-100 object-fit-cover" />
                         </div>
-                        <div class="service-text">
-                            <h5 class="title">3,480+mw</h5>
-                            <span class="sub-title">Installed Will Capacity</span>
-                        </div>
-                        <div class="item-shape">
-                            <img src="assets/images/shape/service-1.svg" alt="Shape" />
-                        </div>
+                        <div class="service-text pt-2">
+                            <h5 class="title">Perdagangan Karbon untuk Pencapaian Target NDC, Kontribusi Indonesia bagi Agenda Perubahan Iklim Global</h5>
+                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
+                        </div> 
                     </div>
-                </li>
-                <li>
-                    <div class="service-content">
+                </div>
+                <div class="col-md-4">
+                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
                         <div class="service-icon">
-                            <i class="flaticon-battery"></i>
+                            <img style="height: 150px;" src="https://ppid.menlhk.go.id/media/articles/5/Ksq6_IMG-20240506-WA0021.jpg" class="rounded-top w-100 object-fit-cover" />
                         </div>
-                        <div class="service-text">
-                            <h5 class="title">25900+</h5>
-                            <span class="sub-title">Total WTGS Installed</span>
-                        </div>
-                        <div class="item-shape">
-                            <img src="assets/images/shape/service-1.svg" alt="Shape" />
-                        </div>
+                        <div class="service-text pt-2">
+                            <h5 class="title">Menteri LHK : Perdagangan Karbon Diatur dengan Pondasi Governance dan Kedaulatan Negara</h5>
+                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
+                        </div> 
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div> 
         </div>
     </section>
-    <section class="tj-about-section">
+    <section class="tj-testimonial-section pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <div class="tj-sec-heading">
+                        <span class="sub-title">Testimonial</span>
+                        <h2 class="sec-title">
+                            <span>Umpan Balik</span>
+                        </h2>
+                    </div>
+                    <div class="swiper tj-testimonial-slider">
+                        <div class="swiper-wrapper">
+                            @foreach ($testimonials as $testimonial)
+                                <div class="swiper-slide">
+                                    <div class="tj-testimonial-item">
+                                        <div class="desc">
+                                            <p>{{ $testimonial->testimonial_text }}</p>
+                                        </div>
+                                        <div class="testimonial-auother">
+                                            <div class="auother-image">
+                                                <img src="{{ asset($testimonial->image_small) }}" alt="Image" />
+                                            </div>
+                                            <div class="auother-header">
+                                                <h5 class="title">
+                                                    {{ $testimonial->name }}
+                                                </h5>
+                                                <span class="sub-title">{{ $testimonial->role }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="testimonial-navigation">
+                            <div class="testimonial-prev"><i class="flaticon-right-arrow"></i></div>
+                            <div class="testimonial-next"><i class="flaticon-right-arrow"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="testimonial-wrapper">
+                        <div class="swiper tj-testimonial-2">
+                            <div class="swiper-wrapper">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-image">
+                                            <img src="{{ asset($testimonial->image_large) }}" alt="Image" />
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="quote-icon">
+                            <img src="assets/images/icon/test-quote.svg" alt="Icon" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tj-about-section d-none">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-12">
@@ -137,34 +188,7 @@
                                     Kami dengan bangga mempersembahkan diri sebagai lembaga yang memimpin perubahan dalam mengatasi permasalahan emisi karbon di Indonesia. Di sini, kami menggali solusi inovatif, melakukan penelitian mendalam, dan mengedukasi masyarakat tentang pentingnya mengurangi emisi karbon untuk menjaga lingkungan hidup yang sehat dan berkelanjutan. Kami percaya bahwa dengan kolaborasi antara para ahli, pemangku kepentingan, dan masyarakat luas, kita dapat mencapai tujuan bersama dalam menghadapi perubahan iklim global. Jelajahi situs kami untuk mengetahui lebih lanjut tentang proyek-proyek terkini, riset terbaru, dan inisiatif pendidikan yang sedang kami jalankan.
                                 </p>
                             </div>
-                        </div>
-                        <div class="fun-fact-area">
-                            <div class="counter-item">
-                                <div class="about-icon">
-                                    <i class="flaticon-solar-panel-1"></i>
-                                </div>
-                                <div class="counter-number">
-                                    <div class="tj-count">
-                                        <span class="odometer" data-count="14000">0</span>+
-                                    </div>
-                                    <span class="sub-title">Installed Capacity</span>
-                                </div>
-                            </div>
-                            <div class="counter-item">
-                                <div class="about-icon">
-                                    <i class="flaticon-solar-cell"></i>
-                                </div>
-                                <div class="counter-number">
-                                    <div class="tj-count"><span class="odometer" data-count="70">0</span>%</div>
-                                    <span class="sub-title">Save World</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tj-about-button d-flex">
-                            <a class="tj-primary-btn btn" href="about-us.html">
-                                Read More <i class="flaticon-right-arrow"></i>
-                            </a>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-12">
@@ -192,19 +216,7 @@
                                     </a>
                                 </div>
                             </div> --}}
-                        </div>
-                        <div class="about-experience">
-                            <div class="about-icon">
-                                <i class="flaticon-experience-1"></i>
-                            </div>
-                            <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="25">0</span>+</div>
-                                <span class="sub-title">Years Experience</span>
-                            </div>
-                            <div class="about-shape">
-                                <img src="assets/images/shape/service-1.svg" alt="Shape" />
-                            </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -221,36 +233,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tj-sec-heading text-center">
-                        <span class="sub-title">Tujuan Utama Kami</span>
+                        <span class="sub-title">Program dan Kegiatan</span>
                         <h2 class="sec-title">
-                            Perkumpulan Ahli Emisi Karbon untuk <br />
-                            <span>Dunia yang Lebih Hijau</span>
+                            Kegiatan yang sudah dilakukan oleh ACEXI  
                         </h2>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row g-3">
+                <!-- Workshop -->
                 <div class="col-lg-6">
-                    <div class="tj-service-item-two">
-                        <div class="service-icon-box">
-                            <div class="service-icon hover-shape-border">
-                                <i class="flaticon-environmental"></i>
-                                <div class="icon-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                    <span class="border-shadow shadow-3"></span>
-                                </div>
-                            </div>
-                            <div class="item-shape">
-                                <img src="assets/images/shape/shape-1.svg" alt="Shape" />
-                            </div>
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/693/2023/11/04/WhatsApp-Image-2023-11-04-at-142729-3708381412.jpg" class="object-fit-cover" />
                         </div>
                         <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Hydropower Plants</a></h4>
+                            <h4 class="title"><a href="service-details.html">Workshop</a></h4>
                             <div class="desc">
                                 <p>
-                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making words,
+                                    Pelatihan praktis untuk mengembangkan keterampilan dalam keberlanjutan dan mitigasi perubahan iklim.
                                 </p>
                             </div>
                             <div class="read-more">
@@ -259,27 +260,18 @@
                         </div>
                     </div>
                 </div>
+            
+                <!-- Sertifikasi -->
                 <div class="col-lg-6">
-                    <div class="tj-service-item-two">
-                        <div class="service-icon-box">
-                            <div class="service-icon hover-shape-border">
-                                <i class="flaticon-save-energy"></i>
-                                <div class="icon-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                    <span class="border-shadow shadow-3"></span>
-                                </div>
-                            </div>
-                            <div class="item-shape">
-                                <img src="assets/images/shape/shape-1.svg" alt="Shape" />
-                            </div>
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://img.inews.co.id/media/600/files/networks/2023/12/14/80e53_acxii.jpg" class="object-fit-cover" />
                         </div>
                         <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Fossil Resources</a></h4>
+                            <h4 class="title"><a href="service-details.html">Sertifikasi</a></h4>
                             <div class="desc">
                                 <p>
-                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making words,
+                                    Pengakuan resmi bagi individu atau organisasi yang mengikuti program pelatihan dan menerapkan ilmu keberlanjutan.
                                 </p>
                             </div>
                             <div class="read-more">
@@ -288,27 +280,18 @@
                         </div>
                     </div>
                 </div>
+            
+                <!-- Pelatihan -->
                 <div class="col-lg-6">
-                    <div class="tj-service-item-two">
-                        <div class="service-icon-box">
-                            <div class="service-icon hover-shape-border">
-                                <i class="flaticon-hydropower"></i>
-                                <div class="icon-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                    <span class="border-shadow shadow-3"></span>
-                                </div>
-                            </div>
-                            <div class="item-shape">
-                                <img src="assets/images/shape/shape-1.svg" alt="Shape" />
-                            </div>
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2HqeNnObv36-UQUeku7Ta24UVAn40Rk5jA&s" class="object-fit-cover" />
                         </div>
                         <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Maximize Green Resources</a></h4>
+                            <h4 class="title"><a href="service-details.html">Pelatihan</a></h4>
                             <div class="desc">
                                 <p>
-                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making words,
+                                    Meningkatkan keterampilan dalam pengelolaan keberlanjutan dan perubahan iklim dengan pendekatan terbaik.
                                 </p>
                             </div>
                             <div class="read-more">
@@ -317,27 +300,58 @@
                         </div>
                     </div>
                 </div>
+            
+                <!-- Program Kemitraan -->
                 <div class="col-lg-6">
-                    <div class="tj-service-item-two">
-                        <div class="service-icon-box">
-                            <div class="service-icon hover-shape-border">
-                                <i class="flaticon-green-energy"></i>
-                                <div class="icon-shape">
-                                    <span class="border-shadow shadow-1"></span>
-                                    <span class="border-shadow shadow-2"></span>
-                                    <span class="border-shadow shadow-3"></span>
-                                </div>
-                            </div>
-                            <div class="item-shape">
-                                <img src="assets/images/shape/shape-1.svg" alt="Shape" />
-                            </div>
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://asset-2.tstatic.net/tribunnews/foto/bank/images/emisi-bki-89.jpg" class="object-fit-cover" />
                         </div>
                         <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Future with Green Energy</a></h4>
+                            <h4 class="title"><a href="service-details.html">Program Kemitraan</a></h4>
                             <div class="desc">
                                 <p>
-                                    All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                    chunks as necessary, making words,
+                                    Menjalin kemitraan dengan berbagai pihak untuk pengembangan solusi keberlanjutan dan pengurangan emisi.
+                                </p>
+                            </div>
+                            <div class="read-more">
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Advokasi dan Kebijakan -->
+                <div class="col-lg-6">
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://forumkeadilan.com/wp-content/uploads/2024/08/ACEXI.jpg" class="object-fit-cover" />
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Advokasi dan Kebijakan</a></h4>
+                            <div class="desc">
+                                <p>
+                                    Mempengaruhi kebijakan untuk mendukung keberlanjutan dan solusi berbasis energi hijau.
+                                </p>
+                            </div>
+                            <div class="read-more">
+                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Pendidikan Pengembangan Kapasitas -->
+                <div class="col-lg-6">
+                    <div class="tj-service-item-two shadow-sm p-2 h-100">
+                        <div class="service-icon-box"> 
+                            <img style="width: 150px; height: 100%;" src="https://ppid.menlhk.go.id/media/articles/5/6DyB_WhatsApp%20Image%202023-10-11%20at%2015.18.06%20(1).jpeg" class="object-fit-cover" />
+                        </div>
+                        <div class="service-content">
+                            <h4 class="title"><a href="service-details.html">Pendidikan Pengembangan Kapasitas</a></h4>
+                            <div class="desc">
+                                <p>
+                                    Meningkatkan keterampilan dan pengetahuan terkait keberlanjutan dan perubahan iklim.
                                 </p>
                             </div>
                             <div class="read-more">
@@ -347,6 +361,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
     <!--=========== Service Section End =========-->
@@ -411,9 +426,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tj-sec-heading text-center">
-                        <span class="sub-title">Aktivitas Kami</span>
+                        <span class="sub-title">Lingkup Kepakaran</span>
                         <h2 class="sec-title">
-                            Mewujudkan Masa Depan Hijau melalui Kolaborasi dan Aksi Nyata
+                            ACEXI Memiliki Lingkup Kepakaran yang Luas
                         </h2>
                     </div>
                 </div>
@@ -473,9 +488,9 @@
                             <span class="sub-title">Pakar</span>
                             <h2 class="sec-title">
                                 Kolaborasi, Dedikasi, dan Aksi 
-                                 <br />
+                                 {{-- <br />
                                 <span>untuk Hijaukan Dunia 
-                                </span>
+                                </span> --}}
                             </h2>
                         </div>
                         {{-- <div class="right-content">
@@ -628,125 +643,7 @@
         </div>
     </section>
     <!--=========== Team Section End =========-->
-
-    <!--=========== Testimonial Section Start =========-->
-    <section class="tj-testimonial-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="tj-sec-heading">
-                        <span class="sub-title">Testimonial</span>
-                        <h2 class="sec-title">
-                            {{-- Check Our Clients <br /> --}}
-                            <span>Umpan Balik</span>
-                        </h2>
-                    </div>
-                    <div class="swiper tj-testimonial-slider">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="tj-testimonial-item">
-                                    <div class="desc">
-                                        <p>
-                                            Asosiasi ini adalah mitra strategis yang menggabungkan keahlian, dedikasi, dan visi untuk menciptakan solusi berkelanjutan. Dengan tim profesional yang memiliki keahlian di berbagai bidang seperti energi terbarukan, pengelolaan karbon, hingga penerapan prinsip ESG, mereka memberikan pendekatan holistik terhadap tantangan lingkungan. Setiap proyek yang dikerjakan mencerminkan komitmen mereka untuk masa depan yang lebih hijau dan inklusif.
-                                        </p>
-                                    </div>
-                                    <div class="testimonial-auother">
-                                        <div class="auother-image">
-                                            <img src="assets/images/testimonial/testi-small-1.png" alt="Image" />
-                                        </div>
-                                        <div class="auother-header">
-                                            <h5 class="title">
-                                                Dewan pengawas  
-                                                {{-- <span class="active-text">Thomas</span> --}}
-                                            </h5>
-                                            {{-- <span class="sub-title">Manager</span> --}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="tj-testimonial-item">
-                                    <div class="desc">
-                                        <p>
-                                            ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin literature from 45 BC, making it over 2000 years
-                                            old. Richard McClintock, a Latin professor at Hampden’’
-                                        </p>
-                                    </div>
-                                    <div class="testimonial-auother">
-                                        <div class="auother-image">
-                                            <img src="assets/images/testimonial/testi-small-2.png" alt="Image" />
-                                        </div>
-                                        <div class="auother-header">
-                                            <h5 class="title">
-                                                Richard <span class="active-text">Thomas</span>
-                                            </h5>
-                                            <span class="sub-title">Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="tj-testimonial-item">
-                                    <div class="desc">
-                                        <p>
-                                            ‘’Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin literature from 45 BC, making it over 2000 years
-                                            old. Richard McClintock, a Latin professor at Hampden’’
-                                        </p>
-                                    </div>
-                                    <div class="testimonial-auother">
-                                        <div class="auother-image">
-                                            <img src="assets/images/testimonial/testi-small-3.png" alt="Image" />
-                                        </div>
-                                        <div class="auother-header">
-                                            <h5 class="title">
-                                                Richard <span class="active-text">Thomas</span>
-                                            </h5>
-                                            <span class="sub-title">Manager</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-navigation">
-                            <div class="testimonial-prev"><i class="flaticon-right-arrow"></i></div>
-                            <div class="testimonial-next">
-                                <i class="flaticon-right-arrow"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="testimonial-wrapper">
-                        <div class="swiper tj-testimonial-2">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="testimonial-image">
-                                        <img src="assets/images/testimonial/testi-big-1.jpg" alt="Image" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-image">
-                                        <img src="assets/images/testimonial/testi-big-2.jpg" alt="Image" />
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="testimonial-image">
-                                        <img src="assets/images/testimonial/testi-big-3.jpg" alt="Image" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="quote-icon">
-                            <img src="assets/images/icon/test-quote.svg" alt="Icon" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=========== Testimonial Section End =========-->
+ 
 
     <!--=========== Faq Section Start =========-->
     <section class="tj-faq-section">
