@@ -40,9 +40,11 @@
         </ul>
     </li>
     <li class="unix-anggota has-dropdown">
-        <a style="font-size: 14px" href="#">@if (Auth::check())
-            <i class="fa fa-crown text-warning"></i>
-        @endif Anggota</a>
+        <a style="font-size: 14px" href="#">
+            @if (Auth::check())
+                <i class="fa fa-crown text-warning"></i>
+            @endif Anggota
+        </a>
         <ul class="sub-menu">
             <li class="unix-struktur-pengurus has-dropdown">
                 <a style="font-size: 14px" href="#">Anggota</a>
@@ -80,24 +82,29 @@
 
         </ul>
     </li>
-    <li class="unix-hubungi-kami">
-        <a style="font-size: 14px" href="#">
-            @if (Auth::check())
+    @if (Auth::check())
+        <li class="unix-hubungi-kami">
+            <a style="font-size: 14px" href="#">
                 <i class="fa fa-crown text-warning"></i>
-            @endif Tren Terbaru</a>
-    </li>
-    <li class="unix-hubungi-kami">
-        <a style="font-size: 14px" href="#">
-            @if (Auth::check())
+                Tren Terbaru</a>
+        </li>
+    @endif
+    @if (Auth::check())
+        <li class="unix-hubungi-kami">
+            <a style="font-size: 14px" href="#">
                 <i class="fa fa-crown text-warning"></i>
-            @endif Studi Kasus</a>
-    </li>
-    <li class="unix-hubungi-kami">
-        <a style="font-size: 14px" href="#">
-            @if (Auth::check())
+                Studi Kasus
+            </a>
+        </li>
+    @endif
+    @if (Auth::check())
+        <li class="unix-hubungi-kami">
+            <a style="font-size: 14px" href="#">
                 <i class="fa fa-crown text-warning"></i>
-            @endif Regulasi & Kebijakan</a>
-    </li>
+                Regulasi & Kebijakan
+            </a>
+        </li>
+    @endif
     <li class="unix-hubungi-kami">
         <a style="font-size: 14px" href="#">
             @if (Auth::check())
