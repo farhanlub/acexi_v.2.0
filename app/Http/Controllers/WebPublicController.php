@@ -1,6 +1,8 @@
 <?php 
 namespace App\Http\Controllers;
 
+use App\Models\Pakar;
+use App\Models\ProgramKegiatan;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,8 +13,10 @@ class WebPublicController extends Controller
     {  
         $title = 'Association Of Carbon Emission Experts Indonesia'; 
         $nav_active = ['unix-beranda']; // Kelas untuk menu yang aktif
-        $testimonials = Testimonial::all();
-        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials')); 
+        $testimonials = Testimonial::limit(3)->get();
+        $pakars = Pakar::limit(4)->get();
+        $programKegiatan = ProgramKegiatan::all();
+        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan')); 
     }
 
     // Programs & Activities Page
@@ -21,6 +25,16 @@ class WebPublicController extends Controller
         $title = 'Programs & Activities'; 
         $nav_active = ['unix-program-kegiatan']; // Kelas untuk menu yang aktif
         return view('pages.guest.programs-activities', compact('title', 'nav_active')); 
+    }
+    public function programsActivitiesCategory($category) 
+    {
+        $data = ProgramKegiatan::where('slug', $category)->first();
+        if (!$data) {
+            abort(404);
+        }
+        $title = 'Programs & Activities ACEXI ' . $data->title; 
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        return view('pages.guest.programs-activities-category', compact('title', 'nav_active', 'data')); 
     }
 
     // Contact Us Page

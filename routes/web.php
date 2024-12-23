@@ -5,7 +5,10 @@ use App\Http\Controllers\WebPublicController;
 use Illuminate\Support\Facades\Route;
 Route::get('/', [WebPublicController::class, 'beranda'])->name('beranda');
 
-Route::get('/program-kegiatan', [WebPublicController::class, 'programsActivities'])->name('program-kegiatan'); 
+Route::get('/program-kegiatan', [WebPublicController::class, 'programsActivities'])->name('program-kegiatan');
+Route::get('/program-kegiatan/{category}', [WebPublicController::class, 'programsActivitiesCategory'])->name('program-kegiatan-kategori');
+
+
 Route::get('/hubungi-kami', [WebPublicController::class, 'contactUs'])->name('hubungi-kami');
 
 // About Us sub-menu

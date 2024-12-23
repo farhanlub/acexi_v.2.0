@@ -152,7 +152,7 @@
 
     <main class="site-main">
         @yield('content')
-        <section class="tj-subscribe-section">
+        {{-- <section class="tj-subscribe-section">
             <div class="container">
                 <div class="row">
                     <div class="container">
@@ -185,7 +185,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     </main>
 
     <!--=========== Footer Area Start =========-->

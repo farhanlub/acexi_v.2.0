@@ -76,68 +76,119 @@
         </div>
         <div class="tj-service-item">
             <div class="row">
-                <div class="col-md-4"> 
-                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
-                        <div class="service-icon">
-                            <img style="height: 150px;" src="https://awsimages.detik.net.id/visual/2022/01/20/ptijk-2022_169.jpeg?w=400&q=90" class="rounded-top w-100 object-fit-cover" />
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="tj-blog-item-two">
+                        <div class="blog-image">
+                            <a href=""><img style="height: 200px;" src="https://awsimages.detik.net.id/visual/2022/01/20/ptijk-2022_169.jpeg?w=400&q=90" class="object-fit-cover" alt="Image"></a>
                         </div>
-                        <div class="service-text pt-2">
-                            <h5 class="title">Taksonomi Hijau adalah Masa Depan Indonesia! Kok Bisa?</h5>
-                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
-                        </div> 
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><i class="flaticon-calendar"></i> Jan 5, 2023</li>
+                                    <li><i class="flaticon-chat"></i> Comment (1)</li>
+                                </ul>
+                            </div>
+                            <h5 class="title">
+                                <a href="">Taksonomi Hijau adalah Masa Depan Indonesia! Kok Bisa?</a>
+                            </h5>
+                            <div class="tj-blog-button d-flex">
+                                <a class="tj-secondary-btn btn" href="">Lihat Selengkapnya <i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4"> 
-                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
-                        <div class="service-icon">
-                            <img style="height: 150px;" src="https://ppid.menlhk.go.id/media/articles/5/6DyB_WhatsApp%20Image%202023-10-11%20at%2015.18.06%20(1).jpeg" class="rounded-top w-100 object-fit-cover" />
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="tj-blog-item-two">
+                        <div class="blog-image">
+                            <a href=""><img style="height: 200px;" src="https://ppid.menlhk.go.id/media/articles/5/6DyB_WhatsApp%20Image%202023-10-11%20at%2015.18.06%20(1).jpeg" class="object-fit-cover" alt="Image"></a>
                         </div>
-                        <div class="service-text pt-2">
-                            <h5 class="title">Perdagangan Karbon untuk Pencapaian Target NDC, Kontribusi Indonesia bagi Agenda Perubahan Iklim Global</h5>
-                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
-                        </div> 
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><i class="flaticon-calendar"></i> Nov 12, 2023</li>
+                                    <li><i class="flaticon-chat"></i> Comment (1)</li>
+                                </ul>
+                            </div>
+                            <h5 class="title">
+                                <a href="">Perdagangan Karbon untuk Pencapaian Target NDC, Kontribusi Indonesia bagi Agenda Perubahan Iklim Global</a>
+                            </h5>
+                            <div class="tj-blog-button d-flex">
+                                <a class="tj-secondary-btn btn" href="">Lihat Selengkapnya <i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="service-content bg-white shadow-sm p-2 rounded h-100">
-                        <div class="service-icon">
-                            <img style="height: 150px;" src="https://ppid.menlhk.go.id/media/articles/5/Ksq6_IMG-20240506-WA0021.jpg" class="rounded-top w-100 object-fit-cover" />
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="tj-blog-item-two">
+                        <div class="blog-image">
+                            <a href=""><img style="height: 200px;" src="https://ppid.menlhk.go.id/media/articles/5/Ksq6_IMG-20240506-WA0021.jpg" class="object-fit-cover" alt="Image"></a>
                         </div>
-                        <div class="service-text pt-2">
-                            <h5 class="title">Menteri LHK : Perdagangan Karbon Diatur dengan Pondasi Governance dan Kedaulatan Negara</h5>
-                            <span class="sub-title"><a href="" class="styleHyperlink">lihat selengkapnya</a></span>
-                        </div> 
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li><i class="flaticon-calendar"></i> Feb 22, 2023</li>
+                                    <li><i class="flaticon-chat"></i> Comment (1)</li>
+                                </ul>
+                            </div>
+                            <h5 class="title">
+                                <a href="">Menteri LHK : Perdagangan Karbon Diatur dengan Pondasi Governance dan Kedaulatan Negara</a>
+                            </h5>
+                            <div class="tj-blog-button d-flex">
+                                <a class="tj-secondary-btn btn" href="">Lihat Selengkapnya <i class="flaticon-right-arrow"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
             </div> 
         </div>
     </section>
-    <section class="tj-testimonial-section pt-0">
+    <section class="tj-testimonial-section-two pt-0">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="tj-sec-heading">
-                        <span class="sub-title">Testimonial</span>
-                        <h2 class="sec-title">
-                            <span>Umpan Balik</span>
-                        </h2>
+                <div class="col-lg-6">
+                    <div class="thumb-content-area">
+                        <div class="active-image">
+                            @foreach ($testimonials as $testimonial)
+                                <div class="testimonial_active_img @if ($loop->first) active @endif">
+                                    <img src="{{ asset($testimonial->image_large) }}" alt="Image">
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper thumb-testimonial-slider">
+                            <div class="swiper-wrapper">
+                                @foreach ($testimonials as $testimonial)
+                                    <div class="swiper-slide @if ($loop->first) swiper-slide-active @endif">
+                                        <div class="thumb-image">
+                                            <img src="{{ asset($testimonial->image_small) }}" alt="Image">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-                    <div class="swiper tj-testimonial-slider">
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-content-area">
+                        <div class="tj-sec-heading-two">
+                            <span class="sub-title">Testimonials</span>
+                            <h2 class="title">Review from <span>Experts</span></h2>
+                        </div>
+                    </div>
+                    <div class="swiper thumb-slider2">
                         <div class="swiper-wrapper">
                             @foreach ($testimonials as $testimonial)
-                                <div class="swiper-slide">
-                                    <div class="tj-testimonial-item">
+                                <div class="swiper-slide @if ($loop->first) swiper-slide-active @endif">
+                                    <div class="testimonial-slider-item">
                                         <div class="desc">
                                             <p>{{ $testimonial->testimonial_text }}</p>
                                         </div>
                                         <div class="testimonial-auother">
-                                            <div class="auother-image">
-                                                <img src="{{ asset($testimonial->image_small) }}" alt="Image" />
+                                            <div class="quote-icon">
+                                                <img src="assets/images/icon/quote.svg" alt="Icon">
                                             </div>
-                                            <div class="auother-header">
-                                                <h5 class="title">
-                                                    {{ $testimonial->name }}
-                                                </h5>
+                                            <div class="testimonial-text">
+                                                <h3 class="title">{{ $testimonial->name }} <span>{{ $testimonial->last_name }}</span></h3>
                                                 <span class="sub-title">{{ $testimonial->role }}</span>
                                             </div>
                                         </div>
@@ -145,33 +196,13 @@
                                 </div>
                             @endforeach
                         </div>
-                        <div class="testimonial-navigation">
-                            <div class="testimonial-prev"><i class="flaticon-right-arrow"></i></div>
-                            <div class="testimonial-next"><i class="flaticon-right-arrow"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="testimonial-wrapper">
-                        <div class="swiper tj-testimonial-2">
-                            <div class="swiper-wrapper">
-                                @foreach ($testimonials as $testimonial)
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-image">
-                                            <img src="{{ asset($testimonial->image_large) }}" alt="Image" />
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="quote-icon">
-                            <img src="assets/images/icon/test-quote.svg" alt="Icon" />
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+     
+    
     
     <section class="tj-about-section d-none">
         <div class="container">
@@ -195,27 +226,7 @@
                     <div class="about-image-group">
                         <div class="about-lg-image">
                             <img src="{{ asset('assets/images/banner/Visi Misi.jpg') }}" alt="Image" />
-                            {{-- <div class="about-circle">
-                                <div class="video-play">
-                                    <a class="venobox popup-videos-button" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=ADmQTw4qqTY">
-                                        <i class="fa-solid fa-play"></i>
-                                        <svg class="shape-1" viewBox="0 0 100 100" width="150" height="100">
-                                            <defs>
-                                                <path id="circle" d="
-                                                              M 50, 50
-                                                              m -37, 0
-                                                              a 37,37 0 1,1 74,0
-                                                              a 37,37 0 1,1 -74,0" />
-                                            </defs>
-                                            <text font-size="16">
-                                                <textPath xlink:href="#circle" class="shape-1">
-                                                    Solar Energy . Solar Energy .
-                                                </textPath>
-                                            </text>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div> --}}
+                              
                         </div> 
                     </div>
                 </div>
@@ -225,147 +236,58 @@
             <img src="assets/images/shape/service-1.svg" alt="Shape" />
         </div>
     </section>
-    <!--=========== About Section End =========-->
-
-    <!--=========== Service Section Start =========-->
-    <section class="tj-service-section">
+    <section class="tj-service-section-two">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="tj-sec-heading text-center">
-                        <span class="sub-title">Program dan Kegiatan</span>
-                        <h2 class="sec-title">
-                            Kegiatan yang sudah dilakukan oleh ACEXI  
+                    <div class="tj-sec-heading-two">
+                        <span class="sub-title">Our programs and activities</span>
+                        <h2 class="title">
+                            Program dan Kegiatan
+                            <span>ACEXI</span>
                         </h2>
                     </div>
                 </div>
             </div>
-            <div class="row g-3">
-                <!-- Workshop -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/693/2023/11/04/WhatsApp-Image-2023-11-04-at-142729-3708381412.jpg" class="object-fit-cover" />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="swiper tj-service-slider">
+                        <div class="swiper-wrapper">
+                            @foreach ($programKegiatan as $program)
+                                <div class="swiper-slide">
+                                    <div class="tj-service-item-three">
+                                        <div class="service-image">
+                                            <img src="{{ asset($program->image) }}" alt="Image">
+                                            <div class="service-icon">
+                                                <i><img src="{{ asset('assets/images/logos/logo.png') }}" alt=""></i> <!-- Ganti dengan ikon sesuai kebutuhan -->
+                                            </div>
+                                        </div>
+                                        <div class="service-content">
+                                            <h5 class="title">
+                                                <a href="{{ route('program-kegiatan-kategori', $program->slug) }}">{{ $program->title }}</a>
+                                            </h5>
+                                            <div class="desc">
+                                                <p>{{ $program->description }}</p>
+                                            </div> 
+                                            <div class="read-more">
+                                                <a class="read-btn" href="{{ route('program-kegiatan-kategori', $program->slug) }}">See More <i class="flaticon-right-arrow"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Workshop</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Pelatihan praktis untuk mengembangkan keterampilan dalam keberlanjutan dan mitigasi perubahan iklim.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Sertifikasi -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://img.inews.co.id/media/600/files/networks/2023/12/14/80e53_acxii.jpg" class="object-fit-cover" />
-                        </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Sertifikasi</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Pengakuan resmi bagi individu atau organisasi yang mengikuti program pelatihan dan menerapkan ilmu keberlanjutan.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Pelatihan -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS2HqeNnObv36-UQUeku7Ta24UVAn40Rk5jA&s" class="object-fit-cover" />
-                        </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Pelatihan</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Meningkatkan keterampilan dalam pengelolaan keberlanjutan dan perubahan iklim dengan pendekatan terbaik.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Program Kemitraan -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://asset-2.tstatic.net/tribunnews/foto/bank/images/emisi-bki-89.jpg" class="object-fit-cover" />
-                        </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Program Kemitraan</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Menjalin kemitraan dengan berbagai pihak untuk pengembangan solusi keberlanjutan dan pengurangan emisi.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Advokasi dan Kebijakan -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://forumkeadilan.com/wp-content/uploads/2024/08/ACEXI.jpg" class="object-fit-cover" />
-                        </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Advokasi dan Kebijakan</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Mempengaruhi kebijakan untuk mendukung keberlanjutan dan solusi berbasis energi hijau.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- Pendidikan Pengembangan Kapasitas -->
-                <div class="col-lg-6">
-                    <div class="tj-service-item-two shadow-sm p-2 h-100">
-                        <div class="service-icon-box"> 
-                            <img style="width: 150px; height: 100%;" src="https://ppid.menlhk.go.id/media/articles/5/6DyB_WhatsApp%20Image%202023-10-11%20at%2015.18.06%20(1).jpeg" class="object-fit-cover" />
-                        </div>
-                        <div class="service-content">
-                            <h4 class="title"><a href="service-details.html">Pendidikan Pengembangan Kapasitas</a></h4>
-                            <div class="desc">
-                                <p>
-                                    Meningkatkan keterampilan dan pengetahuan terkait keberlanjutan dan perubahan iklim.
-                                </p>
-                            </div>
-                            <div class="read-more">
-                                <a class="link" href="service-details.html">Read More <i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
+                        <!-- Swiper Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- Swiper Pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
-    <!--=========== Service Section End =========-->
-
+        
     <!--=========== Counter Section Start =========-->
     <section class="tj-counter-section">
         <div class="container">
@@ -487,159 +409,45 @@
                         <div class="tj-sec-heading">
                             <span class="sub-title">Pakar</span>
                             <h2 class="sec-title">
-                                Kolaborasi, Dedikasi, dan Aksi 
-                                 {{-- <br />
-                                <span>untuk Hijaukan Dunia 
-                                </span> --}}
+                                Kolaborasi, Dedikasi, dan Aksi  
                             </h2>
-                        </div>
-                        {{-- <div class="right-content">
-                            <p>
-                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse fugiat quo
-                                voluptas nulla pariatur?"
-                            </p>
-                        </div> --}}
+                        </div> 
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="tj-team-item">
-                        <div class="team-image">
-                            <img src="assets/images/team/team-1.jpg" alt="Image" />
-                        </div>
-                        <div class="team-content">
-                            <div class="team-auother">
-                                <h5 class="title">Albert Flores</h5>
-                                <span class="sub-title">Technician</span>
+                @foreach ($pakars as $member)
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="tj-team-item">
+                            <div class="team-image">
+                                <img src="{{ asset($member->image) }}" alt="Image" />
                             </div>
-                            <div class="team-share">
-                                <ul class="dot-style team-social">
-                                    <li>
-                                        <i class="fa-regular fa-share-nodes"></i>
-                                        <ul class="dot-style team-social-icon">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            <div class="team-content">
+                                <div class="team-auother">
+                                    <h5 class="title">{{ $member->name }}</h5>
+                                    <span class="sub-title">{{ $member->title }}</span>
+                                </div>
+                                <div class="team-share">
+                                    <ul class="dot-style team-social">
+                                        <li>
+                                            <i class="fa-regular fa-share-nodes"></i>
+                                            <ul class="dot-style team-social-icon">
+                                                <li><a href="{{ $member->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="{{ $member->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="{{ $member->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="{{ $member->instagram }}"><i class="fab fa-instagram"></i></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="tj-team-item">
-                        <div class="team-image">
-                            <img src="assets/images/team/team-2.jpg" alt="Image" />
-                        </div>
-                        <div class="team-content">
-                            <div class="team-auother">
-                                <h5 class="title">Leslie Alexan</h5>
-                                <span class="sub-title">Solar Expert</span>
-                            </div>
-                            <div class="team-share">
-                                <ul class="dot-style team-social">
-                                    <li>
-                                        <i class="fa-regular fa-share-nodes"></i>
-                                        <ul class="dot-style team-social-icon">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="tj-team-item">
-                        <div class="team-image">
-                            <img src="assets/images/team/team-3.jpg" alt="Image" />
-                        </div>
-                        <div class="team-content">
-                            <div class="team-auother">
-                                <h5 class="title">Sony Miltar</h5>
-                                <span class="sub-title">Solar Expert</span>
-                            </div>
-                            <div class="team-share">
-                                <ul class="dot-style team-social">
-                                    <li>
-                                        <i class="fa-regular fa-share-nodes"></i>
-                                        <ul class="dot-style team-social-icon">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="tj-team-item">
-                        <div class="team-image">
-                            <img src="assets/images/team/team-4.jpg" alt="Image" />
-                        </div>
-                        <div class="team-content">
-                            <div class="team-auother">
-                                <h5 class="title">Marko Daniel</h5>
-                                <span class="sub-title">Wind Expert</span>
-                            </div>
-                            <div class="team-share">
-                                <ul class="dot-style team-social">
-                                    <li>
-                                        <i class="fa-regular fa-share-nodes"></i>
-                                        <ul class="dot-style team-social-icon">
-                                            <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            <div class="service-button">
+                <a class="tj-primary-btn btn" href="#"> See More <i class="flaticon-right-arrow"></i> </a>
+             </div>
         </div>
     </section>
     <!--=========== Team Section End =========-->
