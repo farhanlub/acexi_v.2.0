@@ -105,11 +105,11 @@
         </li>
     @endif
     <li class="berita">
-        <a style="font-size: 14px" href="#">
+        <a style="font-size: 14px" href="{{ route('berita') }}">
             @if (Auth::check())
                 <i class="fa fa-crown text-warning"></i>
             @endif
-            Berita
+            Kumpulan Berita
         </a>
     </li>
     <li class="hubungi-kami">

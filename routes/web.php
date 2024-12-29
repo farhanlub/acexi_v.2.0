@@ -10,6 +10,7 @@ Route::get('/program-kegiatan/{category}', [WebPublicController::class, 'program
 
 
 Route::get('/hubungi-kami', [WebPublicController::class, 'contactUs'])->name('hubungi-kami');
+Route::get('/berita', [WebPublicController::class, 'news'])->name('berita');
 
 // About Us sub-menu
 Route::get('/tentang-kami/profil', [WebPublicController::class, 'profile'])->name('tentang-kami.profil');
@@ -17,6 +18,7 @@ Route::get('/tentang-kami/visi-misi', [WebPublicController::class, 'visionMissio
 Route::get('/tentang-kami/struktur-dewan', [WebPublicController::class, 'dewanStructure'])->name('tentang-kami.struktur-dewan');
 Route::get('/tentang-kami/struktur-pengurus', [WebPublicController::class, 'managementStructure'])->name('tentang-kami.struktur-pengurus');
 Route::get('/tentang-kami/lingkup-kepakaran', [WebPublicController::class, 'areaOfExpertise'])->name('tentang-kami.lingkup-kepakaran');
+Route::get('/tentang-kami/lingkup-kepakaran/{slug}', [WebPublicController::class, 'areaOfExpertiseDetail'])->name('tentang-kami.lingkup-kepakaran.detai');
 Route::get('/tentang-kami/galeri', [WebPublicController::class, 'gallery'])->name('tentang-kami.galeri');
 
 // Member sub-menu

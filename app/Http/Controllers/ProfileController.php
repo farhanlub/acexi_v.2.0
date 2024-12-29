@@ -16,8 +16,10 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $nav_active = [''];
         return view('profile.edit', [
             'user' => $request->user(),
+            'nav_active' => $nav_active
         ]);
     }
 

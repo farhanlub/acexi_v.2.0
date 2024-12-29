@@ -1,8 +1,10 @@
 <?php 
 namespace App\Http\Controllers;
 
+use App\Models\ExpertScope;
 use App\Models\Pakar;
 use App\Models\ProgramKegiatan;
+use App\Models\Team;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +18,8 @@ class WebPublicController extends Controller
         $testimonials = Testimonial::limit(3)->get();
         $pakars = Pakar::limit(4)->get();
         $programKegiatan = ProgramKegiatan::all();
-        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan')); 
+        $expertScopes = ExpertScope::all();
+        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan','expertScopes')); 
     }
 
     // Programs & Activities Page
@@ -65,14 +68,16 @@ class WebPublicController extends Controller
     public function managementStructure() 
     { 
         $title = 'Management Structure'; 
+        $data = Team::where('type','!=', 'dewan')->get();
         $nav_active = ['unix-pengurus-pusat','unix-struktur-pengurus', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.about-us.management-structure', compact('title', 'nav_active')); 
+        return view('pages.guest.about-us.management-structure', compact('title', 'nav_active','data')); 
     }
     public function dewanStructure() 
     { 
         $title = 'dewan Structure'; 
+        $data = Team::where('type', 'dewan')->get();
         $nav_active = ['unix-dewan-kehormatan','unix-struktur-pengurus', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.about-us.dewan-structure', compact('title', 'nav_active')); 
+        return view('pages.guest.about-us.dewan-structure', compact('title', 'nav_active','data')); 
     }
 
     // About Us - Area of Expertise Page
@@ -80,8 +85,21 @@ class WebPublicController extends Controller
     { 
         $title = 'Area of Expertise'; 
         $nav_active = ['unix-lingkup-kepakaran', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.about-us.area-of-expertise', compact('title', 'nav_active')); 
+        $expertScopes = ExpertScope::all();
+
+        return view('pages.guest.about-us.area-of-expertise', compact('title', 'nav_active','expertScopes')); 
     }
+    public function areaOfExpertiseDetail($slug) 
+    { 
+        $data = ExpertScope::where('slug', $slug)->first();
+        if (!$data) {
+            abort(404);
+        }
+        $title = 'Area of Expertise ' . $data->title; 
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        return view('pages.guest.about-us.area-of-expertise-detail', compact('title', 'nav_active', 'data')); 
+    }
+
 
     // About Us - Gallery Page
     public function gallery() 
@@ -145,5 +163,13 @@ class WebPublicController extends Controller
         $title = 'Climate Change 101'; 
         $nav_active = ['unix-climate-change-101', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.emission-climate.climate-change-101', compact('title', 'nav_active')); 
+    }
+
+    // News Page
+    public function news() 
+    { 
+        $title = 'Kumpulan Berita'; 
+        $nav_active = ['berita']; // Kelas untuk menu yang aktif
+        return view('pages.guest.news.index', compact('title', 'nav_active')); 
     }
 }

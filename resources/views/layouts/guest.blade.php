@@ -93,7 +93,7 @@
                                     </div>
                                     @else 
                                     <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
-                                        <a href="{{ route('dashboard') }}" class="styleHyperlink">{{ Auth::user()->name }}</a> <i class="fa fa-user"></i>
+                                        <a href="{{ route('profile.edit') }}" class="styleHyperlink">{{ Auth::user()->name }}</a> <i class="fa fa-user"></i>
                                     </div>
                                     @endif
                                 </div>
@@ -201,8 +201,7 @@
                                 </div>
                                 <div class="desc">
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered.
+                                        ASSOCIATION OF CARBON EMISSION EXPERTS INDONESIA
                                     </p>
                                 </div>
                                 <div class="footer-share">
@@ -225,11 +224,12 @@
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">Our Blog</a></li>
-                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="{{ route('beranda') }}">Beranda</a></li>
+                                    <li><a href="{{ route('beranda') }}">Visi & Misi</a></li>
+                                    <li><a href="{{ route('beranda') }}">Lingkup Kepakaran</a></li>
+                                    <li><a href="{{ route('beranda') }}">Program ACEXI</a></li>
+                                    <li><a href="{{ route('beranda') }}">Kegiatan ACEXI</a></li>
+                                    <li><a href="{{ route('beranda') }}">Berita</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -242,17 +242,14 @@
                             <div class="footer-contact">
                                 <ul>
                                     <li>
-                                        <i class="flaticon-location"></i> 2972 Westheimer Rd. Santa Ana, Illinois
-                                        937949
+                                        <i class="flaticon-location"></i>Jl. Ir. H. Juanda No. 50 Pondok Ranji Ciputat Tangerang, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419
                                     </li>
                                     <li>
                                         <i class="flaticon-open"></i>
-                                        <a href="mailto:solarplus@gmail.com">Solarplus@gmail.com </a>
-                                        <a href="mailto:infosolarplus@gmail.com">infosolarplus@gmail.com</a>
+                                        <a href="mailto:info@acexi.org">Info@acexi.org</a> 
                                     </li>
                                     <li>
-                                        <i class="flaticon-phone"></i><a href="tel:(1234)5678900">(1234)-567-8900 </a>
-                                        <a class="d-block" href="tel:1234567890000">123-456-7890000</a>
+                                        <i class="flaticon-phone"></i><a href="tel:6288290222512">+6288290222512</a>
                                     </li>
                                 </ul>
                             </div>
@@ -266,8 +263,9 @@
                             <div class="footer-newsletter">
                                 <div class="desc">
                                     <p>
-                                        There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered.
+                                        
+        Subscribe to our newsletter to receive updates and information about our activities.  Enter your email address below and click the button to subscribe.
+
                                     </p>
                                 </div>
                                 <div class="footer-form">
@@ -287,7 +285,7 @@
                         <div class="copyright-content-ara">
                             <div class="copyright-text">
                                 <p>
-                                    Copyright © 2023 <a href="#" target="_blank"> ThemeJunction. </a> All Rights
+                                    Copyright © 2024 <a href="#" target="_blank"> ACEXI. </a> All Rights
                                     Reserved.
                                 </p>
                             </div>

@@ -5,7 +5,7 @@
         <div class="swiper hero-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner1.jpg') }}"></div>
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner1.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">ACEXI</h1>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="{{ asset('assets/images/banner/banner2.jpg') }}"></div>
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
                             <h1 class="slider-title">Berita terkini</h1>
@@ -139,8 +139,8 @@
                         </div>
                     </div>
                 </div>
-                
-            </div> 
+
+            </div>
         </div>
     </section>
     <section class="tj-testimonial-section-two pt-0">
@@ -201,41 +201,7 @@
             </div>
         </div>
     </section>
-     
-    
-    
-    <section class="tj-about-section d-none">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-7 col-lg-12">
-                    <div class="about-content-one">
-                        <div class="tj-sec-heading">
-                            {{-- <span class="sub-title">Tentang Kami</span> --}}
-                            <h2 class="sec-title">
-                                Tentang Kami
-                            </h2>
-                            <div class="desc">
-                                <p>
-                                    Kami dengan bangga mempersembahkan diri sebagai lembaga yang memimpin perubahan dalam mengatasi permasalahan emisi karbon di Indonesia. Di sini, kami menggali solusi inovatif, melakukan penelitian mendalam, dan mengedukasi masyarakat tentang pentingnya mengurangi emisi karbon untuk menjaga lingkungan hidup yang sehat dan berkelanjutan. Kami percaya bahwa dengan kolaborasi antara para ahli, pemangku kepentingan, dan masyarakat luas, kita dapat mencapai tujuan bersama dalam menghadapi perubahan iklim global. Jelajahi situs kami untuk mengetahui lebih lanjut tentang proyek-proyek terkini, riset terbaru, dan inisiatif pendidikan yang sedang kami jalankan.
-                                </p>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-12">
-                    <div class="about-image-group">
-                        <div class="about-lg-image">
-                            <img src="{{ asset('assets/images/banner/Visi Misi.jpg') }}" alt="Image" />
-                              
-                        </div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sec-shape">
-            <img src="assets/images/shape/service-1.svg" alt="Shape" />
-        </div>
-    </section>
+
     <section class="tj-service-section-two">
         <div class="container">
             <div class="row">
@@ -268,7 +234,7 @@
                                             </h5>
                                             <div class="desc">
                                                 <p>{{ $program->description }}</p>
-                                            </div> 
+                                            </div>
                                             <div class="read-more">
                                                 <a class="read-btn" href="{{ route('program-kegiatan-kategori', $program->slug) }}">See More <i class="flaticon-right-arrow"></i></a>
                                             </div>
@@ -287,7 +253,7 @@
             </div>
         </div>
     </section>
-        
+
     <!--=========== Counter Section Start =========-->
     <section class="tj-counter-section">
         <div class="container">
@@ -356,45 +322,23 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="tj-process-item">
-                        <img src="assets/images/project/process-1.jpg" alt="Image" />
-                        <div class="process-content">
-                            <div class="process-icon">
-                                <i class="flaticon-renewable-energy"></i>
+                @foreach ($expertScopes as $scope)
+                    <div class="col-lg-4 col-md-6">
+                        <a href="">
+                            <div class="tj-process-item">
+                                <img src="{{ asset($scope->image) }}" alt="Image" />
+                                <div class="process-content">
+                                    <div class="process-icon">
+                                        <i class="{{ $scope->icon }}"></i>
+                                    </div>
+                                    <div class="process-title">
+                                        <h5 class="title">{{ $scope->title }}</h5>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="process-title">
-                                <h5 class="title">Carbon Offsetting</h5>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tj-process-item">
-                        <img src="assets/images/project/process-2.jpg" alt="Image" />
-                        <div class="process-content">
-                            <div class="process-icon">
-                                <i class="flaticon-quality"></i>
-                            </div>
-                            <div class="process-title">
-                                <h5 class="title">Research & Analysis</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tj-process-item">
-                        <img src="assets/images/project/process-3.jpg" alt="Image" />
-                        <div class="process-content">
-                            <div class="process-icon">
-                                <i class="flaticon-solar-energy-2"></i>
-                            </div>
-                            <div class="process-title">
-                                <h5 class="title">Renewable Energy</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -409,9 +353,9 @@
                         <div class="tj-sec-heading">
                             <span class="sub-title">Pakar</span>
                             <h2 class="sec-title">
-                                Kolaborasi, Dedikasi, dan Aksi  
+                                Kolaborasi, Dedikasi, dan Aksi
                             </h2>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -447,11 +391,10 @@
             </div>
             <div class="service-button">
                 <a class="tj-primary-btn btn" href="#"> See More <i class="flaticon-right-arrow"></i> </a>
-             </div>
+            </div>
         </div>
     </section>
     <!--=========== Team Section End =========-->
- 
 
     <!--=========== Faq Section Start =========-->
     <section class="tj-faq-section">
