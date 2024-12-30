@@ -10,7 +10,11 @@
             <li class="struktur-pengurus has-dropdown">
                 <a style="font-size: 14px" href="#">Struktur Pengurus</a>
                 <ul class="sub-menu">
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Kehormatan, Penasihat, Pembina, Pendiri, Pakar</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Kehormatan</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Penasihat</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pembina</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pendiri</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pakar</a></li>
                     <li class="pengurus-pusat"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-pengurus') }}">Pengurus Pusat</a></li>
                 </ul>
             </li>

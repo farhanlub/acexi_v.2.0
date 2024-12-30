@@ -84,15 +84,15 @@
                             </div>
                             <div class="header-share d-none d-md-block">
                                 <div class="info-item">
-                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
+                                    <div class="tj-header-btn rounded btn pt-2 pb-2 ps-3 pe-3">
                                         Donasi <i class="fa fa-donate"></i>
                                     </div>
                                     @if (!Auth::check())
-                                        <a class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3" href="{{ route('login') }}">
+                                        <a class="tj-header-btn btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('login') }}">
                                             Member Sign In<i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     @else
-                                        <a class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
+                                        <a class="tj-header-btn btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
                                             {{ Auth::user()->name }} <i class="fa fa-user"></i>
                                         </a>
                                     @endif

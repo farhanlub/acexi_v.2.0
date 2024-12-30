@@ -29,7 +29,7 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1 class="slider-title">Ketua Jenderal TNI (Purn.) Dr. H. Moeldoko, S.I.P., M.A.</h1>
+                            <h1 class="slider-title">Jenderal TNI (Purn.) Dr. H. Moeldoko, S.I.P., M.A.</h1>
                             <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2>
                             <div class="slider-text">
                                 <div class="desc">
@@ -170,7 +170,7 @@
             </div>
         </div>
     </section>
-    <section class="tj-testimonial-section-two pt-0">
+    <section class="tj-testimonial-section-two pt-0 d-none">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
