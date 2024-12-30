@@ -87,17 +87,17 @@
                                     <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
                                         Donasi <i class="fa fa-donate"></i>
                                     </div>
-                                    @if (!Auth::check()) 
-                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
-                                        <a href="{{ route('login') }}" class="styleHyperlink">Sign In</a> / <a href="{{ route('register') }}" class="styleHyperlink">Sign Up</a> <i class="fa fa-arrow-right"></i>
-                                    </div>
-                                    @else 
-                                    <div class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3">
-                                        <a href="{{ route('profile.edit') }}" class="styleHyperlink">{{ Auth::user()->name }}</a> <i class="fa fa-user"></i>
-                                    </div>
+                                    @if (!Auth::check())
+                                        <a class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3" href="{{ route('login') }}">
+                                            Member Sign In<i class="fa fa-arrow-right ms-2"></i>
+                                        </a>
+                                    @else
+                                        <a class="tj-header-btn btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
+                                            {{ Auth::user()->name }} <i class="fa fa-user"></i>
+                                        </a>
                                     @endif
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,15 +107,15 @@
             <div class="ps-5 pe-5">
                 <div class="row">
                     <div class="col-lg-12 p-0">
-                        <div class="bottom-content-area justify-content-lg-center justify-content-end">  
+                        <div class="bottom-content-area justify-content-lg-center justify-content-end">
                             <div class="tj-menu-area d-lg-block d-none">
                                 <nav>
                                     @include('components/navbar')
                                 </nav>
                             </div>
-                            <div class="info-navbar d-lg-none"> 
+                            <div class="info-navbar d-lg-none">
                                 <a class="canva_expander nav-menu-link menu-button" href="#"><i class="flaticon-menu"></i></a>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
             <div class="ps-5 pe-5">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="bottom-content-area justify-content-center">   
+                        <div class="bottom-content-area justify-content-center">
                             <div class="info-right-item">
                                 <div class="tj-menu-area d-lg-block d-none" id="main-menu">
                                     <nav id="mobile-menu">
@@ -140,7 +140,7 @@
                                             <a class="canva_expander nav-menu-link menu-button" href="#"><i class="flaticon-menu"></i></a>
                                         </li>
                                     </ul>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -152,40 +152,6 @@
 
     <main class="site-main">
         @yield('content')
-        {{-- <section class="tj-subscribe-section">
-            <div class="container">
-                <div class="row">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="gallery-text">
-                                    <div class="tj-sec-heading">
-                                        <h2 class="sec-title">Dapatkan Konsultasi Gratis?</h2>
-                                        <div class="gallery-contact">
-                                            Diskusikan tentang proyek Anda untuk dihubungi
-                                            <a href="tel:+6288290222512">0882-9022-2512 (Giordano)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-box-one">
-                                    <div class="input-form">
-                                        <input type="text" id="name" name="name" placeholder="Nama.." required="" />
-                                    </div>
-                                    <div class="input-form">
-                                        <input type="email" id="email" name="email" placeholder="Alamat email...." required="" />
-                                    </div>
-                                    <div class="subscribe-button">
-                                        <button class="tj-primary-btn btn" type="submit" value="submit">
-                                            Dapatkan penawaran sekarang <i class="flaticon-right-arrow"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
     </main>
 
     <!--=========== Footer Area Start =========-->
@@ -220,7 +186,7 @@
                     <div class="col-lg-2 col-md-6">
                         <div class="footer-widget footer1-col-2 widget_nav_menu">
                             <div class="footer-title">
-                                <h5 class="title">Links</h5>
+                                <h5 class="title">Halaman</h5>
                             </div>
                             <div class="footer-menu">
                                 <ul>
@@ -237,7 +203,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget footer1-col-3">
                             <div class="footer-title">
-                                <h5 class="title">Contact Us</h5>
+                                <h5 class="title">Hubungi Kami</h5>
                             </div>
                             <div class="footer-contact">
                                 <ul>
@@ -246,7 +212,7 @@
                                     </li>
                                     <li>
                                         <i class="flaticon-open"></i>
-                                        <a href="mailto:info@acexi.org">Info@acexi.org</a> 
+                                        <a href="mailto:info@acexi.org">Info@acexi.org</a>
                                     </li>
                                     <li>
                                         <i class="flaticon-phone"></i><a href="tel:6288290222512">+6288290222512</a>
@@ -258,23 +224,32 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-widget footer1-col-4">
                             <div class="footer-title">
-                                <h5 class="title">Newsletter</h5>
+                                <h5 class="title">Buletin</h5>
                             </div>
                             <div class="footer-newsletter">
                                 <div class="desc">
                                     <p>
-                                        
-        Subscribe to our newsletter to receive updates and information about our activities.  Enter your email address below and click the button to subscribe.
-
+                                        Berlangganan buletin kami untuk menerima pembaruan dan informasi tentang kegiatan kami. Masukkan alamat email Anda di bawah dan klik tombol untuk berlangganan.
                                     </p>
                                 </div>
                                 <div class="footer-form">
-                                    <input type="email" id="mail" name="email" placeholder="Enter your mail...." />
-                                    <a href="#"><i class="flaticon-sent"></i></a>
+                                    <form action="{{ route('subscribe') }}" method="POST" id="newsletter-form">
+                                        @csrf
+                                        <input type="email" id="mail" name="email" required placeholder="Masukkan email Anda...." />
+                                        <a onclick="document.getElementById('newsletter-form').submit();" style="cursor: pointer">
+                                            <i class="flaticon-sent"></i>
+                                        </a>
+                                    </form>
+                                    @if (session('success'))
+                                        <div class="alert alert-success mt-2">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

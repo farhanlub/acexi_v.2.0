@@ -49,21 +49,23 @@
             <li class="anggota-menu has-dropdown">
                 <a style="font-size: 14px" href="#">Anggota</a>
                 <ul class="sub-menu">
-                    <li class="manfaat-anggota"><a style="font-size: 14px" href="#">Manfaat Menjadi Anggota</a></li>
-                    <li class="cara-anggota"><a style="font-size: 14px" href="#">Cara Menjadi Anggota</a></li>
+                    <li class="manfaat-anggota"><a style="font-size: 14px" href="{{ route('anggota.manfaat') }}">Manfaat Menjadi Anggota</a></li>
+                    <li class="cara-anggota"><a style="font-size: 14px" href="{{ route('anggota.cara') }}">Cara Menjadi Anggota</a></li>
                     @if (Auth::check())
-                        <li class="anggota-terdaftar"><a style="font-size: 14px" href="#"><i class="fa fa-crown text-warning"></i> Anggota yang Terdaftar</a></li>
+                        <li class="anggota-terdaftar"><a style="font-size: 14px" href="{{ route('anggota.anggota-terdaftar') }}"><i class="fa fa-crown text-warning"></i> Anggota yang Terdaftar</a></li>
                     @endif
                 </ul>
             </li>
+            
             <li class="mitra-menu has-dropdown">
                 <a style="font-size: 14px" href="#">Mitra</a>
                 <ul class="sub-menu">
-                    <li class="manfaat-mitra"><a style="font-size: 14px" href="#">Manfaat Menjadi Mitra</a></li>
-                    <li class="cara-mitra"><a style="font-size: 14px" href="#">Cara Menjadi Mitra</a></li>
-                    <li class="mitra-terdaftar"><a style="font-size: 14px" href="#"><i class="fa fa-crown text-warning"></i> Mitra yang Terdaftar</a></li>
+                    <li class="manfaat-mitra"><a style="font-size: 14px" href="{{ route('mitra.manfaat') }}">Manfaat Menjadi Mitra</a></li>
+                    <li class="cara-mitra"><a style="font-size: 14px" href="{{ route('mitra.cara') }}">Cara Menjadi Mitra</a></li>
+                    <li class="mitra-terdaftar"><a style="font-size: 14px" href="{{ route('mitra.mitra-terdaftar') }}"><i class="fa fa-crown text-warning"></i> Mitra yang Terdaftar</a></li>
                 </ul>
             </li>
+            
         </ul>
     </li>
     <li class="emisi-iklim has-dropdown">

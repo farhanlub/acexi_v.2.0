@@ -29,19 +29,46 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1 class="slider-title">Berita terkini</h1>
-                            <h2 class="slider-sub-title">Carbon Emission & <span>Isu Lingkungan</span></h2>
+                            <h1 class="slider-title">Ketua Jenderal TNI (Purn.) Dr. H. Moeldoko, S.I.P., M.A.</h1>
+                            <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2>
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
-                                        Dapatkan informasi terbaru seputar emisi karbon, keberlanjutan, dan isu lingkungan lainnya hanya di sini
+                                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
                                     </p>
-                                </div>
-                                <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="contact.html">
-                                        Selengkapnya <i class="flaticon-right-arrow"></i>
-                                    </a>
-                                </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide tj-slider-item">
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner3.jpg') }}"></div>
+                    <div class="container">
+                        <div class="slider-content">
+                            <h1 class="slider-title">Prof. Dr. Ir. Rokhmin Dahuri, MS.</h1>
+                            <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2>
+                            <div class="slider-text">
+                                <div class="desc">
+                                    <p>
+                                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                    </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide tj-slider-item">
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner4.jpg') }}"></div>
+                    <div class="container">
+                        <div class="slider-content">
+                            <h1 class="slider-title">Poempida Hidayatulloh, B.Eng., Ph.D., DIC.</h1>
+                            <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2>
+                            <div class="slider-text">
+                                <div class="desc">
+                                    <p>
+                                        Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                                    </p>
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -171,8 +198,8 @@
                 <div class="col-lg-6">
                     <div class="testimonial-content-area">
                         <div class="tj-sec-heading-two">
-                            <span class="sub-title">Testimonials</span>
-                            <h2 class="title">Review from <span>Experts</span></h2>
+                            <span class="sub-title">Testimonial</span>
+                            <h2 class="title">Ulasan dari <span>Para Ahli</span></h2>
                         </div>
                     </div>
                     <div class="swiper thumb-slider2">
@@ -206,8 +233,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="tj-sec-heading-two">
-                        <span class="sub-title">Our programs and activities</span>
+                    <div class="tj-sec-heading-two"> 
                         <h2 class="title">
                             Program dan Kegiatan
                             <span>ACEXI</span>
@@ -253,61 +279,7 @@
             </div>
         </div>
     </section>
-
-    <!--=========== Counter Section Start =========-->
-    <section class="tj-counter-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 col-md-5">
-                    <div class="counter-content-area">
-                        <div class="counter-item-two">
-                            <div class="counter-icon">
-                                <i class="flaticon-experience"></i>
-                            </div>
-                            <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="48">0</span>+</div>
-                                <span class="sub-title">Jumlah Pakar</span>
-                            </div>
-                        </div>
-                        <div class="counter-item-two">
-                            <div class="counter-icon">
-                                <i class="flaticon-completed-task"></i>
-                            </div>
-                            <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="239">0</span>+</div>
-                                <span class="sub-title">Jumlah Pengurus</span>
-                            </div>
-                        </div>
-                        <div class="counter-item-two">
-                            <div class="counter-icon">
-                                <i class="flaticon-customer-service"></i>
-                            </div>
-                            <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="230">0</span>+</div>
-                                <span class="sub-title">Jumlah Anggota</span>
-                            </div>
-                        </div>
-                        <div class="counter-item-two">
-                            <div class="counter-icon">
-                                <i class="flaticon-timeline"></i>
-                            </div>
-                            <div class="counter-number">
-                                <div class="tj-count"><span class="odometer" data-count="20">0</span>+</div>
-                                <span class="sub-title">Jumlah Mitra</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-7">
-                    <div class="counter-wrapper">
-                        <img src="{{ asset('assets/images/banner/our-team-banner.jpg') }}" alt="Image" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--=========== Counter Section End =========-->
-
+ 
     <!--=========== Process Section Start =========-->
     <section class="tj-process-section">
         <div class="container">
@@ -321,25 +293,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($expertScopes as $scope)
-                    <div class="col-lg-4 col-md-6">
-                        <a href="">
-                            <div class="tj-process-item">
-                                <img src="{{ asset($scope->image) }}" alt="Image" />
-                                <div class="process-content">
-                                    <div class="process-icon">
-                                        <i class="{{ $scope->icon }}"></i>
-                                    </div>
-                                    <div class="process-title">
-                                        <h5 class="title">{{ $scope->title }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+
+            @include('components/expertise', ['expertScopes' => $expertScopes])
         </div>
     </section>
     <!--=========== Process Section End =========-->
@@ -359,136 +314,10 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($pakars as $member)
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tj-team-item">
-                            <div class="team-image">
-                                <img src="{{ asset($member->image) }}" alt="Image" />
-                            </div>
-                            <div class="team-content">
-                                <div class="team-auother">
-                                    <h5 class="title">{{ $member->name }}</h5>
-                                    <span class="sub-title">{{ $member->title }}</span>
-                                </div>
-                                <div class="team-share">
-                                    <ul class="dot-style team-social">
-                                        <li>
-                                            <i class="fa-regular fa-share-nodes"></i>
-                                            <ul class="dot-style team-social-icon">
-                                                <li><a href="{{ $member->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="{{ $member->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
-                                                <li><a href="{{ $member->twitter }}"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="{{ $member->instagram }}"><i class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="service-button">
-                <a class="tj-primary-btn btn" href="#"> See More <i class="flaticon-right-arrow"></i> </a>
-            </div>
+            @include('components/pakar', ['pakars' => $pakars]) 
         </div>
     </section>
     <!--=========== Team Section End =========-->
 
-    <!--=========== Faq Section Start =========-->
-    <section class="tj-faq-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tj-sec-heading-four text-center">
-                        <span class="sub-title">FAQ</span>
-                        <h2 class="sec-title">Pertanyaan yang Sering<span>Diajukan</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="accordion" id="ItemOne">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Apa yang dimaksud dengan Ahli Emisi Karbon Expert Indonesia?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#ItemOne">
-                                <div class="accordion-body">
-                                    <strong>Ahli Emisi Karbon Expert Indonesia adalah profesional yang memiliki pengetahuan mendalam tentang emisi karbon, praktik keberlanjutan, dan solusi untuk mengurangi dampak lingkungan. Mereka membantu perusahaan dan organisasi untuk mengelola dan mengurangi jejak karbon mereka.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Apa saja layanan yang dapat diberikan oleh Ahli Emisi Karbon Expert Indonesia?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#ItemOne">
-                                <div class="accordion-body">
-                                    <strong>Ahli Emisi Karbon Expert Indonesia menyediakan berbagai layanan, termasuk penilaian emisi karbon, konsultasi keberlanjutan, dan pengembangan strategi hijau untuk membantu klien mengurangi dampak lingkungan mereka.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Apakah Ahli Emisi Karbon Expert Indonesia juga memberikan pelatihan atau workshop?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#ItemOne">
-                                <div class="accordion-body">
-                                    <strong>Ya, Ahli Emisi Karbon Expert Indonesia menyelenggarakan pelatihan dan workshop untuk membantu individu dan organisasi memahami praktik keberlanjutan, mengukur emisi karbon, dan mengembangkan solusi berkelanjutan.</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="accordion" id="ItemTwo">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTen">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                                    Bagaimana caranya untuk bergabung menjadi anggota ACEXI?
-                                </button>
-                            </h2>
-                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#ItemTwo">
-                                <div class="accordion-body">
-                                    <strong>Anda bisa mendaftar dengan mengisi formulir yang sudah kami sediakan di halaman Anggota, atau bisa melalui link berikut</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    Bagaimana saya dapat menjadi Ahli Emisi Karbon Expert Indonesia?
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#ItemTwo">
-                                <div class="accordion-body">
-                                    <strong>Untuk menjadi Ahli Emisi Karbon Expert Indonesia, Anda perlu memiliki pendidikan dan pengalaman yang relevan dalam bidang keberlanjutan, emisi karbon, atau disiplin ilmu terkait. Selain itu, sertifikasi atau pelatihan tambahan dapat menjadi nilai tambah.</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSeven">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                    Bagaimana perusahaan atau organisasi dapat bekerja sama dengan Ahli Emisi Karbon Expert Indonesia?
-                                </button>
-                            </h2>
-                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#ItemTwo">
-                                <div class="accordion-body">
-                                    <strong>Perusahaan atau organisasi yang ingin bekerja sama dengan Ahli Emisi Karbon Expert Indonesia dapat menghubungi kami melalui formulir kontak di situs web atau melalui email. Kami akan segera merespons permintaan Anda.</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+       @include('components/mitra', ['mitras' => $mitras]);
 @endsection

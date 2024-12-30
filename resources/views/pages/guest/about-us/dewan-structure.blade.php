@@ -32,59 +32,63 @@
                 <div class="col-lg-12">
                     <div class="team-content-area">
                         <div class="tj-sec-heading">
-                            <span class="sub-title">Tim Kami</span>
                             <h2 class="sec-title">
-                                Penggerak Utama di Balik <br>
-                                <span>Kesuksesan Asosiasi ACEXI</span>
+                                Penggerak Utama di Balik Kesuksesan Asosiasi ACEXI
                             </h2>
-                        </div>
-                        <div class="right-content">
-                            <p>
-                                Temui para profesional yang berdedikasi yang membentuk tulang punggung ACEXI. Bersama-sama, mereka bekerja untuk mendorong inovasi, kolaborasi, dan keunggulan dalam asosiasi ini, memastikan masa depan cerah bagi industri.
-                            </p>
                         </div>
                     </div>
                 </div>
+                <div class="col-12">
+                    <p>
+                        Temui para profesional yang berdedikasi yang membentuk tulang punggung ACEXI. Bersama-sama, mereka bekerja untuk mendorong inovasi, kolaborasi, dan keunggulan dalam asosiasi ini, memastikan masa depan cerah bagi industri.
+                    </p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="row">
-                @foreach ($data as $teamMember)
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tj-team-item">
-                            <div class="team-image">
-                                <img src="{{ asset($teamMember->image_url) }}" alt="Image">
-                            </div>
-                            <div class="team-content">
-                                <div class="team-auother">
-                                    <h5 class="title">{{ $teamMember->name }}</h5>
-                                    <span class="sub-title">{{ $teamMember->role }}</span>
-                                </div>
-                                <div class="team-share">
-                                    <ul class="dot-style team-social">
-                                        <li>
-                                            <i class="fa-regular fa-share-nodes"></i>
-                                            <ul class="dot-style team-social-icon">
-                                                <li>
-                                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+    <section class="tj-service-section-two">
+        <div class="container">
+            @foreach ($data as $item)
+                <hr class="mt-5">
+                <div class="team-content-area mt-5">
+                    <div class="tj-sec-heading">
+                        <h2 class="sec-title">
+                            {{ $item->name }}
+                        </h2>
                     </div>
-                @endforeach
-            </div>
+                </div>
+                <div class="row justify-content-center gap-2 mt-5">
+                    @foreach ($item->pengurus as $items)
+                        @if ($items->role == 'Ketua')
+                            <div class="col-lg-3 col-md-6 col-sm-6 shadow-sm p-0">
+                                <h5 class="sub-title p-2 bg-success bg-gradient mb-0 rounded-top text-white text-center">Ketua</h5>
+                                @include('components.profile-pengurus', ['data' => $items])
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="row justify-content-center gap-2 mt-5">
+                    @foreach ($item->pengurus as $items)
+                        @if ($items->role == 'Wakil Ketua')
+                            <div class="col-lg-3 col-md-6 col-sm-6  shadow-sm p-0">
+                                <h5 class="sub-title p-2 bg-success bg-gradient mb-0 rounded-top text-white text-center">Wakil Ketua</h5>
+                                @include('components.profile-pengurus', ['data' => $items])
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="row justify-content-center gap-2 mt-5">
+                    @foreach ($item->pengurus as $items)
+                        @if ($items->role == 'Anggota')
+                            <div class="col-lg-3 col-md-6 col-sm-6  shadow-sm p-0">
+                                <h5 class="sub-title p-2 bg-success bg-gradient mb-0 rounded-top text-white text-center">Anggota</h5>
+                                @include('components.profile-pengurus', ['data' => $items])
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection

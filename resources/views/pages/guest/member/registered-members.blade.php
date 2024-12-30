@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="breadcrumb-content-area">
                     <div class="breadcrumb-heading">
-                        <h1 class="breadcrumb-title">Lingkup Kepakaran</h1>
+                        <h1 class="breadcrumb-title">Cara Menjadi Anggota</h1>
                     </div>
                     <div class="breadcrumb-link">
                         <span>
@@ -17,18 +17,12 @@
                         </span>
                         <i class="fa-light fa-angle-right"></i>
                         <span>
-                            <span>Lingkup Kepakaran</span>
+                            <span>Cara Menjadi Anggota</span>
                         </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="tj-testimonial-section">
-    <div class="container">
-        @include('components/expertise', ['expertScopes' => $expertScopes])    
     </div>
 </section>
 @endsection
