@@ -163,29 +163,16 @@
                         </div>
                     </div>
                     <div class="tj-blog-widget">
-                        <h3 class="side-title">Categories</h3>
+                        <h3 class="side-title">Kategori</h3>
                         <div class="sidebar-catagory">
                             <ul>
+                                @foreach ($kategori as $item)
                                 <li>
-                                    <a href="#">Commercial
+                                    <a href="#">{{ $item->name }}
                                         <span> <i class="fa-light fa-angle-right"></i></span>
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="#">Environmental
-                                        <span> <i class="fa-light fa-angle-right"></i></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Hospitals
-                                        <span> <i class="fa-light fa-angle-right"></i></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">Plastice Waste
-                                        <span> <i class="fa-light fa-angle-right"></i></span>
-                                    </a>
-                                </li>
+                                </li> 
+                                @endforeach
                             </ul>
                         </div>
                     </div>

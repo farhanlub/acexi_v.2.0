@@ -56,7 +56,7 @@
     <div class="tj-offcanvas-area">
         <div class="tj-offcanvas-header d-flex align-items-center justify-content-between">
             <div class="logo-area text-center">
-                <a href="index.html"><img src="assets/images/logos/main-logo.png" alt="Logo" /></a>
+                <a href="/"><img src="assets/images/logos/main-logo.png" alt="Logo" /></a>
             </div>
             <div class="offcanvas-icon">
                 <a id="canva_close" href="#">
@@ -70,6 +70,7 @@
 
     <!-- start: Header Area -->
     <header class="tj-header-area header-absolute header-1">
+    {{-- <header class="tj-header-area header-1"> --}}
         <div class="tj-header-topbar-area mb-0">
             <div class="container">
                 <div class="row">
@@ -78,21 +79,24 @@
                             <div class="header-info">
                                 <div class="menu-area" style="gap:0;">
                                     <div class="logo-area">
-                                        <a href="index.html"><img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Logo" /></a>
+                                        <a href="/"><img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Logo" /></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="header-share d-none d-md-block">
                                 <div class="info-item">
-                                    <div class="tj-header-btn rounded btn pt-2 pb-2 ps-3 pe-3">
-                                        Donasi <i class="fa fa-donate"></i>
-                                    </div>
+                                    <a class="btn pt-2 btn-success bg-gradient pb-2 ps-3 pe-3">
+                                        Donasi
+                                    </a>
+                                    <a href="{{ route('kalkulator-karbon') }}" class="btn pt-2 btn-outline-success bg-white text-black pb-2 ps-3 pe-3">
+                                        Kalkulator Karbon
+                                    </a>
                                     @if (!Auth::check())
-                                        <a class="tj-header-btn btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('login') }}">
+                                        <a class="btn-outline-success bg-white text-black btn pt-2 pb-2 ps-3 pe-3" href="{{ route('login') }}">
                                             Member Sign In<i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     @else
-                                        <a class="tj-header-btn btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
+                                        <a class="btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
                                             {{ Auth::user()->name }} <i class="fa fa-user"></i>
                                         </a>
                                     @endif
@@ -163,7 +167,7 @@
                         <div class="footer-widget footer1-col-1">
                             <div class="footer-info">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="{{ asset('assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
+                                    <a href="/"><img src="{{ asset('assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
                                 </div>
                                 <div class="desc">
                                     <p>

@@ -10,12 +10,12 @@
             <li class="struktur-pengurus has-dropdown">
                 <a style="font-size: 14px" href="#">Struktur Pengurus</a>
                 <ul class="sub-menu">
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Kehormatan</a></li>
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Penasihat</a></li>
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pembina</a></li>
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pendiri</a></li>
-                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-dewan') }}">Dewan Pakar</a></li>
-                    <li class="pengurus-pusat"><a style="font-size: 14px" href="{{ route('tentang-kami.struktur-pengurus') }}">Pengurus Pusat</a></li>
+                    <li class="dewan-kehormatan"><a style="font-size: 14px" href="{{ route('tentang-kami.dewan-kehormatan') }}">Dewan Kehormatan</a></li>
+                    <li class="dewan-penasehat"><a style="font-size: 14px" href="{{ route('tentang-kami.dewan-penasehat') }}">Dewan Penasehat</a></li>
+                    <li class="dewan-pembina"><a style="font-size: 14px" href="{{ route('tentang-kami.dewan-pembina') }}">Dewan Pembina</a></li>
+                    <li class="dewan-pendiri"><a style="font-size: 14px" href="{{ route('tentang-kami.dewan-pendiri') }}">Dewan Pendiri</a></li>
+                    <li class="dewan-pakar"><a style="font-size: 14px" href="{{ route('tentang-kami.dewan-pakar') }}">Dewan Pakar</a></li>
+                    <li class="pengurus-pusat"><a style="font-size: 14px" href="{{ route('tentang-kami.pengurus-pusat') }}">Pengurus Pusat</a></li>
                 </ul>
             </li>
             <li class="lingkup-kepakaran"><a style="font-size: 14px" href="{{ route('tentang-kami.lingkup-kepakaran') }}">Lingkup Kepakaran</a></li>
@@ -28,17 +28,17 @@
             <li class="program has-dropdown">
                 <a style="font-size: 14px" href="#">Program</a>
                 <ul class="sub-menu">
-                    <li class="pendidikan-kapasitas"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','pendidikan-pengembangan-kapasitas') }}">Pendidikan Pengembangan Kapasitas</a></li>
-                    <li class="advokasi-kebijakan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','advokasi-dan-kebijakan') }}">Advokasi dan Kebijakan</a></li>
-                    <li class="kemitraan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','program-kemitraan') }}">Program Kemitraan</a></li>
+                    <li class="pendidikan-kapasitas"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'pendidikan-pengembangan-kapasitas') }}">Pendidikan Pengembangan Kapasitas</a></li>
+                    <li class="advokasi-kebijakan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'advokasi-dan-kebijakan') }}">Advokasi dan Kebijakan</a></li>
+                    <li class="kemitraan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'program-kemitraan') }}">Program Kemitraan</a></li>
                 </ul>
             </li>
             <li class="kegiatan has-dropdown">
                 <a style="font-size: 14px" href="#">Kegiatan</a>
                 <ul class="sub-menu">
-                    <li class="pelatihan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','pelatihan') }}">Pelatihan</a></li>
-                    <li class="sertifikasi"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','sertifikasi') }}">Sertifikasi</a></li>
-                    <li class="workshop"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori','workshop') }}">Workshop</a></li>
+                    <li class="pelatihan"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'pelatihan') }}">Pelatihan</a></li>
+                    <li class="sertifikasi"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'sertifikasi') }}">Sertifikasi</a></li>
+                    <li class="workshop"><a style="font-size: 14px" href="{{ route('program-kegiatan-kategori', 'workshop') }}">Workshop</a></li>
                 </ul>
             </li>
         </ul>
@@ -60,31 +60,25 @@
                     @endif
                 </ul>
             </li>
-            
+
             <li class="mitra-menu has-dropdown">
                 <a style="font-size: 14px" href="#">Mitra</a>
                 <ul class="sub-menu">
                     <li class="manfaat-mitra"><a style="font-size: 14px" href="{{ route('mitra.manfaat') }}">Manfaat Menjadi Mitra</a></li>
                     <li class="cara-mitra"><a style="font-size: 14px" href="{{ route('mitra.cara') }}">Cara Menjadi Mitra</a></li>
-                    <li class="mitra-terdaftar"><a style="font-size: 14px" href="{{ route('mitra.mitra-terdaftar') }}"><i class="fa fa-crown text-warning"></i> Mitra yang Terdaftar</a></li>
+                    <li class="mitra-terdaftar"><a style="font-size: 14px" href="{{ route('mitra.mitra-terdaftar') }}">Mitra yang Terdaftar</a></li>
                 </ul>
             </li>
-            
+
         </ul>
     </li>
     <li class="emisi-iklim has-dropdown">
-        <a style="font-size: 14px" href="#">Emisi & Iklim</a>
+        <a style="font-size: 14px" href="#">Climate Change 101</a>
         <ul class="sub-menu">
-            <li class="climate-change has-dropdown">
-                <a style="font-size: 14px" href="#">Climate Change 101</a>
-                <ul class="sub-menu">
-                    <li class="climate-change-indonesia"><a style="font-size: 14px" href="#">Climate Change Indonesia</a></li>
-                    <li class="climate-change-global"><a style="font-size: 14px" href="#">Climate Change Global</a></li>
-                    <li class="peraturan-terbaru"><a style="font-size: 14px" href="#">Peraturan Terbaru</a></li>
-                </ul>
-            </li>
-            <li class="kalkulator-emisi"><a style="font-size: 14px" href="{{ route('emisi-iklim.kalkulator') }}">Kalkulator Emisi</a></li>
-            <li class="keberlanjutan-pendampingan"><a style="font-size: 14px" href="{{ route('emisi-iklim.kalkulator') }}">Keberlanjutan & Pendampingan</a></li>
+            <li class="climate-change-indonesia"><a style="font-size: 14px" href="{{ route('climate-change-indonesia') }}">Climate Change Indonesia</a></li>
+            <li class="climate-change-global"><a style="font-size: 14px" href="{{ route('climate-change-global') }}">Climate Change Global</a></li>
+            <li class="peraturan-terbaru"><a style="font-size: 14px" href="{{ route('climate-change-peraturan') }}">Peraturan Terbaru</a></li>
+            <li class="keberlanjutan-pendampingan"><a style="font-size: 14px" href="{{ route('keberlanjutan-pendampingan') }}">Keberlanjutan & Pendampingan</a></li>
         </ul>
     </li>
     @if (Auth::check())

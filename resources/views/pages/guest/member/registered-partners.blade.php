@@ -8,21 +8,12 @@
                 <div class="breadcrumb-content-area">
                     <div class="breadcrumb-heading">
                         <h1 class="breadcrumb-title">Mitra Terdaftar</h1>
-                    </div>
-                    <div class="breadcrumb-link">
-                        <span>
-                            <a href="/">
-                                <span>Beranda</span>
-                            </a>
-                        </span>
-                        <i class="fa-light fa-angle-right"></i>
-                        <span>
-                            <span>Mitra Terdaftar</span>
-                        </span>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+@include('components/mitra', ['mitras' => $mitra]);
 @endsection

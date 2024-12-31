@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pengurus extends Model
+class Bidang extends Model
 {
     use HasFactory;
 
-    protected $table = 'pengurus';
+    protected $table = 'bidang';
     // Kolom yang bisa diisi secara massal
     protected $fillable = [
-        'kategori_pengurus_id',
-        'role',
-        'team_id',
-        'bidang_id',
+        'name',
+        'slug',
+        'kategori_pengurus_id', 
     ];
 
     // Jika ingin menambahkan fungsi atau relasi lainnya, bisa dilakukan di sini
@@ -23,12 +22,8 @@ class Pengurus extends Model
     {
         return $this->belongsTo(KategoriPengurus::class,'kategori_pengurus_id');
     }
-    public function team()
+    public function pengurus()
     {
-        return $this->belongsTo(Team::class,'team_id');
-    }
-    public function bidang()
-    {
-        return $this->belongsTo(Bidang::class, 'bidang_id');
+        return $this->hasMany(Pengurus::class, 'bidang_id');
     }
 }

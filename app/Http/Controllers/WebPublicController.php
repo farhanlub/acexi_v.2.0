@@ -1,9 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Bidang;
 use App\Models\ExpertScope;
 use App\Models\KategoriPengurus;
 use App\Models\Mitra;
+use App\Models\NewsKategori;
+use App\Models\NewsProgramKegiatan;
 use App\Models\Pakar;
 use App\Models\ProgramKegiatan;
 use App\Models\Team;
@@ -22,7 +25,8 @@ class WebPublicController extends Controller
         $programKegiatan = ProgramKegiatan::all();
         $expertScopes = ExpertScope::all();
         $mitras = Mitra::all();
-        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras'));
+        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get();
+        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras','newsPK'));
     }
 
     // Programs & Activities Page
@@ -68,21 +72,66 @@ class WebPublicController extends Controller
     }
 
     // About Us - Management Structure Page
-    public function managementStructure()
+    public function pengurusPusat()
     {
-        $title = 'Management Structure';
-        $data = Team::where('type', '!=', 'dewan')->get();
+        $title = 'Pengurus Pusat'; 
+        $data = KategoriPengurus::where('name', ['Pengurus Pusat'])->first();
+        $komite1 = KategoriPengurus::where('name', ['Komite Teknis 1'])->first();
+        $komite2 = KategoriPengurus::where('name', ['Komite Teknis 2'])->first();
+        $komite3 = KategoriPengurus::where('name', ['Komite Teknis 3'])->first();
         $nav_active = ['unix-pengurus-pusat', 'unix-struktur-pengurus', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.about-us.management-structure', compact('title', 'nav_active', 'data'));
+        return view('pages.guest.struktur.pengurus-pusat', compact('title', 'nav_active', 'data','komite1','komite2','komite3'));
     }
-    public function dewanStructure()
+    public function pengurusBidang($slug)
     {
-        $title = 'Dewan Structure';
-        $data = KategoriPengurus::whereIn('name', ['Dewan Kehormatan', 'Dewan Pembina', 'Dewan Pendiri', 'Dewan Penasehat', 'Dewan Pakar'])->get();
-        $nav_active = ['unix-dewan-kehormatan', 'unix-struktur-pengurus', 'unix-tentang-kami'];
-        return view('pages.guest.about-us.dewan-structure', compact('title', 'nav_active', 'data'));
+        $data = Bidang::where('slug', $slug)->first();
+        if (!$data) {
+            abort(404);
+        }  
+        $title = 'Bidang ' . $data->name; 
+        $komite1 = KategoriPengurus::where('name', ['Komite Teknis 1'])->first();
+        $komite2 = KategoriPengurus::where('name', ['Komite Teknis 2'])->first();
+        $komite3 = KategoriPengurus::where('name', ['Komite Teknis 3'])->first();
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        return view('pages.guest.struktur.bidang', compact('title', 'nav_active', 'data','komite1','komite2','komite3'));
     }
 
+    // About Us - Team Structure
+    public function dewanKehormatan()
+    {
+        $title = 'Dewan Kehormatan';
+        $data = KategoriPengurus::where('name', ['Dewan Kehormatan'])->first();
+        $nav_active = ['unix-dewan-kehormatan', 'unix-struktur-pengurus', 'unix-tentang-kami'];
+        return view('pages.guest.struktur.dewan-kehormatan', compact('title', 'nav_active', 'data'));
+    }
+    public function dewanPembina()
+    {
+        $title = 'Dewan Pembina';
+        $data = KategoriPengurus::where('name', ['Dewan Pembina'])->first();
+        $nav_active = ['unix-dewan-pembina', 'unix-struktur-pengurus', 'unix-tentang-kami'];
+        return view('pages.guest.struktur.dewan-pembina', compact('title', 'nav_active', 'data'));
+    } 
+    public function dewanPendiri()
+    {
+        $title = 'Dewan Pendiri';
+        $data = KategoriPengurus::where('name', ['Dewan Pendiri'])->first();
+        $nav_active = ['unix-dewan-pendiri', 'unix-struktur-pengurus', 'unix-tentang-kami'];
+        return view('pages.guest.struktur.dewan-pendiri', compact('title', 'nav_active', 'data'));
+    }
+    public function dewanPenasehat()
+    {
+        $title = 'Dewan Penasehat';
+        $data = KategoriPengurus::where('name', ['Dewan Penasehat'])->first();
+        $nav_active = ['unix-dewan-penasehat', 'unix-struktur-pengurus', 'unix-tentang-kami'];
+        return view('pages.guest.struktur.dewan-penasehat', compact('title', 'nav_active', 'data'));
+    }
+    public function dewanPakar()
+    {
+        $title = 'Dewan Pakar';
+        $data = KategoriPengurus::where('name', ['Dewan Pakar'])->first();
+        $nav_active = ['unix-dewan-pakar', 'unix-struktur-pengurus', 'unix-tentang-kami'];
+        return view('pages.guest.struktur.dewan-pakar', compact('title', 'nav_active', 'data'));
+    }
     // About Us - Team Profile Page
     public function profilPengurus($slug)
     {
@@ -95,7 +144,7 @@ class WebPublicController extends Controller
     // About Us - Area of Expertise Page
     public function areaOfExpertise()
     {
-        $title = 'Area of Expertise';
+        $title = 'Lingkup Kepakaran';
         $nav_active = ['unix-lingkup-kepakaran', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
         $expertScopes = ExpertScope::all();
 
@@ -107,7 +156,7 @@ class WebPublicController extends Controller
         if (!$data) {
             abort(404);
         }
-        $title = 'Area of Expertise ' . $data->title;
+        $title = 'Lingkup Kepakaran ' . $data->title;
         $nav_active = ['']; // Kelas untuk menu yang aktif
         return view('pages.guest.about-us.area-of-expertise-detail', compact('title', 'nav_active', 'data'));
     }
@@ -115,7 +164,7 @@ class WebPublicController extends Controller
     // About Us - Gallery Page
     public function gallery()
     {
-        $title = 'Gallery';
+        $title = 'Galeri';
         $nav_active = ['unix-galeri', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.about-us.gallery', compact('title', 'nav_active'));
     }
@@ -123,7 +172,7 @@ class WebPublicController extends Controller
     // Member - Benefits Page
     public function memberBenefits()
     {
-        $title = 'Member Benefits';
+        $title = 'Manfaat menjadi anggota ACEXI';
         $nav_active = ['unix-manfaat-anggota', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.member.benefits', compact('title', 'nav_active'));
     }
@@ -131,7 +180,7 @@ class WebPublicController extends Controller
     // Member - How to Join Page
     public function howToJoin()
     {
-        $title = 'How to Join';
+        $title = 'Cara menjadi anggota ACEXI';
         $nav_active = ['unix-cara-anggota', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.member.how-to-join', compact('title', 'nav_active'));
     }
@@ -139,14 +188,14 @@ class WebPublicController extends Controller
     // Member - Registered Members Page
     public function registeredMembers()
     {
-        $title = 'Registered Members';
+        $title = 'Anggota Terdaftar';
         $nav_active = ['unix-anggota-terdaftar', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.member.registered-members', compact('title', 'nav_active'));
     }
     // Member - Partner Benefits Page
     public function partnerBenefits()
     {
-        $title = 'Partner Benefits';
+        $title = 'Manfaat menjadi Mitra ACEXI';
         $nav_active = ['unix-manfaat-mitra', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.member.partner-benefits', compact('title', 'nav_active'));
     }
@@ -154,33 +203,58 @@ class WebPublicController extends Controller
     // Member - How to Become Partner Page
     public function howToJoinMitra()
     {
-        $title = 'How to Become a Partner';
+        $title = 'Cara menjadi Mitra ACEXI';
         $nav_active = ['unix-cara-mitra', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.member.how-to-become-partner', compact('title', 'nav_active'));
     }
 
     // Member - Registered Partners Page
-    public function registeredPartnersMitra()
+    public function registeredPartners()
     {
-        $title = 'Registered Partners';
+        $title = 'Mitra terdaftar';
         $nav_active = ['unix-mitra-terdaftar', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.member.registered-partners', compact('title', 'nav_active'));
-    } 
-
-    // Emission & Climate - Emission Calculator Page
-    public function emissionCalculator()
-    {
-        $title = 'Emission Calculator';
-        $nav_active = ['unix-kalkulator-emisi', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.emission-climate.emission-calculator', compact('title', 'nav_active'));
+        $mitra = Mitra::all();
+        return view('pages.guest.member.registered-partners', compact('title', 'nav_active','mitra'));
     }
 
-    // Emission & Climate - Climate Change 101 Page
-    public function climateChange101()
+    // Emission & Climate - Carbon Calculator Page
+    public function kalkulatorKarbon()
     {
-        $title = 'Climate Change 101';
-        $nav_active = ['unix-climate-change-101', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.emission-climate.climate-change-101', compact('title', 'nav_active'));
+        $title = 'Kalkulator Karbon';
+        $nav_active = ['unix-kalkulator-karbon', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.carbon-calculator', compact('title', 'nav_active'));
+    }
+
+    // Emission & Climate - Sustainability & Assistance Page
+    public function keberlanjutanPendampingan()
+    {
+        $title = 'Keberlanjutan & Pendampingan';
+        $nav_active = ['unix-keberlanjutan-pendampingan', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.sustainability-assistance', compact('title', 'nav_active'));
+    }
+
+    // Emission & Climate - Climate Change Indonesia Page
+    public function ccIndonesia()
+    {
+        $title = 'Climate Change 101 Indonesia';
+        $nav_active = ['unix-climate-change-indonesia', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.cc-indonesia', compact('title', 'nav_active'));
+    }
+
+    // Emission & Climate - Climate Change Global Page
+    public function ccGlobal()
+    {
+        $title = 'Climate Change 101 Global';
+        $nav_active = ['unix-climate-change-global', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.cc-global', compact('title', 'nav_active'));
+    }
+
+    // Emission & Climate - Climate Change Regulations Page
+    public function ccPeraturan()
+    {
+        $title = 'Climate Change Regulations';
+        $nav_active = ['unix-climate-change-regulations', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.cc-regulations', compact('title', 'nav_active'));
     }
 
     // News Page
@@ -188,6 +262,7 @@ class WebPublicController extends Controller
     {
         $title = 'Kumpulan Berita';
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
-        return view('pages.guest.news.index', compact('title', 'nav_active'));
+        $kategori = NewsKategori::all();
+        return view('pages.guest.news.index', compact('title', 'nav_active','kategori'));
     }
 }

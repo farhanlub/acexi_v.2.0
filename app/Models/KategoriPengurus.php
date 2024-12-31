@@ -20,4 +20,9 @@ class KategoriPengurus extends Model
     {
         return $this->hasMany(Pengurus::class);
     }
+
+    public function bidang()
+    {
+        return $this->hasMany(Bidang::class,'kategori_pengurus_id');
+    }
 }
