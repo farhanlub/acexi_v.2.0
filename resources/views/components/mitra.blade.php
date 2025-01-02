@@ -12,24 +12,22 @@
         </div>
     </div>
     <div class="container-fluid p-0">
-        <div class="row">
-
+        <div class="row justify-content-center"> 
             @foreach ($mitras as $item)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 p-0">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="tj-project-item-two">
                         <div class="project-images">
                             <a href="{{ $item->website_url }}">
                                 <img src="{{ asset($item->image_url) }}" alt="Image">
                             </a>
                             <div class="project-content">
-                                <h3 class="title"><a href="{{ $item->website_url }}">{{ $item->name }}</a></h3>
-                                <span>{{ $item->description }}</span>
+                                <h3 class="title"><a href="{{ $item->website_url }}" target="blank">{{ $item->name }}</a></h3>
+                                {{-- <span>{{ $item->description }}</span> --}}
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
-
+            @endforeach 
         </div>
     </div>
 </section>

@@ -8,16 +8,16 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner1.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content">
-                            <h1 class="slider-title" style="font-size: 60px">ACEXI</h1>
-                            <h2 class="slider-sub-title">ASSOCIATION OF CARBON EMISSION EXPERTS <span>INDONESIA</span></h2>
+                            <h1 class="slider-title">ACEXI</h1>
+                            <h2 class="slider-sub-title" style="font-size: 70px"><strong>ASSOCIATION OF <br> CARBON EMISSION EXPERTS <br> INDONESIA</strong></h2>
                             <div class="slider-text">
                                 <div class="desc">
-                                    <p>
+                                    <p style="font-size: 30px">
                                         Driving AMBITIONS to ACTION
                                     </p>
                                 </div>
                                 <div class="slider-button d-flex">
-                                    <a class="tj-transparent-btn btn" href="{{ route('tentang-kami.profil') }}">
+                                    <a class="tj-primary-btn2 btn" href="{{ route('tentang-kami.profil') }}">
                                         Selenggkapnya <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
@@ -72,101 +72,39 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
         <div class="slider-sec-shape">
             <img src="assets/images/shape/hero-shape.svg" alt="Shape" />
         </div>
-        <div class="tj-service-item">
+    </section>
+
+    <section class="tj-process-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tj-sec-heading-two ">
+                        <h2 class="title">Kegiatan Terbaru <span><strong>Kami</strong></span></h2>
+                        <div class="desc">
+                            <p>
+                                ACEXI Menampilkan Kegiatan Terbaru dalam Berbagai Bidang Kepakaran</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 @foreach ($newsPK as $item)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="tj-blog-item-two">
-                            <div class="blog-image">
-                                <a href=""><img style="height: 200px;" src="{{ $item->image }}" class="object-fit-cover" alt="Image"></a>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <ul>
-                                        <li><i class="flaticon-calendar"></i> {{ date('h:i:s d-m-y', strtotime($item->created_at)) }}</li>
-                                        <li><i class="fa fa-eye"></i> {{ $item->views }}</li>
-                                    </ul>
-                                </div>
-                                <h5 class="title">
-                                    <a href="">{{ $item->title }}</a>
-                                </h5>
-                                <div class="tj-blog-button d-flex">
-                                    <a class="tj-secondary-btn btn" href="">Lihat Selengkapnya <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6"> 
+                        @include('components.news_program_kegiatan', ['data' => $item])
                     </div>
                 @endforeach
 
             </div>
         </div>
     </section>
-    <section class="tj-testimonial-section-two pt-0 d-none">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="thumb-content-area">
-                        <div class="active-image">
-                            @foreach ($testimonials as $testimonial)
-                                <div class="testimonial_active_img @if ($loop->first) active @endif">
-                                    <img src="{{ asset($testimonial->image_large) }}" alt="Image">
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="swiper thumb-testimonial-slider">
-                            <div class="swiper-wrapper">
-                                @foreach ($testimonials as $testimonial)
-                                    <div class="swiper-slide @if ($loop->first) swiper-slide-active @endif">
-                                        <div class="thumb-image">
-                                            <img src="{{ asset($testimonial->image_small) }}" alt="Image">
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial-content-area">
-                        <div class="tj-sec-heading-two">
-                            <span class="sub-title">Testimonial</span>
-                            <h2 class="title">Ulasan dari <span>Para Ahli</span></h2>
-                        </div>
-                    </div>
-                    <div class="swiper thumb-slider2">
-                        <div class="swiper-wrapper">
-                            @foreach ($testimonials as $testimonial)
-                                <div class="swiper-slide @if ($loop->first) swiper-slide-active @endif">
-                                    <div class="testimonial-slider-item">
-                                        <div class="desc">
-                                            <p>{{ $testimonial->testimonial_text }}</p>
-                                        </div>
-                                        <div class="testimonial-auother">
-                                            <div class="quote-icon">
-                                                <img src="assets/images/icon/quote.svg" alt="Icon">
-                                            </div>
-                                            <div class="testimonial-text">
-                                                <h3 class="title">{{ $testimonial->name }} <span>{{ $testimonial->last_name }}</span></h3>
-                                                <span class="sub-title">{{ $testimonial->role }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="tj-service-section-two">
         <div class="container">
             <div class="row">
@@ -189,7 +127,7 @@
                                         <div class="service-image">
                                             <img src="{{ asset($program->image) }}" alt="Image">
                                             <div class="service-icon">
-                                                <i><img src="{{ asset('assets/images/logos/logo.png') }}" alt=""></i> <!-- Ganti dengan ikon sesuai kebutuhan -->
+                                                <i class="bg-white"><img src="{{ asset('storage/assets/images/logos/logo.png') }}" alt=""></i> <!-- Ganti dengan ikon sesuai kebutuhan -->
                                             </div>
                                         </div>
                                         <div class="service-content">
@@ -219,7 +157,7 @@
     </section>
 
     <!--=========== Process Section Start =========-->
-    <section class="tj-process-section">
+    <section class="tj-process-section pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

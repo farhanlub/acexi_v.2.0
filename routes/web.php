@@ -9,6 +9,7 @@ Route::get('/', [WebPublicController::class, 'beranda'])->name('beranda');
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
 
 Route::get('/program-kegiatan', [WebPublicController::class, 'programsActivities'])->name('program-kegiatan');
+Route::get('/program-kegiatan/show/{slug}', [WebPublicController::class, 'programsActivitiesDetail'])->name('program-kegiatan.detail');
 Route::get('/program-kegiatan/{category}', [WebPublicController::class, 'programsActivitiesCategory'])->name('program-kegiatan-kategori');
 
 

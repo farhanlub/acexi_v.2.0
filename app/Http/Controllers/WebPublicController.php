@@ -42,9 +42,22 @@ class WebPublicController extends Controller
         if (!$data) {
             abort(404);
         }
-        $title = 'Programs & Activities ACEXI ' . $data->title;
+        $title = 'Programs & Activities ACEXI ' . $data->title; 
+        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->get();
         $nav_active = ['']; // Kelas untuk menu yang aktif
-        return view('pages.guest.programs-activities-category', compact('title', 'nav_active', 'data'));
+        return view('pages.guest.programs-activities-category', compact('title', 'nav_active', 'data', 'newsPK'));
+    }
+    public function programsActivitiesDetail($slug)
+    {
+        $data = NewsProgramKegiatan::where('slug', $slug)->first();
+        if (!$data) {
+            abort(404);
+        }
+        $title = $data->title;
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        $category = ProgramKegiatan::all();
+        $recent5 = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('pages.guest.programs-activities-detail', compact('title', 'nav_active', 'data','category','recent5'));
     }
 
     // Contact Us Page
@@ -265,4 +278,5 @@ class WebPublicController extends Controller
         $kategori = NewsKategori::all();
         return view('pages.guest.news.index', compact('title', 'nav_active','kategori'));
     }
+    
 }

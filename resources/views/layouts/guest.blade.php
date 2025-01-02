@@ -11,8 +11,8 @@
     <title>{{ $title ?? 'ACEXI' }}</title>
 
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/logos/icon.png') }}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logos/icon.png') }}" />
+    <link rel="apple-touch-icon" href="{{ asset('storage/assets/images/logos/icon.png') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('storage/assets/images/logos/icon.png') }}" />
 
     <!-- CSS here -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
@@ -37,7 +37,7 @@
         <div class="animation-preloader">
             <div class="spinner">
                 <div class="loader-icon">
-                    <img src="{{ asset('assets/images/logos/logo.png') }}" alt="Solar & Renewable Energy HTML Template" />
+                    <img src="{{ asset('storage/assets/images/logos/logo.png') }}" alt="Solar & Renewable Energy HTML Template" />
                 </div>
             </div>
             <div class="txt-loading">
@@ -56,7 +56,7 @@
     <div class="tj-offcanvas-area">
         <div class="tj-offcanvas-header d-flex align-items-center justify-content-between">
             <div class="logo-area text-center">
-                <a href="/"><img src="assets/images/logos/main-logo.png" alt="Logo" /></a>
+                <a href="/"><img src="{{ asset('storage/assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
             </div>
             <div class="offcanvas-icon">
                 <a id="canva_close" href="#">
@@ -79,7 +79,7 @@
                             <div class="header-info">
                                 <div class="menu-area" style="gap:0;">
                                     <div class="logo-area">
-                                        <a href="/"><img src="{{ asset('assets/images/logos/header-logo.png') }}" alt="Logo" /></a>
+                                        <a href="/"><img src="{{ asset('storage/assets/images/logos/header-logo.png') }}" alt="Logo" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                         <div class="footer-widget footer1-col-1">
                             <div class="footer-info">
                                 <div class="footer-logo">
-                                    <a href="/"><img src="{{ asset('assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
+                                    <a href="/"><img src="{{ asset('storage/assets/images/logos/main-logo.png') }}" alt="Logo" /></a>
                                 </div>
                                 <div class="desc">
                                     <p>
@@ -283,29 +283,29 @@
         <div class="footer-section-shape">
             <div class="secton-group-one">
                 <div class="shape-one">
-                    <img src="{{ asset('assets/images/shape/footer-1.svg') }}" alt="Shape" />
+                    <img src="{{ asset('storage/assets/images/shape/footer-1.svg') }}" alt="Shape" />
                 </div>
                 <div class="shape-two">
-                    <img src="{{ asset('assets/images/shape/footer-2.svg') }}" alt="Shape" />
+                    <img src="{{ asset('storage/assets/images/shape/footer-2.svg') }}" alt="Shape" />
                 </div>
                 <div class="shape-three">
-                    <img src="{{ asset('assets/images/shape/footer-3.svg') }}" alt="Shape" />
+                    <img src="{{ asset('storage/assets/images/shape/footer-3.svg') }}" alt="Shape" />
                 </div>
                 <div class="shape-four">
-                    <img src="{{ asset('assets/images/shape/footer-4.svg') }}" alt="Shape" />
+                    <img src="{{ asset('storage/assets/images/shape/footer-4.svg') }}" alt="Shape" />
                 </div>
                 <div class="shape-five">
-                    <img src="{{ asset('assets/images/shape/footer-8.svg') }}" alt="Shape" />
+                    <img src="{{ asset('storage/assets/images/shape/footer-8.svg') }}" alt="Shape" />
                 </div>
             </div>
             <div class="secton-group-two">
                 <div class="shape-one">
-                    <img class="image-1" src="{{ asset('assets/images/shape/footer-5.svg') }}" alt="Shape" />
-                    <img class="image-2" src="{{ asset('assets/images/shape/footer-6.svg') }}" alt="Shape" />
+                    <img class="image-1" src="{{ asset('storage/assets/images/shape/footer-5.svg') }}" alt="Shape" />
+                    <img class="image-2" src="{{ asset('storage/assets/images/shape/footer-6.svg') }}" alt="Shape" />
                 </div>
                 <div class="shape-two">
-                    <img class="image-1" src="{{ asset('assets/images/shape/footer-5.svg') }}" alt="Shape" />
-                    <img class="image-2" src="{{ asset('assets/images/shape/footer-6.svg') }}" alt="Shape" />
+                    <img class="image-1" src="{{ asset('storage/assets/images/shape/footer-5.svg') }}" alt="Shape" />
+                    <img class="image-2" src="{{ asset('storage/assets/images/shape/footer-6.svg') }}" alt="Shape" />
                 </div>
             </div>
         </div>

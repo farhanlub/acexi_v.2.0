@@ -16,7 +16,7 @@ class NewsProgramKegiatan extends Model
         'slug',
         'image',
         'desc',
-        'source',
+        'content',
         'views',
         'program_kegiatan_id', 
     ];
