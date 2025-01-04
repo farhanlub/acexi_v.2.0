@@ -83,7 +83,8 @@ START: Theme Default CSS
   --tj-color-common-black: #000000;
   --tj-color-heading-primary: #323c45;
   --tj-color-text-body: #717171;
-  --tj-color-theme-primary: #39ca6e;
+  /* --tj-color-theme-primary: #39ca6e; */
+  --tj-color-theme-primary: #198754;
   --tj-color-theme-secondary: #323c45;
   --tj-color-theme-bg: #fafafc;
   --tj-color-grey-1: #bdc5ca;

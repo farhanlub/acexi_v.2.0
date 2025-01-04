@@ -25,9 +25,19 @@
             </div>
         </div>
     </section>
-    <section class="tj-project-section-two pb-5 pt-5">
+    <section class="tj-project-section-two  pt-5 pb-5"">
         <div class="container">
             <div class="about-feature-item row gap-0">
+                <div class="col-lg-4 col-md-6">
+                    <div class="shadow-sm rounded feature-content flex-nowrap">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i> <!-- Ikon untuk Perjanjian dan Kesepakatan global -->
+                        </div>
+                        <div class="feature-text">
+                            <h5 class="title"><a href="#kebijakan">Perjanjian dan Kesepakatan Global</a></h5>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="shadow-sm rounded feature-content flex-nowrap">
                         <div class="feature-icon">
@@ -35,16 +45,6 @@
                         </div>
                         <div class="feature-text">
                             <h5 class="title"><a href="#laporan">Laporan Internasional</a></h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="shadow-sm rounded feature-content flex-nowrap">
-                        <div class="feature-icon">
-                            <i class="fas fa-handshake"></i> <!-- Ikon untuk kebijakan dan perjanjian global -->
-                        </div>
-                        <div class="feature-text">
-                            <h5 class="title"><a href="#kebijakan">Kebijakan dan Perjanjian Global</a></h5>
                         </div>
                     </div>
                 </div>
@@ -61,20 +61,34 @@
             </div>
         </div>
     </section>
-
-    <section class="tj-choose-us-section" style="background: #fafafc" id="laporan">
+    <section class="tj-choose-us-section pt-5 pb-5"" id="kebijakan" style="background: #fafafc">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tj-sec-heading-two">
-                        <h2 class="title">
-                            Laporan
-                            <span>Internasional</span>
-                        </h2>
-                    </div>
+            <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
+                <h2 class="title">
+                    Perjanjian dan
+                    <span>Kesepakatan Global</span>
+                </h2>
+            </div>
+            <div class="feature-content w-100">
+                <div class="feature-text">
+                    <h5 class="title"><a href="https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf" target="blank">Paris Agreement (2015)</a>
+                    </h5>
+                    <span class="sub-title"> Kesepakatan global untuk menjaga kenaikan suhu global di bawah 2°C dan berupaya mencapai 1.5°C.
+                    </span>
                 </div>
             </div>
-            <div class="about-feature-item">
+        </div>
+    </section>
+
+    <section class="tj-choose-us-section pt-5 pb-5"" id="laporan">
+        <div class="container">
+            <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
+                <h2 class="title">
+                    Laporan
+                    <span>Internasional</span>
+                </h2>
+            </div>
+            <div class="about-feature-item gap-2">
                 <div class="feature-content w-100">
                     <div class="feature-text">
                         <h5 class="title"><a href="https://www.ipcc.ch/" target="blank">1. IPCC Sixth Assessment Report (2021–2023)</a>
@@ -108,45 +122,19 @@
             </div>
         </div>
     </section>
-    <section class="tj-choose-us-section" id="kebijakan">
+    <section class="tj-choose-us-section pt-5 pb-5"" style="background: #fafafc" id="laporan">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tj-sec-heading-two">
-                        <h2 class="title">
-                            Kebijakan dan
-                            <span>Perjanjian Global</span>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="feature-content w-100">
-                <div class="feature-text">
-                    <h5 class="title" style="color: #39ca6e"><a href="https://unfccc.int/sites/default/files/resource/parisagreement_publication.pdf" target="blank">Paris Agreement (2015)</a>
-                    </h5>
-                    <span class="sub-title"> Kesepakatan global untuk menjaga kenaikan suhu global di bawah 2°C dan berupaya mencapai 1.5°C.
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="tj-choose-us-section" style="background: #fafafc" id="laporan">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="tj-sec-heading-two">
-                        <h2 class="title">
-                            Sumber Data dan
-                            <span>Platform Global</span>
-                        </h2>
-                    </div>
-                </div>
+            <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
+                <h2 class="title">
+                    Sumber Data dan
+                    <span>Platform Global</span>
+                </h2>
             </div>
 
-            <div class="about-feature-item">
+            <div class="about-feature-item gap-2">
                 <div class="feature-content w-100">
                     <div class="feature-text">
-                        <h5 class="title"><a href="https://www.climatewatchdata.org/" target="blank">1. Climate Watch (WRI)
+                        <h5 class="title"><a href="https://www.climatewatchdata.org/" target="blank">Climate Watch (WRI)
                             </a>
                         </h5>
                         <span class="sub-title">Basis data global untuk pelacakan emisi, NDC, dan kebijakan iklim.
@@ -155,13 +143,13 @@
                 </div>
                 <div class="feature-content w-100">
                     <div class="feature-text">
-                        <h5 class="title"><a href="https://ourworldindata.org/climate-change" target="blank">2. Our World in Data: Climate Change</a>
+                        <h5 class="title"><a href="https://ourworldindata.org/climate-change" target="blank">Our World in Data: Climate Change</a>
                         </h5>
                     </div>
                 </div>
                 <div class="feature-content w-100">
                     <div class="feature-text">
-                        <h5 class="title"><a href="https://ourworldindata.org/climate-change" target="blank">3. Organisasi Pendukung Informasi</a>
+                        <h5 class="title"><a href="https://ourworldindata.org/climate-change" target="blank">Organisasi Pendukung Informasi</a>
                         </h5>
                         <small>
                             ● <a href="https://indonesia.cdp.net/" class="text-primary"> CDP (Carbon Disclosure Project)</a>: Mendukung transparansi data emisi dan aksi iklim perusahaan serta kota. <br>

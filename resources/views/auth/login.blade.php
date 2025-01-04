@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" class="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +25,7 @@
         });
     </script>
 </head>
+
 <body class="min-h-screen bg-base-200">
     <section class="min-h-screen flex items-center justify-center">
         <div class="container">
@@ -31,8 +33,7 @@
                 @csrf
                 <!-- Login Header -->
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl font-bold">Login</h2>
-                    <p class="text-sm text-base-content/70">Please enter your credentials to continue</p>
+                    <h2 class="text-2xl font-bold">Member Login</h2>
                 </div>
 
                 <!-- Email Address -->
@@ -40,13 +41,7 @@
                     <label class="label">
                         <span class="label-text">Email</span>
                     </label>
-                    <input type="email" 
-                           class="input input-bordered w-full @error('email') input-error @enderror" 
-                           name="email"
-                           value="{{ old('email') }}"
-                           required 
-                           autofocus 
-                           autocomplete="username">
+                    <input type="email" class="input input-bordered w-full @error('email') input-error @enderror" name="email" value="{{ old('email') }}" required autofocus autocomplete="username">
                     @error('email')
                         <label class="label">
                             <span class="label-text-alt text-error">{{ $message }}</span>
@@ -59,11 +54,7 @@
                     <label class="label">
                         <span class="label-text">Password</span>
                     </label>
-                    <input type="password" 
-                           class="input input-bordered w-full @error('password') input-error @enderror" 
-                           name="password"
-                           required 
-                           autocomplete="current-password">
+                    <input type="password" class="input input-bordered w-full @error('password') input-error @enderror" name="password" required autocomplete="current-password">
                     @error('password')
                         <label class="label">
                             <span class="label-text-alt text-error">{{ $message }}</span>
@@ -72,22 +63,19 @@
                 </div>
 
                 <div class="flex justify-between items-center mt-6">
-                    <a href="#" class="link link-hover text-sm">
-                        Lupa password?
-                    </a>
                     <button type="submit" class="btn btn-primary">
                         Log in
                     </button>
                 </div>
 
                 <!-- Register Link -->
-                <div class="text-center mt-6">
-                    <p class="text-sm">Daftar sebagai anggota/mitra? 
-                        <a href="#" class="link link-primary">Daftar disini</a>
+                <div class="mt-6">
+                    <p class="text-sm">Cara menjadi  <a href="{{ route('anggota.cara') }}" class="link link-primary">Anggota</a> / <a href="{{ route('mitra.cara') }}" class="link link-primary">Mitra</a>?
                     </p>
                 </div>
             </form>
         </div>
     </section>
 </body>
+
 </html>

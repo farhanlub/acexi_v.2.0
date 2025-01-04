@@ -7,14 +7,15 @@ use App\Http\Controllers\NewsletterController;
 
 Route::get('/', [WebPublicController::class, 'beranda'])->name('beranda');
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
-
-Route::get('/program-kegiatan', [WebPublicController::class, 'programsActivities'])->name('program-kegiatan');
+ 
 Route::get('/program-kegiatan/show/{slug}', [WebPublicController::class, 'programsActivitiesDetail'])->name('program-kegiatan.detail');
+Route::get('/program-kegiatan/search/', [WebPublicController::class, 'programsActivitiesSearch'])->name('program-kegiatan.search');
 Route::get('/program-kegiatan/{category}', [WebPublicController::class, 'programsActivitiesCategory'])->name('program-kegiatan-kategori');
 
 
 Route::get('/hubungi-kami', [WebPublicController::class, 'contactUs'])->name('hubungi-kami');
 Route::get('/berita', [WebPublicController::class, 'news'])->name('berita');
+Route::get('/berita/{slug}', [WebPublicController::class, 'newsDetail'])->name('berita.detail');
 
 // About Us sub-menu
 Route::get('/tentang-kami/profil', [WebPublicController::class, 'profile'])->name('tentang-kami.profil');
@@ -49,6 +50,10 @@ Route::get('/keberlanjutan-dan-pendampingan', [WebPublicController::class, 'kebe
 Route::get('/climate-change-101/indonesia', [WebPublicController::class, 'ccIndonesia'])->name('climate-change-indonesia');
 Route::get('/climate-change-101/global', [WebPublicController::class, 'ccGlobal'])->name('climate-change-global');
 Route::get('/climate-change-101/peraturan', [WebPublicController::class, 'ccPeraturan'])->name('climate-change-peraturan');
+
+Route::get('/faq', [WebPublicController::class, 'faq'])->name('faq');
+
+
 
 
 Route::get('/dashboard', function () {

@@ -25,13 +25,12 @@
             </div>
         </div>
     </section>
-    <section class="tj-blog-grid-section">
+    <section class="tj-blog-grid-section pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="blog-content-area">
                         <div class="tj-sec-heading-four">
-                            <span class="sub-title">Sesi {{ $data->title }} Terbaru</span>
                             <h2 class="sec-title">Pembaruan Terbaru <span>{{ $data->title }}</span></h2>
                         </div>
                     </div>
@@ -40,21 +39,32 @@
                     <div class="blog-content-area p-0">
                         <div class="blog-desc">
                             <p>
-                                Program {{ Str::lower($data->title) }} kami memberikan pengetahuan terbaru dan peluang pengembangan profesional. Ikuti sesi {{ Str::lower($data->title) }} yang akan datang.
+                                {{ $data->description }}
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            @if (count($newsPK) > 0)
+                <div class="row">
+                    @foreach ($newsPK as $item)
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            @include('components.news_program_kegiatan', ['data' => $item])
+                        </div>
+                    @endforeach
 
-            <div class="row">
-                @foreach ($newsPK as $item)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        @include('components.news_program_kegiatan', ['data' => $item])
+                </div>
+            @else
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-primary" role="alert">
+                            
+                            Belum ada berita terbaru pada kategori ini
+                        </div>
+
                     </div>
-                @endforeach
-
-            </div>
+                </div>
+            @endif
         </div>
     </section>
 @endsection

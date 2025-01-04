@@ -340,7 +340,7 @@
     <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
     <script src="{{ asset('assets/js/meanmenu.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script>
+    {{-- <script>
         const nacActiveClasses = @json($nav_active);
         document.querySelectorAll('li').forEach(function(li) {
             nacActiveClasses.forEach(function(className) {
@@ -349,6 +349,6 @@
                 }
             });
         });
-    </script>
+    </script> --}}
 
 </html>

@@ -5,12 +5,14 @@ use App\Models\Bidang;
 use App\Models\ExpertScope;
 use App\Models\KategoriPengurus;
 use App\Models\Mitra;
+use App\Models\News;
 use App\Models\NewsKategori;
 use App\Models\NewsProgramKegiatan;
 use App\Models\Pakar;
 use App\Models\ProgramKegiatan;
 use App\Models\Team;
 use App\Models\Testimonial;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class WebPublicController extends Controller
@@ -26,26 +28,28 @@ class WebPublicController extends Controller
         $expertScopes = ExpertScope::all();
         $mitras = Mitra::all();
         $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras','newsPK'));
+        return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras', 'newsPK'));
     }
 
     // Programs & Activities Page
-    public function programsActivities()
-    {
-        $title = 'Programs & Activities';
-        $nav_active = ['unix-program-kegiatan']; // Kelas untuk menu yang aktif
-        return view('pages.guest.programs-activities', compact('title', 'nav_active'));
-    }
+    // public function programsActivities()
+    // {
+    //     $title = 'Programs & Activities';
+    //     $nav_active = ['unix-program-kegiatan']; // Kelas untuk menu yang aktif
+    //     return view('pages.guest.programs-activities', compact('title', 'nav_active'));
+    // }
     public function programsActivitiesCategory($category)
     {
         $data = ProgramKegiatan::where('slug', $category)->first();
         if (!$data) {
             abort(404);
         }
-        $title = 'Programs & Activities ACEXI ' . $data->title; 
-        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->get();
+        $title = 'Programs & Activities ACEXI ' . $data->title;
+        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')
+            ->where('program_kegiatan_id', $data->id)
+            ->get();
         $nav_active = ['']; // Kelas untuk menu yang aktif
-        return view('pages.guest.programs-activities-category', compact('title', 'nav_active', 'data', 'newsPK'));
+        return view('pages.guest.programs-activities.programs-activities-category', compact('title', 'nav_active', 'data', 'newsPK'));
     }
     public function programsActivitiesDetail($slug)
     {
@@ -53,13 +57,30 @@ class WebPublicController extends Controller
         if (!$data) {
             abort(404);
         }
+        $data->views = $data->views + 1;
+        $data->save();
         $title = $data->title;
         $nav_active = ['']; // Kelas untuk menu yang aktif
         $category = ProgramKegiatan::all();
         $recent5 = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('pages.guest.programs-activities-detail', compact('title', 'nav_active', 'data','category','recent5'));
+        return view('pages.guest.programs-activities.programs-activities-detail', compact('title', 'nav_active', 'data', 'category', 'recent5'));
     }
+    public function programsActivitiesSearch(Request $request)
+    {
+        $request->validate([
+            'search' => [
+                'required',
+                'string', // Pastikan input berupa string
+                'max:255', // Batasi panjang input untuk mencegah overflow
+                'regex:/^[a-zA-Z0-9\s]+$/', // Izinkan hanya alfanumerik dan spasi. Sesuaikan regex ini sesuai kebutuhan.
+            ],
+        ]);
 
+        $text = $request->search;
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        $newsPK = NewsProgramKegiatan::where('title', 'like', '%' . $text . '%')->get();
+        return view('pages.guest.programs-activities.programs-activities-search', compact('text', 'nav_active', 'newsPK'));
+    }
     // Contact Us Page
     public function contactUs()
     {
@@ -87,26 +108,26 @@ class WebPublicController extends Controller
     // About Us - Management Structure Page
     public function pengurusPusat()
     {
-        $title = 'Pengurus Pusat'; 
+        $title = 'Pengurus Pusat';
         $data = KategoriPengurus::where('name', ['Pengurus Pusat'])->first();
         $komite1 = KategoriPengurus::where('name', ['Komite Teknis 1'])->first();
         $komite2 = KategoriPengurus::where('name', ['Komite Teknis 2'])->first();
         $komite3 = KategoriPengurus::where('name', ['Komite Teknis 3'])->first();
         $nav_active = ['unix-pengurus-pusat', 'unix-struktur-pengurus', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.struktur.pengurus-pusat', compact('title', 'nav_active', 'data','komite1','komite2','komite3'));
+        return view('pages.guest.struktur.pengurus-pusat', compact('title', 'nav_active', 'data', 'komite1', 'komite2', 'komite3'));
     }
     public function pengurusBidang($slug)
     {
         $data = Bidang::where('slug', $slug)->first();
         if (!$data) {
             abort(404);
-        }  
-        $title = 'Bidang ' . $data->name; 
+        }
+        $title = 'Bidang ' . $data->name;
         $komite1 = KategoriPengurus::where('name', ['Komite Teknis 1'])->first();
         $komite2 = KategoriPengurus::where('name', ['Komite Teknis 2'])->first();
         $komite3 = KategoriPengurus::where('name', ['Komite Teknis 3'])->first();
         $nav_active = ['']; // Kelas untuk menu yang aktif
-        return view('pages.guest.struktur.bidang', compact('title', 'nav_active', 'data','komite1','komite2','komite3'));
+        return view('pages.guest.struktur.bidang', compact('title', 'nav_active', 'data', 'komite1', 'komite2', 'komite3'));
     }
 
     // About Us - Team Structure
@@ -123,7 +144,7 @@ class WebPublicController extends Controller
         $data = KategoriPengurus::where('name', ['Dewan Pembina'])->first();
         $nav_active = ['unix-dewan-pembina', 'unix-struktur-pengurus', 'unix-tentang-kami'];
         return view('pages.guest.struktur.dewan-pembina', compact('title', 'nav_active', 'data'));
-    } 
+    }
     public function dewanPendiri()
     {
         $title = 'Dewan Pendiri';
@@ -227,7 +248,7 @@ class WebPublicController extends Controller
         $title = 'Mitra terdaftar';
         $nav_active = ['unix-mitra-terdaftar', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
         $mitra = Mitra::all();
-        return view('pages.guest.member.registered-partners', compact('title', 'nav_active','mitra'));
+        return view('pages.guest.member.registered-partners', compact('title', 'nav_active', 'mitra'));
     }
 
     // Emission & Climate - Carbon Calculator Page
@@ -276,7 +297,40 @@ class WebPublicController extends Controller
         $title = 'Kumpulan Berita';
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
         $kategori = NewsKategori::all();
-        return view('pages.guest.news.index', compact('title', 'nav_active','kategori'));
+        $data = News::orderBy('created_at', 'desc')->paginate(3); // Menampilkan 1 berita per halaman
+        $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('pages.guest.news.index', compact('title', 'nav_active', 'kategori', 'data', 'recent5'));
     }
-    
+
+    public function newsDetail($slug)
+    {
+        $data = News::where('slug', $slug)->first();
+        if (!$data) {
+            abort(404);
+        } 
+        $data->views = $data->views + 1;
+        $data->save();
+        $title = $data->title;
+        $nav_active = ['berita']; // Kelas untuk menu yang aktif
+        $category = NewsKategori::all();
+        $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('pages.guest.news.detail', compact('title', 'nav_active', 'data', 'category', 'recent5'));
+    }
+
+    public function newsSearch(Request $request)
+    {
+        $request->validate([
+            'search' => [
+                'required',
+                'string', // Pastikan input berupa string
+                'max:255', // Batasi panjang input untuk mencegah overflow
+                'regex:/^[a-zA-Z0-9\s]+$/', // Izinkan hanya alfanumerik dan spasi. Sesuaikan regex ini sesuai kebutuhan.
+            ],
+        ]);
+
+        $text = $request->search;
+        $nav_active = ['berita']; // Kelas untuk menu yang aktif
+        $data = News::where('title', 'like', '%' . $text . '%')->get();
+        return view('pages.guest.news.search', compact('text', 'nav_active', 'data'));
+    }
 }

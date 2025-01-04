@@ -1,4 +1,4 @@
-<section class="tj-project-section-two">
+<section class="tj-project-section-two pt-5 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

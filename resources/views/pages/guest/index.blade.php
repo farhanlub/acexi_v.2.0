@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="tj-slider-section">
+    <section class="tj-slider-section pb-0">
         <div class="swiper hero-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide tj-slider-item">
@@ -73,6 +73,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="swiper-slide tj-slider-item">
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner5.jpg') }}"></div>
+                    <div class="container">
+                        <div class="slider-content me-5"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide tj-slider-item">
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner6.jpg') }}"></div>
+                    <div class="container">
+                        <div class="slider-content me-5"> 
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -81,12 +95,12 @@
         </div>
     </section>
 
-    <section class="tj-process-section">
+    <section class="tj-process-section pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="tj-sec-heading-two ">
-                        <h2 class="title">Kegiatan Terbaru <span><strong>Kami</strong></span></h2>
+                    <div class="tj-sec-heading-two mb-0">
+                        <h2 class="title">Kegiatan Terkini <span><strong>ACEXI</strong></span></h2>
                         <div class="desc">
                             <p>
                                 ACEXI Menampilkan Kegiatan Terbaru dalam Berbagai Bidang Kepakaran</p>
@@ -105,11 +119,11 @@
             </div>
         </div>
     </section>
-    <section class="tj-service-section-two">
+    <section class="tj-service-section-two pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="tj-sec-heading-two">
+                    <div class="tj-sec-heading-two mb-0">
                         <h2 class="title">
                             Program dan Kegiatan
                             <span>ACEXI</span>
@@ -119,7 +133,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="swiper tj-service-slider">
+                    <div class="swiper tj-service-slider pt-0">
                         <div class="swiper-wrapper">
                             @foreach ($programKegiatan as $program)
                                 <div class="swiper-slide">
@@ -157,7 +171,7 @@
     </section>
 
     <!--=========== Process Section Start =========-->
-    <section class="tj-process-section pt-5">
+    <section class="tj-process-section pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -176,7 +190,7 @@
     <!--=========== Process Section End =========-->
 
     <!--=========== Team Section Start =========-->
-    <section class="tj-team-section">
+    <section class="tj-team-section pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
