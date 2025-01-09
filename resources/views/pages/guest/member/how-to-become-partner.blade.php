@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="breadcrumb-wrapper pb-0 bg-success" style=" background-size: auto;">
+<section class="breadcrumb-wrapper" data-bg-image="{{ asset('storage/assets/images/banner/cara_menjadi_anggota.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -12,10 +12,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="contact-bottom-shape">
-            <img src="{{ asset('storage/assets/images/shape/footer-lg-shape.svg') }}" alt="Shape">
-        </div>
+        </div> 
     </section>
     <section class="tj-price-section -0">
         <div class="container">

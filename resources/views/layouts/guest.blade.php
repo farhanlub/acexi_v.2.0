@@ -29,6 +29,8 @@
         }
     </style>
 
+    @yield('css')
+
 </head>
 
 <body>
@@ -96,8 +98,8 @@
                                             Member Sign In<i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     @else
-                                        <a class="btn-outline-success btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile.edit') }}">
-                                            {{ Auth::user()->name }} <i class="fa fa-user"></i>
+                                        <a class="btn-outline-success bg-white text-black btn pt-2 pb-2 ps-3 pe-3" href="{{ route('profile') }}">
+                                             <i class="fa fa-user"></i>
                                         </a>
                                     @endif
                                 </div>
@@ -340,6 +342,7 @@
     <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
     <script src="{{ asset('assets/js/meanmenu.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    @yield('js')
     {{-- <script>
         const nacActiveClasses = @json($nav_active);
         document.querySelectorAll('li').forEach(function(li) {

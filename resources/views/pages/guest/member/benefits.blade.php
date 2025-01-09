@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="breadcrumb-wrapper pb-0 bg-success" style=" background-size: auto;">
+    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('storage/assets/images/banner/manfaat_menjadi_anggota.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -12,9 +12,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="contact-bottom-shape">
-            <img src="{{ asset('storage/assets/images/shape/footer-lg-shape.svg') }}" alt="Shape">
         </div>
     </section>
 
@@ -55,11 +52,10 @@
                         </li>
                     </ul>
                 </div>
-                <a class="tj-primary-btn2 btn" href="https://form.jotform.com/233527511017448">
-                    Daftar Sekarang <i class="flaticon-right-arrow"></i>
-                </a><hr class="mt-5">
+                <a href="https://form.jotform.com/233527511017448" class="btn btn-lg btn-success rounded-0">Daftar Sekarang</a>
+                <hr class="mt-5">
                 <h5>Belum tahu cara menjadi anggota? </h5>
-                <a href="{{ route('anggota.cara') }}" class="btn btn-lg btn-primary">Ikuti petunjuk disini</a>
+                <a href="{{ route('anggota.cara') }}" class="btn btn-lg btn-outline-success rounded-0">Ikuti petunjuk disini</a>
             </div>
         </div>
     </section>

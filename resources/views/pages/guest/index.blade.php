@@ -25,12 +25,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide tj-slider-item">
+                {{-- <div class="swiper-slide tj-slider-item">
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner2.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Jenderal TNI (Purn.) <br> Dr. H. Moeldoko, S.I.P., M.A.</h1>
-                            {{-- <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2> --}}
+                            <h1 class="slider-title" style="font-size: 60px">Jenderal TNI (Purn.) <br> Dr. H. Moeldoko, S.I.P., M.A.</h1> 
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
@@ -45,8 +44,7 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner3.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Prof. Dr. Ir. Rokhmin <br> Dahuri, MS.</h1>
-                            {{-- <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2> --}}
+                            <h1 class="slider-title" style="font-size: 60px">Prof. Dr. Ir. Rokhmin <br> Dahuri, MS.</h1> 
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
@@ -61,8 +59,7 @@
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner4.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Poempida Hidayatulloh, <br> B.Eng., Ph.D., DIC.</h1>
-                            {{-- <h2 class="slider-sub-title">Lorem Ipsum<span>Lorem Ipsum</span></h2> --}}
+                            <h1 class="slider-title" style="font-size: 60px">Poempida Hidayatulloh, <br> B.Eng., Ph.D., DIC.</h1> 
                             <div class="slider-text">
                                 <div class="desc">
                                     <p>
@@ -72,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="swiper-slide tj-slider-item">
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner5.jpg') }}"></div>
                     <div class="container">

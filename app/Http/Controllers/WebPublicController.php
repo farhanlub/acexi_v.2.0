@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Bidang;
 use App\Models\ExpertScope;
 use App\Models\KategoriPengurus;
+use App\Models\Member;
 use App\Models\Mitra;
 use App\Models\News;
 use App\Models\NewsKategori;
@@ -27,7 +28,7 @@ class WebPublicController extends Controller
         $programKegiatan = ProgramKegiatan::all();
         $expertScopes = ExpertScope::all();
         $mitras = Mitra::all();
-        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get();
+        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get(); 
         return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras', 'newsPK'));
     }
 
@@ -224,8 +225,19 @@ class WebPublicController extends Controller
     {
         $title = 'Anggota Terdaftar';
         $nav_active = ['unix-anggota-terdaftar', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.member.registered-members', compact('title', 'nav_active'));
+        $members = Member::where('display', 'Y')->orderBy('nama_lengkap', 'asc')->get(); 
+        return view('pages.guest.member.registered-members', compact('title', 'nav_active','members'));
     }
+    public function registeredMembersDetail($id_member)
+    {
+        $data = Member::where('id_member', $id_member)->where('display','Y')->first();
+        if (!$data) {
+            abort(404);
+        } 
+        $title = 'Profil Anggota ' . $data->nama_lengkap;
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        return view('pages.guest.member.detail-member', compact('title', 'nav_active', 'data'));
+    }                           
     // Member - Partner Benefits Page
     public function partnerBenefits()
     {
@@ -297,7 +309,7 @@ class WebPublicController extends Controller
         $title = 'Kumpulan Berita';
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
         $kategori = NewsKategori::all();
-        $data = News::orderBy('created_at', 'desc')->paginate(3); // Menampilkan 1 berita per halaman
+        $data = News::orderBy('created_at', 'desc')->paginate(6); // Menampilkan 1 berita per halaman
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.guest.news.index', compact('title', 'nav_active', 'kategori', 'data', 'recent5'));
     }
@@ -312,13 +324,13 @@ class WebPublicController extends Controller
         $data->save();
         $title = $data->title;
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
-        $category = NewsKategori::all();
+        $kategori = NewsKategori::all();
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
-        return view('pages.guest.news.detail', compact('title', 'nav_active', 'data', 'category', 'recent5'));
+        return view('pages.guest.news.detail', compact('title', 'nav_active', 'data', 'kategori', 'recent5'));
     }
 
     public function newsSearch(Request $request)
-    {
+    { 
         $request->validate([
             'search' => [
                 'required',
@@ -330,7 +342,23 @@ class WebPublicController extends Controller
 
         $text = $request->search;
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
-        $data = News::where('title', 'like', '%' . $text . '%')->get();
-        return view('pages.guest.news.search', compact('text', 'nav_active', 'data'));
+        $data = News::where('title', 'like', '%' . $text . '%')->get(); 
+        $kategori = NewsKategori::all();
+        $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
+        return view('pages.guest.news.search', compact('text', 'nav_active', 'data', 'kategori', 'recent5'));
+    }
+
+    public function newsCategory($category)
+    {
+        $category = NewsKategori::where('slug', $category)->first();
+        if (!$category) {
+            abort(404);
+        }
+        $title = 'Kategori Berita ' . $category->name;
+        $kategori = NewsKategori::all();
+        $data = News::where('news_category_id', $category->id)->orderBy('created_at', 'desc')->paginate(6); 
+        $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
+        $nav_active = ['berita']; // Kelas untuk menu yang aktif ;
+        return view('pages.guest.news.category', compact('title', 'nav_active', 'kategori', 'data', 'recent5','category'));
     }
 }

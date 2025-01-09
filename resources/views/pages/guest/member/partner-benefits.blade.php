@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="breadcrumb-wrapper pb-0 bg-success" style=" background-size: auto;">
+    <section class="breadcrumb-wrapper" data-bg-image="{{ asset('storage/assets/images/banner/manfaat_menjadi_anggota.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -68,5 +68,4 @@
             </div>
         </div>
     </section>
-    
 @endsection

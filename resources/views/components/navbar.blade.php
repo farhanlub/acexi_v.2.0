@@ -51,7 +51,12 @@
         </a>
         <ul class="sub-menu">
             <li class="anggota-menu has-dropdown">
-                <a style="font-size: 14px" href="#">Anggota</a>
+                <a style="font-size: 14px" href="#">
+                    @if (Auth::check())
+                        <i class="fa fa-crown text-warning"></i>
+                    @endif
+                    Anggota
+                </a>
                 <ul class="sub-menu">
                     <li class="manfaat-anggota"><a style="font-size: 14px" href="{{ route('anggota.manfaat') }}">Manfaat Menjadi Anggota</a></li>
                     <li class="cara-anggota"><a style="font-size: 14px" href="{{ route('anggota.cara') }}">Cara Menjadi Anggota</a></li>
@@ -83,7 +88,7 @@
     </li>
     @if (Auth::check())
         <li class="tren-terbaru">
-            <a style="font-size: 14px" href="#">
+            <a style="font-size: 14px" href="{{ route('tren-terbaru') }}">
                 <i class="fa fa-crown text-warning"></i>
                 Tren Terbaru</a>
         </li>

@@ -61,7 +61,7 @@
                                 </div>
                             @endif
                             <div class="sidebar-search">
-                                <form action="{{ route('program-kegiatan.search') }}" method="GET">
+                                <form action="{{ route('berita.search') }}" method="GET">
                                     <input type="text" name="search" id="searchTwo" placeholder="Search Here">
                                     <button type="submit" value="search">
                                         <i class="fa-light fa-magnifying-glass"></i>
@@ -70,12 +70,12 @@
                             </div>
                         </div>
                         <div class="tj-blog-widget">
-                            <h3 class="side-title">Categories</h3>
+                            <h3 class="side-title">Kategori</h3>
                             <div class="sidebar-catagory">
                                 <ul>
-                                    @foreach ($category as $item)
+                                    @foreach ($kategori as $item)
                                         <li>
-                                            <a href="{{ route('program-kegiatan-kategori', $item->slug) }}">{{ $item->name }}
+                                            <a href="{{ route('berita.kategori', $item->slug) }}">{{ $item->name }}
                                                 <span> <i class="fa-light fa-angle-right"></i></span>
                                             </a>
                                         </li>
@@ -89,7 +89,7 @@
                                 @foreach ($recent5 as $item)
                                     <div class="single-post d-flex align-items-center">
                                         <div class="post-image">
-                                            <a href="blog-details.html">
+                                            <a href="{{ route('berita.detail', $item->slug) }}">
                                                 <img src="{{ asset($item->image) }}" alt="Blog"></a>
                                         </div>
                                         <div class="post-content">
@@ -99,7 +99,7 @@
                                                 </ul>
                                             </div>
                                             <h5 class="title-link">
-                                                <a href="{{ route('program-kegiatan.detail', $item->slug) }}">{{ $item->title }}</a>
+                                                <a href="{{ route('berita.detail', $item->slug) }}">{{ $item->title }}</a>
                                             </h5>
                                         </div>
                                     </div>

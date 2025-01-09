@@ -66,7 +66,7 @@
             <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
                 <h2 class="title">
                     Perjanjian dan
-                    <span>Kesepakatan Global</span>
+                    <span><strong>Kesepakatan Global</strong></span>
                 </h2>
             </div>
             <div class="feature-content w-100">
