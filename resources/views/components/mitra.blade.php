@@ -5,29 +5,20 @@
                 <div class="tj-sec-heading-three text-center">
                     <span class="sub-title">Mitra Terpercaya Kami</span>
                     <h2 class="title">
-                        Bersama Menuju Masa Depan Berkelanjutan 
+                        Bersama Menuju Masa Depan Berkelanjutan
                     </h2>
                 </div>
-            </div> 
+            </div>
         </div>
-    </div>
-    <div class="container-fluid p-0">
-        <div class="row justify-content-center"> 
+
+        <div class="row justify-content-center g-3">
             @foreach ($mitras as $item)
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="tj-project-item-two">
-                        <div class="project-images">
-                            <a href="{{ $item->website_url }}">
-                                <img src="{{ asset($item->image_url) }}" alt="Image">
-                            </a>
-                            <div class="project-content">
-                                <h3 class="title"><a href="{{ $item->website_url }}" target="blank">{{ $item->name }}</a></h3>
-                                {{-- <span>{{ $item->description }}</span> --}}
-                            </div>
-                        </div>
+                <div class="col-md-3">
+                    <div class="card text-start border-0 shadow-sm">
+                        <a href="{{ $item->website_url }}" target="blank" class=" link-opacity-50-hover"><img class="card-img-top" src="{{ asset($item->image_url) }}" alt="Title" /></a>
                     </div>
                 </div>
-            @endforeach 
+            @endforeach
         </div>
-    </div>
+    </div> 
 </section>

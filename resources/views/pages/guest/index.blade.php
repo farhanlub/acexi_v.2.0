@@ -18,58 +18,13 @@
                                 </div>
                                 <div class="slider-button d-flex">
                                     <a class="tj-primary-btn2 btn" href="{{ route('tentang-kami.profil') }}">
-                                        Selenggkapnya <i class="flaticon-right-arrow"></i>
+                                        Selengkapnya <i class="flaticon-right-arrow"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                {{-- <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner2.jpg') }}"></div>
-                    <div class="container">
-                        <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Jenderal TNI (Purn.) <br> Dr. H. Moeldoko, S.I.P., M.A.</h1> 
-                            <div class="slider-text">
-                                <div class="desc">
-                                    <p>
-                                        Asosiasi ini adalah mitra strategis yang menggabungkan keahlian, dedikasi, dan visi untuk menciptakan solusi berkelanjutan. Dengan tim profesional yang memiliki keahlian di berbagai bidang seperti energi terbarukan, pengelolaan karbon, hingga penerapan prinsip ESG, mereka memberikan pendekatan holistik terhadap tantangan lingkungan. Setiap proyek yang dikerjakan mencerminkan komitmen mereka untuk masa depan yang lebih hijau dan inklusif.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner3.jpg') }}"></div>
-                    <div class="container">
-                        <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Prof. Dr. Ir. Rokhmin <br> Dahuri, MS.</h1> 
-                            <div class="slider-text">
-                                <div class="desc">
-                                    <p>
-                                        Asosiasi ini adalah mitra strategis yang menggabungkan keahlian, dedikasi, dan visi untuk menciptakan solusi berkelanjutan. Dengan tim profesional yang memiliki keahlian di berbagai bidang seperti energi terbarukan, pengelolaan karbon, hingga penerapan prinsip ESG, mereka memberikan pendekatan holistik terhadap tantangan lingkungan. Setiap proyek yang dikerjakan mencerminkan komitmen mereka untuk masa depan yang lebih hijau dan inklusif.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide tj-slider-item">
-                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner4.jpg') }}"></div>
-                    <div class="container">
-                        <div class="slider-content me-5">
-                            <h1 class="slider-title" style="font-size: 60px">Poempida Hidayatulloh, <br> B.Eng., Ph.D., DIC.</h1> 
-                            <div class="slider-text">
-                                <div class="desc">
-                                    <p>
-                                        Asosiasi ini adalah mitra strategis yang menggabungkan keahlian, dedikasi, dan visi untuk menciptakan solusi berkelanjutan. Dengan tim profesional yang memiliki keahlian di berbagai bidang seperti energi terbarukan, pengelolaan karbon, hingga penerapan prinsip ESG, mereka memberikan pendekatan holistik terhadap tantangan lingkungan. Setiap proyek yang dikerjakan mencerminkan komitmen mereka untuk masa depan yang lebih hijau dan inklusif.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                </div> 
                 <div class="swiper-slide tj-slider-item">
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner5.jpg') }}"></div>
                     <div class="container">
@@ -79,6 +34,13 @@
                 </div>
                 <div class="swiper-slide tj-slider-item">
                     <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner6.jpg') }}"></div>
+                    <div class="container">
+                        <div class="slider-content me-5"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide tj-slider-item">
+                    <div class="slider-bg-image" data-bg-image="{{ asset('storage/assets/images/banner/banner7.jpg') }}"></div>
                     <div class="container">
                         <div class="slider-content me-5"> 
                         </div>
@@ -123,7 +85,7 @@
                     <div class="tj-sec-heading-two mb-0">
                         <h2 class="title">
                             Program dan Kegiatan
-                            <span>ACEXI</span>
+                            <span><strong>ACEXI</strong></span>
                         </h2>
                     </div>
                 </div>

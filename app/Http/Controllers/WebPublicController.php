@@ -3,7 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Bidang;
 use App\Models\ExpertScope;
+use App\Models\Gallery;
 use App\Models\KategoriPengurus;
+use App\Models\KeberlanjutanPendampingan;
 use App\Models\Member;
 use App\Models\Mitra;
 use App\Models\News;
@@ -11,6 +13,8 @@ use App\Models\NewsKategori;
 use App\Models\NewsProgramKegiatan;
 use App\Models\Pakar;
 use App\Models\ProgramKegiatan;
+use App\Models\RegulationCategory;
+use App\Models\RegulationCC;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -28,7 +32,7 @@ class WebPublicController extends Controller
         $programKegiatan = ProgramKegiatan::all();
         $expertScopes = ExpertScope::all();
         $mitras = Mitra::all();
-        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get(); 
+        $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')->limit(3)->get();
         return view('pages.guest.index', compact('title', 'nav_active', 'testimonials', 'pakars', 'programKegiatan', 'expertScopes', 'mitras', 'newsPK'));
     }
 
@@ -48,7 +52,7 @@ class WebPublicController extends Controller
         $title = 'Programs & Activities ACEXI ' . $data->title;
         $newsPK = NewsProgramKegiatan::orderBy('created_at', 'desc')
             ->where('program_kegiatan_id', $data->id)
-            ->get();
+            ->paginate(4);
         $nav_active = ['']; // Kelas untuk menu yang aktif
         return view('pages.guest.programs-activities.programs-activities-category', compact('title', 'nav_active', 'data', 'newsPK'));
     }
@@ -201,7 +205,16 @@ class WebPublicController extends Controller
     {
         $title = 'Galeri';
         $nav_active = ['unix-galeri', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.about-us.gallery', compact('title', 'nav_active'));
+        $galleries = Gallery::all();
+        return view('pages.guest.about-us.gallery', compact('title', 'nav_active', 'galleries'));
+    }
+
+    public function galleryDetail($slug)
+    {
+        $title = 'Galeri - ';
+        $nav_active = ['unix-galeri', 'unix-tentang-kami']; // Kelas untuk menu yang aktif (termasuk parent)
+        $galleries = Gallery::all();
+        return view('pages.guest.about-us.gallery', compact('title', 'nav_active', 'galleries'));
     }
 
     // Member - Benefits Page
@@ -225,19 +238,19 @@ class WebPublicController extends Controller
     {
         $title = 'Anggota Terdaftar';
         $nav_active = ['unix-anggota-terdaftar', 'unix-anggota']; // Kelas untuk menu yang aktif (termasuk parent)
-        $members = Member::where('display', 'Y')->orderBy('nama_lengkap', 'asc')->get(); 
-        return view('pages.guest.member.registered-members', compact('title', 'nav_active','members'));
+        $members = Member::where('display', 'Y')->orderBy('nama_lengkap', 'asc')->get();
+        return view('pages.guest.member.registered-members', compact('title', 'nav_active', 'members'));
     }
     public function registeredMembersDetail($id_member)
     {
-        $data = Member::where('id_member', $id_member)->where('display','Y')->first();
+        $data = Member::where('id_member', $id_member)->where('display', 'Y')->first();
         if (!$data) {
             abort(404);
-        } 
+        }
         $title = 'Profil Anggota ' . $data->nama_lengkap;
         $nav_active = ['']; // Kelas untuk menu yang aktif
         return view('pages.guest.member.detail-member', compact('title', 'nav_active', 'data'));
-    }                           
+    }
     // Member - Partner Benefits Page
     public function partnerBenefits()
     {
@@ -276,7 +289,9 @@ class WebPublicController extends Controller
     {
         $title = 'Keberlanjutan & Pendampingan';
         $nav_active = ['unix-keberlanjutan-pendampingan', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.sustainability-assistance', compact('title', 'nav_active'));
+        $keberlanjutan = KeberlanjutanPendampingan::where('type','keberlanjutan')->get();
+        $pendampingan = KeberlanjutanPendampingan::where('type','pendampingan')->get();
+        return view('pages.guest.sustainability-assistance', compact('title', 'nav_active','keberlanjutan','pendampingan'));
     }
 
     // Emission & Climate - Climate Change Indonesia Page
@@ -300,7 +315,46 @@ class WebPublicController extends Controller
     {
         $title = 'Climate Change Regulations';
         $nav_active = ['unix-climate-change-regulations', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
-        return view('pages.guest.cc-regulations', compact('title', 'nav_active'));
+        $categories = RegulationCategory::all();
+        $data = [];
+        $category = [];
+        $year = request('year'); // Ambil parameter 'year' dari request
+
+        // Jika tab kosong, ambil data berdasarkan kategori pertama dan tahun jika ada
+        if (request('tab') == '') {
+            $category = $categories[0]; // Ambil kategori pertama jika 'tab' kosong
+
+            $dataQuery = RegulationCC::where('regulation_categories_id', $category->id); // Query untuk kategori pertama
+
+            // Jika ada parameter tahun, filter berdasarkan tahun
+            if ($year) {
+                $dataQuery->where('year', $year);
+            }
+
+            $data = $dataQuery->paginate(5); // Ambil data yang telah difilter
+        } else {
+            // Jika parameter 'tab' ada, ambil kategori berdasarkan slug
+            $category = RegulationCategory::where('slug', request('tab'))->first();
+
+            // Query berdasarkan kategori dan filter berdasarkan tahun jika ada
+            $dataQuery = RegulationCC::where('regulation_categories_id', $category->id)->orderBy('year', 'desc'); // Urutkan berdasarkan tahun
+
+            // Jika ada parameter tahun, filter berdasarkan tahun
+            if ($year) {
+                $dataQuery->where('year', $year);
+            }
+
+            // Paginasi data
+            $data = $dataQuery->paginate(5);
+        }
+
+        // Mengambil data tahun yang unik (tanpa duplikat)
+        $years = RegulationCC::select('year')->distinct()->get();
+        // Menampilkan data tahun sebagai array
+        $yearsArray = $years->pluck('year')->toArray(); 
+ 
+        // Mengembalikan view dengan data yang telah diproses
+        return view('pages.guest.cc-regulations', compact('title', 'nav_active', 'categories', 'category', 'data', 'yearsArray'));
     }
 
     // News Page
@@ -309,7 +363,7 @@ class WebPublicController extends Controller
         $title = 'Kumpulan Berita';
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
         $kategori = NewsKategori::all();
-        $data = News::orderBy('created_at', 'desc')->paginate(6); // Menampilkan 1 berita per halaman
+        $data = News::orderBy('created_at', 'desc')->paginate(5); // Menampilkan 1 berita per halaman
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.guest.news.index', compact('title', 'nav_active', 'kategori', 'data', 'recent5'));
     }
@@ -319,7 +373,7 @@ class WebPublicController extends Controller
         $data = News::where('slug', $slug)->first();
         if (!$data) {
             abort(404);
-        } 
+        }
         $data->views = $data->views + 1;
         $data->save();
         $title = $data->title;
@@ -330,7 +384,7 @@ class WebPublicController extends Controller
     }
 
     public function newsSearch(Request $request)
-    { 
+    {
         $request->validate([
             'search' => [
                 'required',
@@ -342,7 +396,7 @@ class WebPublicController extends Controller
 
         $text = $request->search;
         $nav_active = ['berita']; // Kelas untuk menu yang aktif
-        $data = News::where('title', 'like', '%' . $text . '%')->get(); 
+        $data = News::where('title', 'like', '%' . $text . '%')->paginate(6);
         $kategori = NewsKategori::all();
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.guest.news.search', compact('text', 'nav_active', 'data', 'kategori', 'recent5'));
@@ -356,9 +410,11 @@ class WebPublicController extends Controller
         }
         $title = 'Kategori Berita ' . $category->name;
         $kategori = NewsKategori::all();
-        $data = News::where('news_category_id', $category->id)->orderBy('created_at', 'desc')->paginate(6); 
+        $data = News::where('news_category_id', $category->id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
         $nav_active = ['berita']; // Kelas untuk menu yang aktif ;
-        return view('pages.guest.news.category', compact('title', 'nav_active', 'kategori', 'data', 'recent5','category'));
+        return view('pages.guest.news.category', compact('title', 'nav_active', 'kategori', 'data', 'recent5', 'category'));
     }
 }

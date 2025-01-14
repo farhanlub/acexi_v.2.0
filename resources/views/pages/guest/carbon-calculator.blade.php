@@ -63,16 +63,7 @@
              <div class="about-image-group-three">
                 <div class="about-top-image">
                    <img src="{{ asset('storage/assets/images/logos/carbonfootprintlogo.png') }}" alt="Images">
-                </div>  
-                <div class="shape-one">
-                   <img src="assets/images/shape/about-shape-1.svg" alt="Shape">
-                </div>
-                <div class="shape-two">
-                   <img src="assets/images/shape/about-shape-2.svg" alt="Shape">
-                </div>
-                <div class="shape-three">
-                   <img src="assets/images/shape/about-shape-3.svg" alt="Shape">
-                </div>
+                </div>    
              </div>
           </div>
        </div>

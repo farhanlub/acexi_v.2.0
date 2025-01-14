@@ -10,10 +10,10 @@ class WebPrivateController extends Controller
     // News Page
     public function tren()
     {
-        $title = 'Kumpulan Berita';
+        $title = 'Tren Terbaru';
         $nav_active = ['berita'];
         $kategori = TrenCategory::all();
-        $data = Tren::orderBy('created_at', 'desc')->paginate(6);
+        $data = Tren::orderBy('created_at', 'desc')->paginate(4);
         $recent5 = Tren::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.member.tren.index', compact('title', 'nav_active', 'kategori', 'data', 'recent5'));
     }
@@ -45,8 +45,10 @@ class WebPrivateController extends Controller
         ]);
 
         $text = $request->search;
-        $nav_active = ['berita'];
-        $data = Tren::where('title', 'like', '%' . $text . '%')->get();
+        $nav_active = ['tren'];
+        $data = Tren::where('title', 'like', '%' . $text . '%')
+            ->orderBy('created_at', 'desc')
+            ->paginate(4);
         $kategori = TrenCategory::all();
         $recent5 = Tren::orderBy('created_at', 'desc')->limit(5)->get();
         return view('pages.member.tren.search', compact('text', 'nav_active', 'data', 'kategori', 'recent5'));
@@ -58,13 +60,13 @@ class WebPrivateController extends Controller
         if (!$category) {
             abort(404);
         }
-        $title = 'Kategori Tren Terbaru ' . $category->name;
+        $title = 'Tren Terbaru - ' . $category->name;
         $kategori = TrenCategory::all();
         $data = Tren::where('tren_category_id', $category->id)
             ->orderBy('created_at', 'desc')
-            ->paginate(6);
+            ->paginate(4);
         $recent5 = Tren::orderBy('created_at', 'desc')->limit(5)->get();
-        $nav_active = ['berita']; ;
+        $nav_active = ['berita'];
         return view('pages.member.tren.category', compact('title', 'nav_active', 'kategori', 'data', 'recent5', 'category'));
     }
 }

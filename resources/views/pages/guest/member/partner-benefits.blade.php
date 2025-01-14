@@ -12,10 +12,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="contact-bottom-shape">
-            <img src="{{ asset('storage/assets/images/shape/footer-lg-shape.svg') }}" alt="Shape">
-        </div>
+        </div> 
     </section>
     <section class="tj-project-section-two pb-5 mb-5">
         <div class="container">

@@ -22,7 +22,7 @@
                         <div class="tj-sec-heading-two" style="max-width: 100%">
                             <h2 class="title">
                                 Kriteria
-                                <span>Calon Anggota</span>
+                                <span><strong>Calon Anggota</strong></span>
                             </h2>
                             <div class="desc">
                                 <p>
@@ -55,7 +55,7 @@
                         <div class="tj-sec-heading-two" style="max-width: 100%">
                             <h2 class="title">
                                 Langkah-Langkah
-                                <span>Pendaftaran</span>
+                                <span><strong>Pendaftaran</strong></span>
                             </h2>
                             <div class="desc"> 
                                 <div class="tj-price-item border-0 bg-transparent ps-0">

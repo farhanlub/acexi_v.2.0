@@ -33,93 +33,36 @@
                         <span class="sub-title">Galeri ACEXI</span>
                         <h2 class="title">
                             Menampilkan Kegiatan dan Proyek <br>
-                            <span>Asosiasi ACEXI</span>
+                            <span><strong>ACEXI</strong></span>
                         </h2>
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-1.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Pelatihan Tenaga Ahli Energi Terbarukan</a></h3>
-                                <span class="sub-title">Peningkatan Kapasitas untuk Masa Depan Energi</span>
+                @foreach ($galleries as $key => $item)
+                    @php
+                        // Menentukan pola untuk empat data pertama: 8, 4, 4, 8, dan seterusnya hanya 4
+                        if ($key < 4) {
+                            $colClass = [8, 4, 4, 8][$key]; // Menggunakan pola 8, 4, 4, 8 untuk 4 data pertama
+                        } else {
+                            $colClass = 4; // Kolom berikutnya hanya 4
+                        }
+                    @endphp
+                    <div class="col-lg-{{ $colClass }}">
+                        <div class="tj-project-item">
+                            <div class="project-image">
+                                <img src="{{ asset($item->image) }}" style="height: 263px" alt="Image" class="w-100 object-fit-cover rounded">
+                                <div class="project-content">
+                                    <h3 class="title"><a href="{{ route('tentang-kami.galeri-detail',$item->slug) }}">{{ $item->title }}</a></h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-2.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Seminar tentang Solusi Energi Ramah Lingkungan</a></h3>
-                                <span class="sub-title">Diskusi Inovasi untuk Keberlanjutan</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-8.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Pameran Teknologi Energi Terbarukan</a></h3>
-                                <span class="sub-title">Menampilkan Inovasi dalam Energi Bersih</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-9.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Workshop Solusi Pengelolaan Energi</a></h3>
-                                <span class="sub-title">Pendekatan Praktis untuk Industri</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-10.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Forum Diskusi Kebijakan Energi Terbarukan</a></h3>
-                                <span class="sub-title">Menyusun Langkah Bersama untuk Kebijakan Hijau</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-11.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Rapat Kerja Asosiasi ACEXI 2023</a></h3>
-                                <span class="sub-title">Evaluasi dan Perencanaan Ke Depan</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tj-project-item">
-                        <div class="project-image">
-                            <img src="{{ asset('storage/assets/images/project/project-12.jpg') }}" alt="Image">
-                            <div class="project-content">
-                                <h3 class="title"><a href="#">Kolaborasi dengan Pemerintah untuk Energi Terbarukan</a></h3>
-                                <span class="sub-title">Menjamin Implementasi Solusi Energi Bersih</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+ 
             </div>
-            
+
         </div>
     </section>
-    
 @endsection

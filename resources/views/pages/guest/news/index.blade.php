@@ -42,11 +42,9 @@
                                     </a>
                                 </div>
                             </div>
-                        @endforeach
-                        <div class="blog-pagination">
-                            <ul>
-                                {{ $data->links('pagination::simple-tailwind') }}
-                            </ul>
+                        @endforeach 
+                        <div class="mt-4"> 
+                            {{ $data->appends([])->links('vendor.pagination.custom-bootstrap-5') }}
                         </div>
                     </div>
                 </div>
@@ -54,7 +52,7 @@
                     <div class="tj-main-sidebar">
                         <div class="tj-blog-widget">
                             <div class="sidebar-search">
-                                <form action="#">
+                                <form action="{{ route('berita.search') }}" method="GET">
                                     <input type="text" name="search" id="searchTwo" placeholder="Search Here">
                                     <button type="submit" value="search">
                                         <i class="fa-light fa-magnifying-glass"></i>

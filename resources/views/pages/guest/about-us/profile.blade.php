@@ -64,7 +64,7 @@
                     <div class="tj-sec-heading-two w-100" style="max-width: 100% !important;"> 
                         <h2 class="title text">
                             Apa yang Kami
-                            <span>Lakukan</span>
+                            <span><strong>Lakukan</strong></span>
                         </h2>
                         <div class="desc">
                             <p>
@@ -173,7 +173,7 @@
                     <div class="tj-sec-heading-two mb-3"> 
                         <h2 class="title">
                             Peran dan Kontribusi
-                            <span>ACEXI</span>
+                            <span><strong>ACEXI</strong></span>
                         </h2>
                     </div>
                 </div>

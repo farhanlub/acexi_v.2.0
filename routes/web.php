@@ -35,6 +35,7 @@ Route::get('/tentang-kami/profil-pengurus/{slug}', [WebPublicController::class, 
 Route::get('/tentang-kami/lingkup-kepakaran', [WebPublicController::class, 'areaOfExpertise'])->name('tentang-kami.lingkup-kepakaran');
 Route::get('/tentang-kami/lingkup-kepakaran/{slug}', [WebPublicController::class, 'areaOfExpertiseDetail'])->name('tentang-kami.lingkup-kepakaran.detai');
 Route::get('/tentang-kami/galeri', [WebPublicController::class, 'gallery'])->name('tentang-kami.galeri');
+Route::get('/tentang-kami/galeri/{slug}', [WebPublicController::class, 'galleryDetail'])->name('tentang-kami.galeri-detail');
 
 // Member sub-menu
 Route::get('/anggota/manfaat', [WebPublicController::class, 'memberBenefits'])->name('anggota.manfaat');

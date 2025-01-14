@@ -27,7 +27,10 @@
                                         @include('components.news', ['data' => $item])
                                     </div>
                                 @endforeach
-                            </div> 
+                            </div>  
+                            <div class="mt-4">
+                                {{ $data->appends(['search' => request('search')])->links('vendor.pagination.custom-bootstrap-5') }}
+                            </div>
                         </div>
                     @endif
 

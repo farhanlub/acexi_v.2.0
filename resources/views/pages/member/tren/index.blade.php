@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="breadcrumb-wrapper" data-bg-image="https://i.pinimg.com/550x/64/01/09/6401090da33cb13ee835da4cc28fc652.jpg">
+    <section class="breadcrumb-wrapper" data-bg-image="https://cdn.dribbble.com/users/2101653/screenshots/5650189/media/949e19b541dc94968d3adec63f6d9fd1.jpg?resize=400x0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -20,8 +20,7 @@
                 <div class="col-lg-8">
                     @if (count($data) == 0)
                         <div class="alert alert-info">
-                            <h4 class="alert-heading">Tidak ada berita</h4>
-                            <p>Belum ada berita dalam kategori ini.</p>
+                            <h4 class="alert-heading">Tidak ada berita</h4> 
                         </div>
                     @else
                         <div class="sidebar-wrapper">
@@ -32,10 +31,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="blog-pagination mt-5">
-                                <ul>
-                                    {{ $data->links('pagination::simple-tailwind') }}
-                                </ul>
+                            <div class="mt-4"> 
+                                {{ $data->appends([])->links('vendor.pagination.custom-bootstrap-5') }}
                             </div>
                         </div>
                     @endif

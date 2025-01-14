@@ -85,7 +85,7 @@
             <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
                 <h2 class="title">
                     Laporan
-                    <span>Internasional</span>
+                    <span><strong>Internasional</strong></span>
                 </h2>
             </div>
             <div class="about-feature-item gap-2">
@@ -127,7 +127,7 @@
             <div class="tj-sec-heading-two  mb-0" style="max-width: 100% !important;">
                 <h2 class="title">
                     Sumber Data dan
-                    <span>Platform Global</span>
+                    <span><strong>Platform Global</strong></span>
                 </h2>
             </div>
 

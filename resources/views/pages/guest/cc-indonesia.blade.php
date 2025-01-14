@@ -66,7 +66,7 @@
                     <div class="tj-sec-heading-two mb-0">
                         <h2 class="title">
                             Laporan dan
-                            <span>Dokumen Resmi</span>
+                            <span><strong>Dokumen Resmi</strong></span>
                         </h2>
                     </div> 
             <div class="row">
@@ -135,7 +135,7 @@
             <div class="tj-sec-heading-two mb-0">
                 <h2 class="title">
                     Kebijakan dan
-                    <span>Rencana Nasional</span>
+                    <span><strong>Rencana Nasional</strong></span>
                 </h2>
             </div> 
             <div class="row">
@@ -184,7 +184,7 @@
             <div class="tj-sec-heading-two mb-0">
                 <h2 class="title">
                     Riset dan
-                    <span>Kajian Akademisi</span>
+                    <span><strong>Kajian Akademisi</strong></span>
                 </h2>
             </div> 
             <div class="about-feature-item gap-2">

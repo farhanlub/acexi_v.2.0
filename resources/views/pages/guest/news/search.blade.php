@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section class="breadcrumb-wrapper pb-0 bg-success" style=" padding-top: 155px; background-size: auto;"> 
+    <section class="breadcrumb-wrapper pb-0 bg-success" style=" padding-top: 155px; background-size: auto;">
         <div class="contact-bottom-shape">
             <img src="{{ asset('storage/assets/images/shape/footer-lg-shape.svg') }}" alt="Shape">
         </div>
@@ -27,10 +27,13 @@
                                         @include('components.news', ['data' => $item])
                                     </div>
                                 @endforeach
-                            </div> 
+                            </div>
                         </div>
                     @endif
 
+                    <div class="mt-4">
+                        {{ $data->appends(['search' => request('search')])->links('vendor.pagination.custom-bootstrap-5') }}
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="tj-main-sidebar">

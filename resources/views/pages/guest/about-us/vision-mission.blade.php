@@ -33,7 +33,7 @@
                     <span class="sub-title">Nilai Kami</span>
                     <h2 class="title">
                         Sumber Energi yang Lebih Baik untuk <br>
-                        <span>Masa Depan yang Lebih Berkelanjutan</span>
+                        <span><strong>Masa Depan yang Lebih Berkelanjutan</strong></span>
                     </h2>
                     
                     

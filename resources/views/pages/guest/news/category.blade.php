@@ -34,15 +34,12 @@
                                         @include('components.news', ['data' => $item])
                                     </div>
                                 @endforeach
-                            </div>
-                            <div class="blog-pagination mt-5">
-                                <ul>
-                                    {{ $data->links('pagination::simple-tailwind') }}
-                                </ul>
-                            </div>
+                            </div> 
                         </div>
                     @endif
-
+                    <div class="mt-4">
+                        {{ $data->appends([])->links('vendor.pagination.custom-bootstrap-5') }}
+                    </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="tj-main-sidebar">

@@ -35,10 +35,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="blog-pagination mt-5">
-                                <ul>
-                                    {{ $data->links('pagination::simple-tailwind') }}
-                                </ul>
+                            <div class="mt-4">
+                                {{ $data->appends([])->links('vendor.pagination.custom-bootstrap-5') }}
                             </div>
                         </div>
                     @endif
