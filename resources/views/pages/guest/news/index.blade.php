@@ -14,29 +14,29 @@
             </div>
         </div>
     </section>
-    <section class="tj-blog-details">
+    <section class="tj-blog-details pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="sidebar-wrapper">
                         @foreach ($data as $item)
-                            <div class="details-item">
+                            <div class="details-item shadow-sm mb-3">
                                 <div class="blog-thumb-image">
                                     <a href="{{ route('berita.detail', $item->slug) }}"><img src="{{ asset($item->image) }}" alt="Image"></a>
                                 </div>
-                                <div class="blog-meta-two">
+                                <div class="blog-meta-two mb-3 ps-3 pe-3">
                                     <ul>
                                         <li><i class="flaticon-calendar"></i> {{ date('d M Y', strtotime($item->created_at)) }}</li>
                                         <li><i class="fa-light fa-eye"></i> {{ number_format($item->views) }}</li>
                                     </ul>
                                 </div>
-                                <div class="details-title">
-                                    <h3 class="title"><a href="{{ route('berita.detail', $item->slug) }}">{{ $item->title }}</a></h3>
+                                <div class="details-title mb-3 ps-3 pe-3">
+                                    <h3 class="title mb-0"><a href="{{ route('berita.detail', $item->slug) }}">{{ $item->title }}</a></h3>
                                 </div>
-                                <p>
+                                <p class=" ps-3 pe-3">
                                     {{ Str::limit($item->desc, 150) }}
                                 </p>
-                                <div class="blog-button d-flex">
+                                <div class="blog-button d-flex ps-3 pe-3 pb-3 mt-3">
                                     <a class="tj-primary-btn btn btn-sm" href="{{ route('berita.detail', $item->slug) }}">
                                         Selengkapnya <i class="flaticon-right-arrow"></i>
                                     </a>

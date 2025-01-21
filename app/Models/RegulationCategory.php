@@ -20,4 +20,8 @@ class RegulationCategory extends Model
     {
         return $this->hasMany(RegulationCC::class, 'regulation_categories_id');
     }
+    public function regulationsKebijakan()
+    {
+        return $this->hasMany(RegulationKebijakan::class, 'regulation_categories_id');
+    }
 }

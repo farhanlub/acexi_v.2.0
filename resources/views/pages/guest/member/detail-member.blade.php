@@ -26,11 +26,13 @@
                         <div class="team-image shadow-sm">
                             <img src="{{ $data->image != null ? asset($data->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" alt="Image">
                         </div>
-                        <a href="{{ route('anggota.anggota-terdaftar') }}" class="btn  btn-danger"><i  class="fa fa-arrow-left me-2"></i> Kembali</a>
+                        @if (Auth::check())
+                            <a href="{{ route('anggota.anggota-terdaftar') }}" class="btn  btn-danger"><i class="fa fa-arrow-left me-2"></i> Kembali</a>
+                        @endif
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <div class=" shadow-sm  rounded p-2"> 
+                    <div class=" shadow-sm  rounded p-2">
                         <table class="table table-striped">
                             <tr>
                                 <td class="text-nowrap">Nama</td>
@@ -86,7 +88,7 @@
                             </tr>
                             <tr>
                                 <td class="text-nowrap">Website Perusahaan</td>
-                                <td>: 
+                                <td>:
                                     @if ($data->website_perusahaan_on == 'Y' && $data->website_perusahaan)
                                         <a href="{{ Str::startsWith($data->website_perusahaan, 'http://') || Str::startsWith($data->website_perusahaan, 'https://') ? $data->website_perusahaan : 'https://' . $data->website_perusahaan }}" target="_blank">{{ $data->website_perusahaan }}</a>
                                     @else
@@ -99,7 +101,7 @@
                                 <td>: {{ $data->nama_asosiasi_on == 'Y' && $data->nama_asosiasi ? $data->nama_asosiasi : '-' }}</td>
                             </tr>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>

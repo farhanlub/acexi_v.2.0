@@ -233,6 +233,17 @@ class WebPublicController extends Controller
         return view('pages.guest.member.how-to-join', compact('title', 'nav_active'));
     }
 
+    function member(Request $request){
+        $id = $request->id;
+        $data = Member::where('id_member', $id)->first();
+        if (!$data) {
+            abort(404);
+        }
+        $title = 'Profil Anggota ' . $data->nama_lengkap;
+        $nav_active = ['']; // Kelas untuk menu yang aktif
+        return view('pages.guest.member.detail-member', compact('title', 'nav_active', 'data'));
+    }
+
     // Member - Registered Members Page
     public function registeredMembers()
     {
@@ -308,6 +319,14 @@ class WebPublicController extends Controller
         $title = 'Climate Change 101 Global';
         $nav_active = ['unix-climate-change-global', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
         return view('pages.guest.cc-global', compact('title', 'nav_active'));
+    }
+
+    // Emission & Climate - Climate Change Global Page
+    public function donasi()
+    {
+        $title = 'Donasi ACEXI';
+        $nav_active = ['unix-climate-change-global', 'unix-emisi-iklim']; // Kelas untuk menu yang aktif (termasuk parent)
+        return view('pages.guest.donasi', compact('title', 'nav_active'));
     }
 
     // Emission & Climate - Climate Change Regulations Page

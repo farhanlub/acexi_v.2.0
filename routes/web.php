@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebPublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\WebPrivateController;
+use App\Http\Middleware\RoleMiddleware;
 
 Route::get('/', [WebPublicController::class, 'beranda'])->name('beranda');
 Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
@@ -40,6 +42,7 @@ Route::get('/tentang-kami/galeri/{slug}', [WebPublicController::class, 'galleryD
 // Member sub-menu
 Route::get('/anggota/manfaat', [WebPublicController::class, 'memberBenefits'])->name('anggota.manfaat');
 Route::get('/anggota/cara', [WebPublicController::class, 'howToJoin'])->name('anggota.cara');
+Route::get('/member', [WebPublicController::class, 'member'])->name('anggota.cari');
 
 Route::get('/mitra/manfaat', [WebPublicController::class, 'partnerBenefits'])->name('mitra.manfaat');
 Route::get('/mitra/cara', [WebPublicController::class, 'howToJoinMitra'])->name('mitra.cara');
@@ -54,8 +57,9 @@ Route::get('/climate-change-101/peraturan', [WebPublicController::class, 'ccPera
 
 Route::get('/faq', [WebPublicController::class, 'faq'])->name('faq');
 
-Route::middleware('auth')->group(function () {
+Route::get('/donasi', [WebPublicController::class, 'donasi'])->name('donasi');
 
+Route::middleware('auth')->group(function () {
     Route::get('/tren-terbaru', [WebPrivateController::class, 'tren'])->name('tren-terbaru');
     Route::get('/tren-terbaru/search/', [WebPrivateController::class, 'trenSearch'])->name('tren-terbaru.search');
     Route::get('/tren-terbaru/{slug}', [WebPrivateController::class, 'trenDetail'])->name('tren-terbaru.detail');
@@ -66,6 +70,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/studi-kasus/{slug}', [WebPrivateController::class, 'studiDetail'])->name('studi-kasus.detail');
     Route::get('/studi-kasus/kategori/{category}', [WebPrivateController::class, 'studiCategory'])->name('studi-kasus.kategori');
 
+    Route::get('/regulasi-dan-kebijakan', [WebPrivateController::class, 'regulasiKebijakan'])->name('regulasi-dan-kebijakan');
+
     Route::get('/anggota/anggota-terdaftar', [WebPublicController::class, 'registeredMembers'])->name('anggota.anggota-terdaftar');
     Route::get('/anggota/anggota-terdaftar/{id_member}', [WebPublicController::class, 'registeredMembersDetail'])->name('anggota.anggota-terdaftar.detail');
     Route::get('/profil', [ProfileController::class, 'index'])->name('profile');
@@ -73,6 +79,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profil/edit-kata-sandi', [ProfileController::class, 'editPassword'])->name('profile.edit.kata-sandi');
     Route::put('/profil/update-kata-sandi', [ProfileController::class, 'updatePassword'])->name('profile.update.kata-sandi');
     Route::put('/profil/update', [ProfileController::class, 'update'])->name('profile.update');
-});
 
+    Route::prefix('admin')
+        ->middleware(['auth', RoleMiddleware::class])
+        ->group(function () {
+            Route::get('/dashboard', [AdminController::class, 'index'])->name('admin-dashboard');
+            Route::get('/member', [AdminController::class, 'member'])->name('admin-member');
+        });
+});
 require __DIR__ . '/auth.php';

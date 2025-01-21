@@ -95,7 +95,7 @@
     @endif
     @if (Auth::check())
         <li class="studi-kasus">
-            <a style="font-size: 14px" href="#">
+            <a style="font-size: 14px" href="{{ route('studi-kasus') }}">
                 <i class="fa fa-crown text-warning"></i>
                 Studi Kasus
             </a>
@@ -103,7 +103,7 @@
     @endif
     @if (Auth::check())
         <li class="regulasi-kebijakan">
-            <a style="font-size: 14px" href="#">
+            <a style="font-size: 14px" href="{{ route('regulasi-dan-kebijakan') }}">
                 <i class="fa fa-crown text-warning"></i>
                 Regulasi & Kebijakan
             </a>

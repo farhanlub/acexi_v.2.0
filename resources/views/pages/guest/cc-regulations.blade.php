@@ -7,7 +7,8 @@
                 <div class="breadcrumb-link">
                     <span>
                         <a href="#">
-                            <span>Database Peraturan Climate Change</span>
+                            <span>Database Peraturan  Pengendalian Perubahan Iklim
+                            </span>
                         </a>
                     </span>
                 </div>
@@ -55,8 +56,7 @@
                                 <div class="col-12">
                                     <div class="card text-start border-0 shadow-sm">
                                         <div class="card-body">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <small class="border border-success-subtle text-sm border ps-2 pe-2 rounded">{{ $item->belongToBy->name }}</small>
+                                            <div class="d-flex justify-content-end align-items-center"> 
                                                 <button class="btn-secondary btn btn-sm">{{ $item->year }}</button>
                                             </div>
                                             <hr>
