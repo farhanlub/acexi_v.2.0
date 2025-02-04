@@ -11,18 +11,14 @@ class KategoriPengurus extends Model
 
     protected $table = 'kategori_pengurus';
     // Kolom yang bisa diisi secara massal
-    protected $fillable = [
-        'name',
-        'sort', 
-    ];
-
+    protected $fillable = ['name', 'sort'];
     public function pengurus()
     {
-        return $this->hasMany(Pengurus::class);
+        return $this->hasMany(Pengurus::class, 'kategori_pengurus_id')->orderBy('sort', 'asc');
     }
 
     public function bidang()
     {
-        return $this->hasMany(Bidang::class,'kategori_pengurus_id');
+        return $this->hasMany(Bidang::class, 'kategori_pengurus_id');
     }
 }

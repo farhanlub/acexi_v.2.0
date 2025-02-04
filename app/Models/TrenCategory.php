@@ -16,5 +16,11 @@ class TrenCategory extends Model
         'slug',
         'desc', 
     ];
+
+    public function tren()
+    {
+        return $this->hasMany(Tren::class, 'tren_category_id');
+    }
+
     
 }

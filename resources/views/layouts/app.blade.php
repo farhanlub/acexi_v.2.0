@@ -10,38 +10,41 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{ asset('storage/assets/images/logos/icon.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('storage/assets/images/logos/icon.png') }}" type="image/x-icon">
-    <title>Admin ACEXI </title>
+    <title>Portal Website ACEXI</title>
+    @yield('css')
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     <!-- Font Awesome-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/fontawesome.css') }}">
     <!-- ico-font-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/icofont.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/icofont.css') }}">
     <!-- Themify icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/themify.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/themify.css') }}">
     <!-- Flag icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/flag-icon.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/flag-icon.css') }}">
     <!-- Feather icon-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/feather-icon.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/feather-icon.css') }}">
     <!-- Plugins css start-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/slick.css">
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/select.bootstrap5.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/scrollbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/prism.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/sweetalert2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/jquery.dataTables.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/dataTables.bootstrap5.css') }}">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/vendors/bootstrap.css') }}">
     <!-- App css-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/style.css">
-    <link id="color" rel="stylesheet" href="../assets/admin/assets/css/color-1.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/style.css') }}">
+    <link id="color" rel="stylesheet" href="{{ asset('assets/admin/assets/css/color-1.css') }}" media="screen">
     <!-- Responsive css-->
-    <link rel="stylesheet" type="text/css" href="../assets/admin/assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin/assets/css/responsive.css') }}">
 </head>
 
-<body onload="startTime()">
+<body>
     <!-- loader starts-->
     <div class="loader-wrapper">
         <div class="loader-index"> <span></span></div>
@@ -79,10 +82,10 @@
                 </div>
                 <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">
                     <div class="notification-slider">
-                        <div class="d-flex h-100"> <img src="../assets/admin/assets/images/giftools.gif" alt="gif">
+                        <div class="d-flex h-100"> <img src="{{ asset('assets/admin/assets/images/giftools.gif') }}" alt="gif">
                             <h6 class="mb-0 f-w-400"><span class="font-primary">Don't Miss Out! </span><span class="f-light"> Out new update has been release.</span></h6><i class="icon-arrow-top-right f-light"></i>
                         </div>
-                        <div class="d-flex h-100"><img src="../assets/admin/assets/images/giftools.gif" alt="gif">
+                        <div class="d-flex h-100"><img src="{{ asset('assets/admin/assets/images/giftools.gif') }}" alt="gif">
                             <h6 class="mb-0 f-w-400"><span class="f-light">Something you love is now on sale! </span></h6><a class="ms-1" href="https://1.envato.market/3GVzd" target="_blank">Buy now !</a>
                         </div>
                     </div>
@@ -92,23 +95,26 @@
                         <li>
                             <div class="mode">
                                 <svg>
-                                    <use href="../assets/admin/assets/svg/icon-sprite.svg#moon"></use>
+                                    <use href="{{ asset('/assets/admin/assets/svg/icon-sprite.svg#moon') }}"></use>
                                 </svg>
                             </div>
                         </li>
 
                         <li class="profile-nav onhover-dropdown pe-0 py-0">
-                            <div class="d-flex profile-media"><img class="b-r-10" style="width: 35px; height: 35px" src="{{ asset($user->member->image) }}" alt="">
-                                <div class="flex-grow-1"><span>{{ $user->member->nama_lengkap }}</span>
+                            <div class="d-flex profile-media"><img class="b-r-10" style="width: 35px; height: 35px" src="{{ Auth::user()->pengurus->image != null ? asset(Auth::user()->pengurus->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" alt="">
+                                <div class="flex-grow-1"><span>{{ $user->pengurus->name }}</span>
                                     <p class="mb-0">Admin <i class="middle fa-solid fa-angle-down"></i></p>
                                 </div>
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
-                                <li><a href="sign-up.html"><i data-feather="user"></i><span>Account </span></a></li>
-                                <li><a href="mail-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                                <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                                <li><a href="add-user.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                                <li><a href="login.html"><i data-feather="log-in"> </i><span>Log out</span></a></li>
+                                <li><a href="{{ route('profile.edit',Auth::id()) }}"><i data-feather="settings"></i><span>Settings</span></a></li>
+                                <li><a href="login.html">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" class="bg-transparent border-0 shadow-none m-0 p-0"><i data-feather="log-in"> </i><span>Logout</span></button>
+                                        </form>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -134,12 +140,12 @@
                         <div class="back-btn"><i class="fa-solid fa-angle-left"></i></div>
                         <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
                     </div>
-                    <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/admin/assets/images/logo/logo-icon.png" alt=""></a></div>
+                    <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" src="{{ asset('assets/admin/assets/images/logo/logo-icon.png') }}" alt=""></a></div>
                     <nav class="sidebar-main">
                         <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
                         <div id="sidebar-menu">
                             <ul class="sidebar-links" id="simple-bar">
-                                <li class="back-btn"><a href="index.html"><img class="img-fluid" src="../assets/admin/assets/images/logo/logo-icon.png" alt=""></a>
+                                <li class="back-btn"><a href="index.html"><img class="img-fluid" src="{{ asset('assets/admin/assets/images/logo/logo-icon.png') }}" alt=""></a>
                                     <div class="mobile-back text-end"><span>Back</span><i class="fa-solid fa-angle-right ps-2" aria-hidden="true"></i></div>
                                 </li>
                                 <li class="pin-title sidebar-main-title">
@@ -153,55 +159,162 @@
                                     </div>
                                 </li>
 
-                                <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="file-manager.html">
-                                        <svg class="stroke-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#stroke-file"></use>
-                                        </svg>
-                                        <svg class="fill-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#fill-file"></use>
-                                        </svg><span>Dashboard</span></a></li>
                                 <li class="sidebar-list">
                                     <i class="fa-solid fa-thumbtack"></i>
-                                    <a class="sidebar-link sidebar-title" href="#">
+                                    <a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName() == 'admin-dashboard' ? 'active' : '' }}" href="{{ route('admin-dashboard') }}">
                                         <svg class="stroke-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-file') }}"></use>
                                         </svg>
                                         <svg class="fill-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#fill-ecommerce"></use>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-file') }}"></use>
+                                        </svg><span>Dashboard</span></a>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-akun-pengurus', 'admin-akun-pengurus-create', 'admin-akun-pengurus-edit', 'admin-data-pengurus', 'admin-data-pengurus-create', 'admin-data-pengurus-edit', 'admin-struktur-pengurus', 'admin-struktur-pengurus-create', 'admin-struktur-pengurus-edit','admin-struktur-bidang-pengurus']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-user') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-user') }}"></use>
                                         </svg><span>Pengurus</span></a>
-                                    <ul class="sidebar-submenu">
-                                        <li><a href="category.html">Akun Pengurus</a></li>
-                                        <li><a href="category.html">Data Pengurus</a></li>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-akun-pengurus', 'admin-akun-pengurus-create', 'admin-akun-pengurus-edit', 'admin-data-pengurus', 'admin-data-pengurus-create', 'admin-data-pengurus-edit', 'admin-struktur-pengurus', 'admin-struktur-pengurus-create', 'admin-struktur-pengurus-edit','admin-struktur-bidang-pengurus']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-akun-pengurus') }}" class="{{ in_array(Route::currentRouteName(), ['admin-akun-pengurus', 'admin-akun-pengurus-create', 'admin-akun-pengurus-edit']) ? 'active' : '' }}">Akun Pengurus</a></li>
+                                        <li><a href="{{ route('admin-data-pengurus') }}" class="{{ in_array(Route::currentRouteName(), ['admin-data-pengurus', 'admin-data-pengurus-create', 'admin-data-pengurus-edit']) ? 'active' : '' }}">Data Pengurus</a></li>
+                                        <li><a href="{{ route('admin-struktur-pengurus') }}" class="{{ in_array(Route::currentRouteName(), ['admin-struktur-pengurus', 'admin-struktur-pengurus-create', 'admin-struktur-pengurus-edit','admin-struktur-bidang-pengurus']) ? 'active' : '' }}">Struktur Pengurus</a></li>
                                     </ul>
                                 </li>
 
                                 <li class="sidebar-list">
                                     <i class="fa-solid fa-thumbtack"></i>
-                                    <a class="sidebar-link sidebar-title" href="#">
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-akun-member', 'admin-akun-member-create', 'admin-akun-member-edit', 'admin-data-member', 'admin-data-member-create', 'admin-data-member-edit']) ? 'active' : '' }}" href="#">
                                         <svg class="stroke-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-user') }}"></use>
                                         </svg>
                                         <svg class="fill-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#fill-ecommerce"></use>
-                                        </svg><span>Anggota</span></a>
-                                    <ul class="sidebar-submenu">
-                                        <li><a href="category.html">Akun Anggota</a></li>
-                                        <li><a href="category.html">Data Anggota</a></li>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-user') }}"></use>
+                                        </svg><span>Member</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-akun-member', 'admin-akun-member-create', 'admin-akun-member-edit', 'admin-data-member', 'admin-data-member-create', 'admin-data-member-edit']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-akun-member') }}" class="{{ in_array(Route::currentRouteName(), ['admin-akun-member', 'admin-akun-member-create', 'admin-akun-member-edit']) ? 'active' : '' }}">Akun Member</a></li>
+                                        <li><a href="{{ route('admin-data-member') }}" class="{{ in_array(Route::currentRouteName(), ['admin-data-member', 'admin-data-member-create', 'admin-data-member-edit']) ? 'active' : '' }}">Data Member</a></li>
                                     </ul>
                                 </li>
                                 <li class="sidebar-list">
                                     <i class="fa-solid fa-thumbtack"></i>
-                                    <a class="sidebar-link sidebar-title" href="#">
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-akun-mitra', 'admin-akun-mitra-create', 'admin-akun-mitra-edit', 'admin-data-mitra', 'admin-data-mitra-create', 'admin-data-mitra-edit']) ? 'active' : '' }}" href="#">
                                         <svg class="stroke-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-learning') }}"></use>
                                         </svg>
                                         <svg class="fill-icon">
-                                            <use href="../assets/admin/assets/svg/icon-sprite.svg#fill-ecommerce"></use>
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-learning') }}"></use>
                                         </svg><span>Mitra</span></a>
-                                    <ul class="sidebar-submenu">
-                                        <li><a href="category.html">Akun Mitra</a></li>
-                                        <li><a href="category.html">Data Mitra</a></li>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-akun-mitra', 'admin-akun-mitra-create', 'admin-akun-mitra-edit', 'admin-data-mitra', 'admin-data-mitra-create', 'admin-data-mitra-edit']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-akun-mitra') }}" class="{{ in_array(Route::currentRouteName(), ['admin-akun-mitra', 'admin-akun-mitra-create', 'admin-akun-mitra-edit']) ? 'active' : '' }}">Akun Mitra</a></li>
+                                        <li><a href="{{ route('admin-data-mitra') }}" class="{{ in_array(Route::currentRouteName(), ['admin-data-mitra', 'admin-data-mitra-create', 'admin-data-mitra-edit']) ? 'active' : '' }}">Data Mitra</a></li>
                                     </ul>
+                                </li> 
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-program','admin-program-create','admin-program-edit','admin-kegiatan','admin-kegiatan-create','admin-kegiatan-edit']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-social') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-social') }}"></use>
+                                        </svg>
+                                        <span>Program & Kegiatan</span></a>
+                                    <ul class="sidebar-submenu  {{ in_array(Route::currentRouteName(), ['admin-program','admin-program-create','admin-program-edit','admin-kegiatan','admin-kegiatan-create','admin-kegiatan-edit']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-program') }}" class=" {{ in_array(Route::currentRouteName(), ['admin-program','admin-program-create','admin-program-edit']) ? 'active' : '' }}">Program</a></li>
+                                        <li><a href="{{ route('admin-kegiatan') }}" class=" {{ in_array(Route::currentRouteName(), ['admin-kegiatan','admin-kegiatan-create','admin-kegiatan-edit']) ? 'active' : '' }}">Kegiatan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-peraturan-climate-change','admin-peraturan-climate-change-create','admin-peraturan-climate-change-edit','admin-kategori-peraturan-climate-change','admin-kategori-peraturan-climate-change-create','admin-kategori-peraturan-climate-change-edit']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-maps') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-maps') }}"></use>
+                                        </svg>
+                                        <span>Climate Change</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-peraturan-climate-change','admin-peraturan-climate-change-create','admin-peraturan-climate-change-edit','admin-kategori-peraturan-climate-change','admin-kategori-peraturan-climate-change-create','admin-kategori-peraturan-climate-change-edit']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-peraturan-climate-change') }}" class="{{ in_array(Route::currentRouteName(), ['admin-peraturan-climate-change','admin-peraturan-climate-change-create','admin-peraturan-climate-change-edit']) ? 'active' : '' }}">Peraturan</a></li>
+                                        <li><a href="{{ route('admin-kategori-peraturan-climate-change') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kategori-peraturan-climate-change','admin-kategori-peraturan-climate-change-create','admin-kategori-peraturan-climate-change-edit']) ? 'active' : '' }}">Kategori Peraturan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-tren-terbaru','admin-tren-terbaru-create','admin-tren-terbaru-edit','admin-kategori-tren-terbaru']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-charts') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-charts') }}"></use>
+                                        </svg>
+                                        <span>Tren Terbaru</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-tren-terbaru','admin-tren-terbaru-create','admin-tren-terbaru-edit','admin-kategori-tren-terbaru']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-tren-terbaru') }}" class="{{ in_array(Route::currentRouteName(), ['admin-tren-terbaru','admin-tren-terbaru-create','admin-tren-terbaru-edit']) ? 'active' : '' }}">Artikel</a></li>
+                                        <li><a href="{{ route('admin-kategori-tren-terbaru') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kategori-tren-terbaru']) ? 'active' : '' }}">Kategori Artikel</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-studi-kasus','admin-studi-kasus-create','admin-studi-kasus-edit','admin-kategori-studi-kasus']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-knowledgebase') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-knowledgebase') }}"></use>
+                                        </svg>
+                                        <span>Studi Kasus</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-studi-kasus','admin-studi-kasus-create','admin-studi-kasus-edit','admin-kategori-studi-kasus']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-studi-kasus') }}" class="{{ in_array(Route::currentRouteName(), ['admin-studi-kasus','admin-studi-kasus-create','admin-studi-kasus-edit']) ? 'active' : '' }}">Artikel</a></li>
+                                        <li><a href="{{ route('admin-kategori-studi-kasus') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kategori-studi-kasus']) ? 'active' : '' }}">Kategori Artikel</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-peraturan-regulasi-kebijakan','admin-peraturan-regulasi-kebijakan-create','admin-peraturan-regulasi-kebijakan-edit','admin-kategori-peraturan-regulasi-kebijakan','admin-kategori-peraturan-regulasi-kebijakan-create','admin-kategori-peraturan-regulasi-kebijakan-edit']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-internationalization') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-internationalization') }}"></use>
+                                        </svg>
+                                        <span>Regulasi & Kebijakan</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-peraturan-regulasi-kebijakan','admin-peraturan-regulasi-kebijakan-create','admin-peraturan-regulasi-kebijakan-edit','admin-kategori-peraturan-regulasi-kebijakan','admin-kategori-peraturan-regulasi-kebijakan-create','admin-kategori-peraturan-regulasi-kebijakan-edit']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-peraturan-regulasi-kebijakan') }}" class="{{ in_array(Route::currentRouteName(), ['admin-peraturan-regulasi-kebijakan','admin-peraturan-regulasi-kebijakan-create','admin-peraturan-regulasi-kebijakan-edit']) ? 'active' : '' }}">Peraturan</a></li>
+                                        <li><a href="{{ route('admin-kategori-peraturan-regulasi-kebijakan') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kategori-peraturan-regulasi-kebijakan','admin-kategori-peraturan-regulasi-kebijakan-create','admin-kategori-peraturan-regulasi-kebijakan-edit']) ? 'active' : '' }}">Kategori Peraturan</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title {{ in_array(Route::currentRouteName(), ['admin-kumpulan-berita','admin-kumpulan-berita-create','admin-kumpulan-berita-edit','admin-kategori-kumpulan-berita']) ? 'active' : '' }}" href="#">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-blog') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-blog') }}"></use>
+                                        </svg>
+                                        <span>Kumpulan Berita</span></a>
+                                    <ul class="sidebar-submenu {{ in_array(Route::currentRouteName(), ['admin-kumpulan-berita','admin-kumpulan-berita-create','admin-kumpulan-berita-edit','admin-kategori-kumpulan-berita']) ? 'd-block' : '' }}">
+                                        <li><a href="{{ route('admin-kumpulan-berita') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kumpulan-berita','admin-kumpulan-berita-create','admin-kumpulan-berita-edit']) ? 'active' : '' }}">Artikel</a></li>
+                                        <li><a href="{{ route('admin-kategori-kumpulan-berita') }}" class="{{ in_array(Route::currentRouteName(), ['admin-kategori-kumpulan-berita']) ? 'active' : '' }}">Kategori Artikel</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="sidebar-list">
+                                    <i class="fa-solid fa-thumbtack"></i>
+                                    <a class="sidebar-link sidebar-title link-nav " href="{{ route('admin-dashboard') }}">
+                                        <svg class="stroke-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#stroke-faq') }}"></use>
+                                        </svg>
+                                        <svg class="fill-icon">
+                                            <use href="{{ asset('assets/admin/assets/svg/icon-sprite.svg#fill-faq') }}"></use>
+                                        </svg><span>Tentang Aplikasi</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -211,7 +324,9 @@
             </div>
             <!-- Page Sidebar Ends-->
 
-            @yield('content')
+            <div class="page-body">
+                @yield('content')
+            </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -223,46 +338,60 @@
                 </div>
             </footer>
         </div>
-    </div>
-    <!-- latest jquery-->
-    <script src="../assets/admin/assets/js/jquery.min.js"></script>
+    </div><!-- latest jquery-->
+    <script src="{{ asset('assets/admin/assets/js/jquery.min.js') }}"></script>
     <!-- Bootstrap js-->
-    <script src="../assets/admin/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <!-- feather icon js-->
-    <script src="../assets/admin/assets/js/icons/feather-icon/feather.min.js"></script>
-    <script src="../assets/admin/assets/js/icons/feather-icon/feather-icon.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/icons/feather-icon/feather.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/icons/feather-icon/feather-icon.js') }}"></script>
     <!-- scrollbar js-->
-    <script src="../assets/admin/assets/js/scrollbar/simplebar.min.js"></script>
-    <script src="../assets/admin/assets/js/scrollbar/custom.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/scrollbar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/scrollbar/custom.js') }}"></script>
     <!-- Sidebar jquery-->
-    <script src="../assets/admin/assets/js/config.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/config.js') }}"></script>
     <!-- Plugins JS start-->
-    <script src="../assets/admin/assets/js/sidebar-menu.js"></script>
-    <script src="../assets/admin/assets/js/sidebar-pin.js"></script>
-    <script src="../assets/admin/assets/js/clock.js"></script>
-    <script src="../assets/admin/assets/js/slick/slick.min.js"></script>
-    <script src="../assets/admin/assets/js/slick/slick.js"></script>
-    <script src="../assets/admin/assets/js/header-slick.js"></script>
-    <script src="../assets/admin/assets/js/chart/apex-chart/apex-chart.js"></script>
-    <script src="../assets/admin/assets/js/chart/apex-chart/stock-prices.js"></script>
-    <script src="../assets/admin/assets/js/counter/counter-custom.js"></script>
-    <script src="../assets/admin/assets/js/notify/bootstrap-notify.min.js"></script>
-    <script src="../assets/admin/assets/js/dashboard/default.js"></script>
-    <script src="../assets/admin/assets/js/notify/index.js"></script>
-    <script src="../assets/admin/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
-    <script src="../assets/admin/assets/js/datatable/datatables/dataTables.js"></script>
-    <script src="../assets/admin/assets/js/datatable/datatables/dataTables.select.js"></script>
-    <script src="../assets/admin/assets/js/datatable/datatables/select.bootstrap5.js"></script>
-    <script src="../assets/admin/assets/js/datatable/datatables/datatable.custom.js"></script>
-    <script src="../assets/admin/assets/js/typeahead/handlebars.js"></script>
-    <script src="../assets/admin/assets/js/typeahead/typeahead.bundle.js"></script>
-    <script src="../assets/admin/assets/js/typeahead/typeahead.custom.js"></script>
-    <script src="../assets/admin/assets/js/typeahead-search/handlebars.js"></script>
-    <script src="../assets/admin/assets/js/typeahead-search/typeahead-custom.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/sidebar-menu.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/sidebar-pin.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/slick/slick.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/header-slick.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/prism/prism.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/clipboard/clipboard.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/custom-card/custom-card.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/sweet-alert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/datatable/datatables/dataTables1.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/datatable/datatables/dataTables.bootstrap5.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/datatable/datatables/datatable.custom2.js') }}"></script>
     <!-- Plugins JS Ends-->
+    @yield('js')
     <!-- Theme js-->
-    <script src="../assets/admin/assets/js/script.js"></script>
-    <script src="../assets/admin/assets/js/script1.js"></script>
+    <script src="{{ asset('assets/admin/assets/js/script.js') }}"></script>
+    <script src="{{ asset('assets/admin/assets/js/script1.js') }}"></script>
+
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    },
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "{{ session('success') }}",
+                });
+            });
+        </script>
+    @endif
+
 </body>
 
 </html>

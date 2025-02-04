@@ -98,14 +98,23 @@
                                             Member Sign In<i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     @else
-                                    @if (Auth::user()->role == 'admin')
-                                        <a class="btn-light btn border-white pt-2 pb-2 ps-3 pe-3" href="{{ route('admin-dashboard') }}">
+                                        {{-- @if (Auth::user()->role == 'admin')
                                             Halaman Admin<i class="fa fa-cog ms-2"></i>
-                                        </a>
-                                    @endif
-                                    <a class="ms-2" href="{{ route('profile') }}">
-                                        <img src="{{ Auth::user()->member->image != null ? asset(Auth::user()->member->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" class="img-fluid rounded-circle border border-white" alt="image desc" style="width: 40px; height: 40px; object-fit: cover;" />
-                                    </a>
+                                        @endif --}}
+                                        @if (Auth::user()->role == 'admin')
+                                            <a class="ms-2" href="{{ route('admin-dashboard') }}">
+                                                <img src="{{ Auth::user()->pengurus->image != null ? asset(Auth::user()->pengurus->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" class="img-fluid rounded-circle border border-white" alt="image desc" style="width: 40px; height: 40px; object-fit: cover;" />
+                                            </a>
+                                        @elseif (Auth::user()->role == 'pengurus')
+                                            <a class="ms-2" href="{{ route('profile') }}">
+                                                <img src="{{ Auth::user()->pengurus->image != null ? asset(Auth::user()->pengurus->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" class="img-fluid rounded-circle border border-white" alt="image desc" style="width: 40px; height: 40px; object-fit: cover;" />
+                                            </a>
+                                        @else
+                                            <a class="ms-2" href="{{ route('profile') }}">
+                                                <img src="{{ Auth::user()->member->image != null ? asset(Auth::user()->member->image) : 'https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg' }}" class="img-fluid rounded-circle border border-white" alt="image desc" style="width: 40px; height: 40px; object-fit: cover;" />
+
+                                            </a>
+                                        @endif
                                     @endif
                                 </div>
                             </div>

@@ -15,5 +15,11 @@ class NewsKategori extends Model
         'name',
         'slug',
         'desc', 
-    ];
+    ];    
+    public function news()
+    {
+        return $this->hasMany(News::class, 'news_category_id');
+    }
+
+
 }

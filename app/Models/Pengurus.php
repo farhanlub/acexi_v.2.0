@@ -14,6 +14,7 @@ class Pengurus extends Model
     protected $fillable = [
         'kategori_pengurus_id',
         'role',
+        'sort',
         'team_id',
         'bidang_id',
     ];

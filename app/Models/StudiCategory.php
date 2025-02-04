@@ -16,5 +16,9 @@ class StudiCategory extends Model
         'slug',
         'desc', 
     ];
-    
+    public function studi()
+    {
+        return $this->hasMany(Studi::class, 'studi_category_id');
+    }
+
 }

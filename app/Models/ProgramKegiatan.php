@@ -10,5 +10,9 @@ class ProgramKegiatan extends Model
     use HasFactory;
 
     protected $table = 'program_kegiatan';  // Nama tabel
-    protected $fillable = ['title', 'description', 'image','slug'];
+    protected $fillable = ['title', 'description', 'image','slug','type'];
+
+    public function newsProgramKegiatan(){
+        return $this->hasMany(NewsProgramKegiatan::class, 'program_kegiatan_id');
+    }
 }

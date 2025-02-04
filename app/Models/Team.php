@@ -10,16 +10,20 @@ class Team extends Model
 {
     use HasFactory;
 
+    protected $table = 'teams'; // Nama tabel di database
+
     // Kolom yang dapat diisi
     protected $fillable = [
         'name',
         'role',
         'title',
+        'email',
         'pakar',
         'display_in_home',
         'expert_scope_id',
         'image',
         'facebook',
+        'email',
         'linkedin',
         'twitter',
         'instagram',

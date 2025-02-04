@@ -194,7 +194,7 @@ class WebPublicController extends Controller
         $data = ExpertScope::where('slug', $slug)->first();
         if (!$data) {
             abort(404);
-        }
+        } 
         $title = 'Lingkup Kepakaran ' . $data->title;
         $nav_active = ['']; // Kelas untuk menu yang aktif
         return view('pages.guest.about-us.area-of-expertise-detail', compact('title', 'nav_active', 'data'));
