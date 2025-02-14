@@ -99,4 +99,65 @@ class TrenTerbaruController extends Controller
         $categories = TrenCategory::all();
         return view('pages.admin.tren-terbaru.index-kategori', compact('user', 'categories'));
     }
+    // Menambahkan fungsi create untuk membuat kategori baru
+public function createKategori(): View
+{
+    $user = Auth::user();
+    return view('pages.admin.tren-terbaru.create-kategori', compact('user'));
+}
+
+// Menambahkan fungsi store untuk menyimpan kategori baru
+public function storeKategori(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'desc' => 'required|string'
+    ]);
+
+    $category = new TrenCategory([
+        'name' => $request->name,
+        'slug' => Str::slug($request->name),
+        'desc' => $request->desc
+    ]);
+
+    $category->save();
+
+    return redirect()->route('admin-kategori-tren-terbaru')->with('success', 'Kategori berhasil ditambahkan.');
+}
+
+// Menambahkan fungsi edit untuk mengedit kategori yang ada
+public function editKategori($id): View
+{
+    $user = Auth::user();
+    $category = TrenCategory::findOrFail($id);
+    return view('pages.admin.tren-terbaru.edit-kategori', compact('user', 'category'));
+}
+
+// Menambahkan fungsi update untuk memperbarui kategori yang ada
+public function updateKategori(Request $request, $id)
+{
+    $category = TrenCategory::findOrFail($id);
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'desc' => 'required|string'
+    ]);
+
+    $category->update([
+        'name' => $request->name,
+        'slug' => Str::slug($request->name),
+        'desc' => $request->desc
+    ]);
+
+    return redirect()->route('admin-kategori-tren-terbaru')->with('success', 'Kategori berhasil diperbarui.');
+}
+
+// Menambahkan fungsi destroy untuk menghapus kategori
+public function destroyKategori($id)
+{ 
+    $category = TrenCategory::findOrFail($id);
+    $category->delete();
+
+    return redirect()->route('admin-kategori-tren-terbaru')->with('success', 'Kategori berhasil dihapus.');
+}
+
 }

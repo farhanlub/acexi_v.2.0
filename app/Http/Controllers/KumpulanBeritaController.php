@@ -100,4 +100,56 @@ class KumpulanBeritaController extends Controller
         $categories = NewsKategori::all();
         return view('pages.admin.kumpulan-berita.index-kategori', compact('user', 'categories'));
     }
+    function createKategori(): View
+    {
+        $user = Auth::user();
+        return view('pages.admin.kumpulan-berita.create-kategori', compact('user'));
+    }
+
+    public function storeKategori(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'desc' => 'required|string',
+        ]);
+        $category = new NewsKategori();
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->desc = $request->desc;
+        $category->save();
+
+        return redirect()->route('admin-kategori-kumpulan-berita')->with('success', 'Kategori berita berhasil ditambahkan.');
+    }
+
+    public function editKategori($id): View
+    {
+        $user = Auth::user();
+        $category = NewsKategori::findOrFail($id);
+        return view('pages.admin.kumpulan-berita.edit-kategori', compact('user', 'category'));
+    }
+
+    public function updateKategori(Request $request, $id)
+    {
+        $category = NewsKategori::findOrFail($id);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'desc' => 'required|string',
+        ]);
+
+        $category->update([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'desc' => $request->desc,
+        ]);
+
+        return redirect()->route('admin-kategori-kumpulan-berita')->with('success', 'Kategori berita berhasil diperbarui.');
+    }
+
+    public function destroyKategori($id)
+    {
+        $category = NewsKategori::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('admin-kategori-kumpulan-berita')->with('success', 'Kategori berita berhasil dihapus.');
+    }
 }

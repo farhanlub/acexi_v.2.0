@@ -35,7 +35,7 @@
             </div>
             <div class="about-feature-item gap-2">
                 <div class="feature-content w-100">
-                    <div class="feature-text">
+                    <div class="feature-tAext">
                         <span class="sub-title">
                             Kami di ACEXI (Asosiasi Ahli Emisi Karbon Indonesia) berdedikasi untuk memimpin perubahan menuju Indonesia yang lebih hijau dan berkelanjutan. Dengan fokus pada pengurangan emisi karbon, pelatihan, dan pengembangan kapasitas, kami bekerja untuk memastikan bahwa setiap langkah yang kita ambil hari ini dapat menciptakan masa depan yang lebih baik bagi generasi mendatang.
                         </span>

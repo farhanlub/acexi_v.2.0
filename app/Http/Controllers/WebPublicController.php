@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bidang;
 use App\Models\ExpertScope;
+use App\Models\Faq;
 use App\Models\Gallery;
 use App\Models\KategoriPengurus;
 use App\Models\KeberlanjutanPendampingan;
@@ -435,5 +436,10 @@ class WebPublicController extends Controller
         $recent5 = News::orderBy('created_at', 'desc')->limit(5)->get();
         $nav_active = ['berita']; // Kelas untuk menu yang aktif ;
         return view('pages.guest.news.category', compact('title', 'nav_active', 'kategori', 'data', 'recent5', 'category'));
+    }
+    public function faq()
+    {
+        $data = Faq::all();
+        return view('pages.guest.faq', compact('data'));
     }
 }

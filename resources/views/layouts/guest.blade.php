@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
+@php
+    use App\Models\AppInformation;
+    $app_info = AppInformation::first();
+@endphp
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -193,10 +198,21 @@
                                 <div class="footer-share">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                            @if ($app_info->x != '')
+                                                <a target="_blank" href="{{ $app_info->x }}"><i class="fa-brands fa-x-twitter"></i></a>
+                                            @endif
+                                            @if ($app_info->whatsapp != '')
+                                                <a target="_blank" href="https://wa.me/{{ $app_info->whatsapp }}"><i class="fa-brands fa-whatsapp"></i></a>
+                                            @endif
+                                            @if ($app_info->instagram != '')
+                                                <a target="_blank" href="{{ $app_info->instagram }}"><i class="fa-brands fa-instagram"></i></a>
+                                            @endif
+                                            @if ($app_info->facebook != '')
+                                                <a target="_blank" href="{{ $app_info->facebook }}"><i class="fa-brands fa-facebook-f"></i></a>
+                                            @endif
+                                            @if ($app_info->linkedin != '')
+                                                <a target="_blank" href="{{ $app_info->linkedin }}"><i class="fa-brands fa-linkedin"></i></a>
+                                            @endif
                                         </li>
                                     </ul>
                                 </div>
@@ -211,10 +227,10 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="{{ route('beranda') }}">Beranda</a></li>
-                                    <li><a href="{{ route('beranda') }}">Visi & Misi</a></li>
-                                    <li><a href="{{ route('beranda') }}">Lingkup Kepakaran</a></li>
-                                    <li><a href="{{ route('beranda') }}">Program ACEXI</a></li>
-                                    <li><a href="{{ route('beranda') }}">Kegiatan ACEXI</a></li>
+                                    <li><a href="{{ route('tentang-kami.profil') }}">Profil</a></li>
+                                    <li><a href="{{ route('tentang-kami.visi-misi') }}">Visi & Misi</a></li>
+                                    <li><a href="{{ route('tentang-kami.lingkup-kepakaran') }}">Lingkup Kepakaran</a></li>
+                                    <li><a href="{{ route('tentang-kami.galeri') }}">Galeri</a></li>
                                     <li><a href="{{ route('beranda') }}">Berita</a></li>
                                 </ul>
                             </div>
@@ -227,16 +243,21 @@
                             </div>
                             <div class="footer-contact">
                                 <ul>
-                                    <li>
-                                        <i class="flaticon-location"></i>Jl. Ir. H. Juanda No. 50 Pondok Ranji Ciputat Tangerang, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-open"></i>
-                                        <a href="mailto:info@acexi.org">Info@acexi.org</a>
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-phone"></i><a href="tel:6288290222512">+6288290222512</a>
-                                    </li>
+                                    @if ($app_info->address != '')
+                                        <li>
+                                            <i class="flaticon-location"></i>{{ $app_info->address }}
+                                        </li>
+                                    @endif
+                                    @if ($app_info->email != '')
+                                        <li>
+                                            <i class="flaticon-open"></i> {{ $app_info->email }}
+                                        </li>
+                                    @endif
+                                    @if ($app_info->tel != '')
+                                        <li>
+                                            <i class="flaticon-phone"></i><a href="tel:{{ $app_info->tel }}">+{{ $app_info->tel }}</a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -268,8 +289,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> 
                 </div>
             </div>
         </div>
@@ -285,10 +305,8 @@
                                 </p>
                             </div>
                             <div class="copyright-menu">
-                                <ul>
-                                    <li><a href="#">Setting & Privacy</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Support</a></li>
+                                <ul> 
+                                    <li><a href="{{ route('faq') }}">FAQ</a></li> 
                                 </ul>
                             </div>
                         </div>

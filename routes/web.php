@@ -14,12 +14,18 @@ use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\RegulasiKebijakanController;
 use App\Http\Controllers\StudiKasusController;
+use App\Http\Controllers\TentangAplikasiController;
 use App\Http\Controllers\TrenTerbaruController;
 use App\Http\Controllers\WebPrivateController;
 use App\Http\Middleware\RoleMiddleware;
 
 Route::get('/', [WebPublicController::class, 'beranda'])->name('beranda');
-Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe');
+Route::post('/subscribe', [NewsletterController::class, 'subscribe'])->name('subscribe'); 
+
+
+Route::post('/submit-contact', [NewsletterController::class, 'submitContact'])->name('submit-contact');
+
+
 
 Route::get('/program-kegiatan/search/', [WebPublicController::class, 'programsActivitiesSearch'])->name('program-kegiatan.search');
 Route::get('/program-kegiatan/{slug}', [WebPublicController::class, 'programsActivitiesDetail'])->name('program-kegiatan.detail');
@@ -176,6 +182,12 @@ Route::middleware('auth')->group(function () {
             Route::delete('/tren-terbaru/{id}', [trenTerbaruController::class, 'destroy'])->name('admin-tren-terbaru-destroy');
 
             Route::get('/kategori-tren-terbaru', [trenTerbaruController::class, 'indexKategori'])->name('admin-kategori-tren-terbaru');
+            Route::get('/kategori-tren-terbaru/create', [TrenTerbaruController::class, 'createKategori'])->name('admin-kategori-tren-terbaru-create');
+            Route::post('/kategori-tren-terbaru/store', [TrenTerbaruController::class, 'storeKategori'])->name('admin-kategori-tren-terbaru-store');
+            Route::get('/kategori-tren-terbaru/edit/{id}', [TrenTerbaruController::class, 'editKategori'])->name('admin-kategori-tren-terbaru-edit');
+            Route::put('/kategori-tren-terbaru/update/{id}', [TrenTerbaruController::class, 'updateKategori'])->name('admin-kategori-tren-terbaru-update');
+            Route::delete('/kategori-tren-terbaru/destroy/{id}', [TrenTerbaruController::class, 'destroyKategori'])->name('admin-kategori-tren-terbaru-destroy');
+
 
 
             
@@ -198,6 +210,12 @@ Route::middleware('auth')->group(function () {
             Route::delete('/kumpulan-berita/{id}', [KumpulanBeritaController::class, 'destroy'])->name('admin-kumpulan-berita-destroy');
 
             Route::get('/kategori-kumpulan-berita', [KumpulanBeritaController::class, 'indexKategori'])->name('admin-kategori-kumpulan-berita');
+            Route::get('/kategori-kumpulan-berita/create', [KumpulanBeritaController::class, 'createKategori'])->name('admin-kategori-kumpulan-berita-create');
+            Route::post('/kategori-kumpulan-berita/store', [KumpulanBeritaController::class, 'storeKategori'])->name('admin-kategori-kumpulan-berita-store');
+            Route::get('/kategori-kumpulan-berita/edit/{id}', [KumpulanBeritaController::class, 'editKategori'])->name('admin-kategori-kumpulan-berita-edit');
+            Route::put('/kategori-kumpulan-berita/update/{id}', [KumpulanBeritaController::class, 'updateKategori'])->name('admin-kategori-kumpulan-berita-update');
+            Route::delete('/kategori-kumpulan-berita/destroy/{id}', [KumpulanBeritaController::class, 'destroyKategori'])->name('admin-kategori-kumpulan-berita-destroy');
+            
 
 
 
@@ -209,6 +227,7 @@ Route::middleware('auth')->group(function () {
             Route::delete('/peraturan-climate-change/{id}', [ClimateChangeController::class, 'destroy'])->name('admin-peraturan-climate-change-destroy');
             
             Route::get('/kategori-peraturan-climate-change', [ClimateChangeController::class, 'indexKategori'])->name('admin-kategori-peraturan-climate-change');
+            
 
 
 
@@ -221,6 +240,10 @@ Route::middleware('auth')->group(function () {
             
             Route::get('/kategori-peraturan-regulasi-kebijakan', [RegulasiKebijakanController::class, 'indexKategori'])->name('admin-kategori-peraturan-regulasi-kebijakan');
 
+            Route::get('/tentang-aplikasi', [TentangAplikasiController::class, 'index'])->name('admin-tentang-aplikasi');
+            Route::put('/tentang-aplikasi', [TentangAplikasiController::class, 'update'])->name('admin-tentang-aplikasi-update');
+
+            
 
  
         });

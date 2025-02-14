@@ -27,6 +27,18 @@
     </section>
     <div class="tj-contact-section tj-contact-page pb-5">
         <div class="container">
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Berhasil!</h4>
+                    <p>{{ session('success') }}</p>
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Error!</h4>
+                    <p>{{ session('error') }}</p>
+                </div>
+            @endif
             <div class="row align-items-end">
                 <div class="col-lg-6">
                     <div class="contact-left-content">
@@ -48,42 +60,43 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="tj-contact-form">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-input">
-                                    <input type="text" id="nameOne" name="name" placeholder="Nama Anda..." required="">
+                    <form method="POST" action="{{ route('submit-contact') }}" onsubmit="disableButton()">
+                        @csrf
+                        <div class="tj-contact-form">
+                            <div class="row">
+                                @foreach (['name', 'phone', 'email', 'website', 'message'] as $field)
+                                    <div class="col-lg-{{ $field == 'message' ? '12' : '6' }}">
+                                        <div class="form-input">
+                                            <label for="{{ $field }}">{{ ucfirst($field) }}</label>
+                                            @if ($field == 'message')
+                                                <textarea id="{{ $field }}" name="{{ $field }}" placeholder="Tulis Pesan Anda...">{{ old($field) }}</textarea>
+                                            @else
+                                                <input type="{{ $field == 'email' ? 'email' : 'text' }}" id="{{ $field }}" name="{{ $field }}" placeholder="Masukkan {{ ucfirst($field) }} Anda" value="{{ old($field) }}" required="">
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
+                                <div class="col-lg-12">
+                                    <div class="tj-contact-button">
+                                        <button class="tj-primary-btn2 btn" type="submit" id="submitBtn">
+                                            Hubungi Kami <i class="flaticon-right-arrow"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-input">
-                                    <input type="text" id="phone" name="phone" placeholder="Telepon..." required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-input">
-                                    <input type="email" id="emailTwo" name="email" placeholder="Masukkan Email Anda" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-input">
-                                    <input type="text" id="site" name="website" placeholder="Masukkan Situs Web Anda" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-input">
-                                    <textarea id="message" name="message" placeholder="Tulis Pesan Anda..."></textarea>
-                                </div>
-                            </div>
-                            <div class="tj-contact-button">
-                                <button class="tj-primary-btn2 btn" type="submit" value="submit">
-                                    Hubungi Kami <i class="flaticon-right-arrow"></i>
-                                </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        function disableButton() {
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').innerHTML = 'Mengirim...';
+        }
+    </script>
 @endsection
